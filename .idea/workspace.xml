@@ -2,20 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8edb67b-213f-4fa9-aeaf-c26fc764ef0a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reset-01.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Calculadora.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,7 +39,7 @@
   </component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="App" />
+      <option name="MAIN_CLASS_NAME" value="com.company.App" />
       <module name="reset-01" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -62,6 +65,22 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state width="637" height="163" key="GridCell.Tab.0.bottom" timestamp="1583606552715">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="637" height="163" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1583606552715" />
+    <state width="637" height="163" key="GridCell.Tab.0.center" timestamp="1583606552715">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="637" height="163" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1583606552715" />
+    <state width="637" height="163" key="GridCell.Tab.0.left" timestamp="1583606552715">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="637" height="163" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1583606552715" />
+    <state width="637" height="163" key="GridCell.Tab.0.right" timestamp="1583606552715">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="637" height="163" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1583606552715" />
     <state x="518" y="205" key="com.intellij.ide.util.TipDialog" timestamp="1583593375542">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
