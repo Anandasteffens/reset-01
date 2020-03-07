@@ -11,7 +11,10 @@ public class Calculadora {
     int multiplica (int valorUm, int valorDois){
         return valorUm * valorDois;
     }
-    int divide (int valorUm, int valorDois){
+    double divide (int valorUm, int valorDois){
         return valorUm/valorDois;
+    }
+    int modulo (int valorUm, int valorDois){
+        return valorUm % valorDois;
     }
 }
