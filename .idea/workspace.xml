@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86bb2f26-6cbe-4c55-9c71-3e4f13f7a8a8" name="Default Changelist" comment="" />
+    <list default="true" id="e8edb67b-213f-4fa9-aeaf-c26fc764ef0a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reset-01.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1Ynme5CwdWmZEXu4qsEruWayihu" />
+  <component name="ProjectId" id="1Ynzuc8do0Flc6WPIqzp1apBQSh" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="ignore.virus.scanning.warn.message" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="App" />
-      <module name="aula-01" />
+      <module name="reset-01" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
-      <module name="aula-01" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.App" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
@@ -53,34 +53,18 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="86bb2f26-6cbe-4c55-9c71-3e4f13f7a8a8" name="Default Changelist" comment="" />
-      <created>1583586824713</created>
+      <changelist id="e8edb67b-213f-4fa9-aeaf-c26fc764ef0a" name="Default Changelist" comment="" />
+      <created>1583593369620</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1583586824713</updated>
+      <updated>1583593369620</updated>
     </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1041" height="163" key="GridCell.Tab.0.bottom" timestamp="1583587983039">
+    <state x="518" y="205" key="com.intellij.ide.util.TipDialog" timestamp="1583593375542">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1041" height="163" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1583587983039" />
-    <state width="1041" height="163" key="GridCell.Tab.0.center" timestamp="1583587983039">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1041" height="163" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1583587983039" />
-    <state width="1041" height="163" key="GridCell.Tab.0.left" timestamp="1583587983039">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1041" height="163" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1583587983039" />
-    <state width="1041" height="163" key="GridCell.Tab.0.right" timestamp="1583587983039">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1041" height="163" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1583587983039" />
-    <state x="384" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1583586835165">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="384" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1583586835165" />
+    <state x="518" y="205" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1583593375542" />
   </component>
 </project>
