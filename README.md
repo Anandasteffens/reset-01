@@ -1,1 +1,1 @@
-# Curso de Java CWI - Reset
+# CWI Reset é demais!
