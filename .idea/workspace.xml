@@ -36,11 +36,26 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.AplicacaoAluno">
+    <configuration name="AplicacaoAluno" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ExercicioTres.AplicacaoAluno" />
+      <module name="reset-01" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ExercicioTres.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.company.App" />
       <module name="reset-01" />
@@ -50,6 +65,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AplicacaoAluno" />
         <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
@@ -68,22 +84,34 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1323" height="163" key="GridCell.Tab.0.bottom" timestamp="1583608835874">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="1032" y="178" key="#Project_Structure" timestamp="1583695037304">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1032" y="178" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1583695037304" />
+    <state width="914" height="281" key="GridCell.Tab.0.bottom" timestamp="1583706941365">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1323" height="163" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1583608835874" />
-    <state width="1323" height="163" key="GridCell.Tab.0.center" timestamp="1583608835874">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="914" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583706941365" />
+    <state width="914" height="281" key="GridCell.Tab.0.center" timestamp="1583706941365">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1323" height="163" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1583608835874" />
-    <state width="1323" height="163" key="GridCell.Tab.0.left" timestamp="1583608835874">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="914" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583706941365" />
+    <state width="914" height="281" key="GridCell.Tab.0.left" timestamp="1583706941365">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1323" height="163" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1583608835873" />
-    <state width="1323" height="163" key="GridCell.Tab.0.right" timestamp="1583608835874">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="914" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583706941365" />
+    <state width="914" height="281" key="GridCell.Tab.0.right" timestamp="1583706941365">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1323" height="163" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1583608835874" />
+    <state width="914" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583706941365" />
+    <state x="922" y="162" key="SettingsEditor" timestamp="1583694905420">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="922" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583694905420" />
     <state x="518" y="205" key="com.intellij.ide.util.TipDialog" timestamp="1583593375542">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
