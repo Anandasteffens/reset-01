@@ -19,11 +19,11 @@ public class Feiticeiro {
     }
 
     public int atacar(Guerreiro guerreiro){
-        if (mana < custoMana){
+        if (this.mana < custoMana){
             return 0;
         }
         Calculos calculos = new Calculos();
-        int poderFinal = calculos.poderFinalAtaque(this.magia.poderAtaque, ataque);
+        int poderFinal = calculos.poderFinalAtaque(this.magia.poderAtaque, this.ataque);
         int danoFinal = calculos.danoFinal(poderFinal, guerreiro.defesa);
         int vidaFinal = calculos.vidaFinal(guerreiro.vida, danoFinal);
         int manaFinal = calculos.manaFinal(this.mana, this.custoMana);
@@ -35,11 +35,11 @@ public class Feiticeiro {
         return danoFinal;
     }
     public int atacar(Barbaro barbaro){
-        if (mana < custoMana){
+        if (this.mana < custoMana){
             return 0;
         }
         Calculos calculos = new Calculos();
-        int poderFinal = calculos.poderFinalAtaque(this.magia.poderAtaque, ataque);
+        int poderFinal = calculos.poderFinalAtaque(this.magia.poderAtaque, this.ataque);
         int danoFinal = calculos.danoFinal(poderFinal, barbaro.defesa);
         int vidaFinal = calculos.vidaFinal(barbaro.vida, danoFinal);
         int manaFinal = calculos.manaFinal(this.mana, this.custoMana);
@@ -51,11 +51,11 @@ public class Feiticeiro {
         return danoFinal;
     }
     public int atacar(Mago mago){
-        if (mana < custoMana){
+        if (this.mana < custoMana){
             return 0;
         }
         Calculos calculos = new Calculos();
-        int poderFinal = calculos.poderFinalAtaque(this.magia.poderAtaque, ataque);
+        int poderFinal = calculos.poderFinalAtaque(this.magia.poderAtaque, this.ataque);
         int danoFinal = calculos.danoFinal(poderFinal, mago.defesa);
         int vidaFinal = calculos.vidaFinal(mago.vida, danoFinal);
         int manaFinal = calculos.manaFinal(this.mana, this.custoMana);
@@ -67,11 +67,11 @@ public class Feiticeiro {
         return danoFinal;
     }
     public int atacar(Feiticeiro feiticeiro){
-        if (mana < custoMana){
+        if (this.mana < custoMana){
             return 0;
         }
         Calculos calculos = new Calculos();
-        int poderFinal = calculos.poderFinalAtaque(this.magia.poderAtaque, ataque);
+        int poderFinal = calculos.poderFinalAtaque(this.magia.poderAtaque, this.ataque);
         int danoFinal = calculos.danoFinal(poderFinal, feiticeiro.defesa);
         int vidaFinal = calculos.vidaFinal(feiticeiro.vida, danoFinal);
         int manaFinal = calculos.manaFinal(this.mana, this.custoMana);
@@ -83,11 +83,11 @@ public class Feiticeiro {
         return danoFinal;
     }
     public int atacar(Druida druida){
-        if (mana < custoMana){
+        if (this.mana < custoMana){
             return 0;
         }
         Calculos calculos = new Calculos();
-        int poderFinal = calculos.poderFinalAtaque(this.magia.poderAtaque, ataque);
+        int poderFinal = calculos.poderFinalAtaque(this.magia.poderAtaque, this.ataque);
         int danoFinal = calculos.danoFinal(poderFinal, druida.defesa);
         int vidaFinal = calculos.vidaFinal(druida.vida, danoFinal);
         int manaFinal = calculos.manaFinal(this.mana, this.custoMana);
@@ -99,11 +99,11 @@ public class Feiticeiro {
         return danoFinal;
     }
     public int atacar(Clerigo clerigo){
-        if (mana < custoMana){
+        if (this.mana < custoMana){
             return 0;
         }
         Calculos calculos = new Calculos();
-        int poderFinal = calculos.poderFinalAtaque(this.magia.poderAtaque, ataque);
+        int poderFinal = calculos.poderFinalAtaque(this.magia.poderAtaque, this.ataque);
         int danoFinal = calculos.danoFinal(poderFinal, clerigo.defesa);
         int vidaFinal = calculos.vidaFinal(clerigo.vida, danoFinal);
         int manaFinal = calculos.manaFinal(this.mana, this.custoMana);
