@@ -33,33 +33,43 @@ public class AppBatalha {
         System.out.print(guerreiro.atacar(barbaro)+ " de dano");
         System.out.println(".");
         //System.out.println("vida do barbaro " +barbaro.vida);
-        //System.out.print();
+        System.out.println("#####################");
 
         //Ataque Guerreiro 2
+        System.out.println("#####################");
         System.out.print(guerreiro.nome +" " + "atacou"+ " ");
         System.out.print(mago.nome +" "+"com");
         System.out.print(" " +guerreiro.arma.nome + " " +"causando ");
         System.out.print(guerreiro.atacar(mago)+ " de dano");
         System.out.println(".");
         //System.out.println("vida do mago " +mago.vida);
-        //System.out.print();
+        System.out.println("#####################");
+        
         //Ataque Barbaro 1
+        System.out.println("#####################");
         System.out.print(barbaro.nome +" " + "atacou"+ " ");
         System.out.print(clerigo.nome +" "+"com");
         System.out.print(" " +barbaro.arma.nome + " " +"causando ");
         System.out.print(barbaro.atacar(clerigo)+ " de dano");
         System.out.println(".");
-        //System.out.print();
+        System.out.println("#####################");
 
         //Ataque Barbaro 2
+        System.out.println("#####################");
         System.out.print(barbaro.nome +" " + "atacou"+ " ");
         System.out.print(feiticeiro.nome +" "+"com");
         System.out.print(" " +barbaro.arma.nome + " " +"causando ");
         System.out.print(barbaro.atacar(feiticeiro)+ " de dano");
         System.out.println(".");
         //System.out.print();
+        System.out.println("#####################");
 
         //Ataque Mago 1
+        System.out.println("#####################");
+        int danoCausado = mago.atacar(druida);
+        if (danoCausado <= 0 ){
+            System.out.println("Duelo finalizado por falta de mana");
+        }
         System.out.print(mago.nome +" " + "atacou"+ " ");
         System.out.print(druida.nome +" "+"com");
         System.out.print(" " +mago.magia.nome + " " +"causando ");
@@ -67,6 +77,7 @@ public class AppBatalha {
         System.out.println(".");
         //System.out.println("mana eh: " +mago.mana);
        // System.out.print();
+        System.out.println("#####################");
 
         //Ataque Mago 2
         System.out.println("#####################");
@@ -85,6 +96,11 @@ public class AppBatalha {
 
 
         //Ataque Feiticeiro 1
+        System.out.println("#####################");
+        int danoCausado = feiticeiro.atacar(barbaro);
+        if (danoCausado <= 0 ){
+            System.out.println("Duelo finalizado por falta de mana");
+        }
         System.out.print(feiticeiro.nome +" " + "atacou"+ " ");
         System.out.print(barbaro.nome +" "+"com");
         System.out.print(" " +feiticeiro.magia.nome + " " +"causando ");
@@ -92,8 +108,14 @@ public class AppBatalha {
         System.out.println(".");
       //  System.out.println("mana eh: " +feiticeiro.mana);
        // System.out.print();
+        System.out.println("#####################");
 
         //Ataque Feiticeiro 2
+        System.out.println("#####################");
+        int danoCausado = feiticeiro.atacar(mago);
+        if (danoCausado <= 0 ){
+            System.out.println("Duelo finalizado por falta de mana");
+        }
         System.out.print(feiticeiro.nome +" " + "atacou"+ " ");
         System.out.print(mago.nome +" "+"com");
         System.out.print(" " +feiticeiro.magia.nome + " " +"causando ");
@@ -101,9 +123,15 @@ public class AppBatalha {
         System.out.println(".");
        // System.out.println("mana eh: " +feiticeiro.mana);
         //System.out.print();
+        System.out.println("#####################");
 
 
         //Ataque Druida 1
+        System.out.println("#####################");
+        int danoCausado = druida.atacar(clerigo);
+        if (danoCausado <= 0 ){
+            System.out.println("Duelo finalizado por falta de fe");
+        }
         System.out.print(druida.nome +" " + "atacou"+ " ");
         System.out.print(clerigo.nome +" "+"com");
         System.out.print(" " +druida.poderDivino.nome + " " +"causando ");
@@ -113,6 +141,11 @@ public class AppBatalha {
         //System.out.print();
 
         //Ataque Druida 2
+        System.out.println("#####################");
+        int danoCausado = druida.atacar(feiticeiro);
+        if (danoCausado <= 0 ){
+            System.out.println("Duelo finalizado por falta de fe");
+        }
         System.out.print(druida.nome +" " + "atacou"+ " ");
         System.out.print(feiticeiro.nome +" "+"com");
         System.out.print(" " +druida.poderDivino.nome + " " +"causando ");
@@ -120,8 +153,14 @@ public class AppBatalha {
         System.out.println(".");
        // System.out.println("a fe eh: " +druida.fe);
         //System.out.print();
+        System.out.println("#####################");
 
         //Ataque Clerigo 1
+        System.out.println("#####################");
+        int danoCausado = clerigo.atacar(druida);
+        if (danoCausado <= 0 ){
+            System.out.println("Duelo finalizado por falta de fe");
+        }
         System.out.print(clerigo.nome +" " + "atacou"+ " ");
         System.out.print(druida.nome +" "+"com");
         System.out.print(" " +clerigo.poderDivino.nome + " " +"causando ");
@@ -129,8 +168,14 @@ public class AppBatalha {
         System.out.println(".");
        // System.out.println("fe eh: " +clerigo.fe);
         //System.out.print();
+        System.out.println("#####################");
 
         //Ataque Clerigo 2
+        System.out.println("#####################");
+        int danoCausado = clerigo.atacar(guerreiro);
+        if (danoCausado <= 0 ){
+            System.out.println("Duelo finalizado por falta de fe");
+        }
         System.out.print(clerigo.nome +" " + "atacou"+ " ");
         System.out.print(guerreiro.nome +" "+"com");
         System.out.print(" " +clerigo.poderDivino.nome + " " +"causando ");
@@ -138,6 +183,8 @@ public class AppBatalha {
         System.out.println(".");
        // System.out.println("fe eh: " +clerigo.fe);
         //System.out.print();
+        System.out.println("#####################");
+        System.out.println("#####################");
 
         //Resultados Finais
         System.out.println("Resultado da Batalha:");
@@ -157,8 +204,6 @@ public class AppBatalha {
         System.out.print(clerigo.nome+ " apresentou ");
         System.out.print(clerigo.vida+ " de vida e ");
         System.out.print(clerigo.fe+ " de fe ao final do combate.");
-
-
 
     }
 }
