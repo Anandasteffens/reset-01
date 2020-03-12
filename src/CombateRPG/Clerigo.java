@@ -19,14 +19,14 @@ public class Clerigo {
     }
 
     public int atacar(Guerreiro guerreiro){
-        if (fe < custoFe){
+        if (this.fe < custoFe){
             return 0;
         }
         Calculos calculos = new Calculos();
-        int poderFinal = calculos.poderFinalAtaque(this.poderDivino.poderIntensidade, ataque);
+        int poderFinal = calculos.poderFinalAtaque(this.poderDivino.poderIntensidade, this.ataque);
         int danoFinal = calculos.danoFinal(poderFinal, guerreiro.defesa);
         int vidaFinal = calculos.vidaFinal(guerreiro.vida, danoFinal);
-        int feFinal = calculos.manaFinal(this.fe, this.custoFe);
+        int feFinal = calculos.feFinal(this.fe, this.custoFe);
         guerreiro.vida = vidaFinal;
         this.fe = feFinal;
         if (danoFinal >guerreiro.vida){
@@ -35,14 +35,14 @@ public class Clerigo {
         return danoFinal;
     }
     public int atacar(Barbaro barbaro){
-        if (fe < custoFe){
+        if (this.fe < custoFe){
             return 0;
         }
         Calculos calculos = new Calculos();
-        int poderFinal = calculos.poderFinalAtaque(this.poderDivino.poderIntensidade, ataque);
+        int poderFinal = calculos.poderFinalAtaque(this.poderDivino.poderIntensidade, this.ataque);
         int danoFinal = calculos.danoFinal(poderFinal, barbaro.defesa);
         int vidaFinal = calculos.vidaFinal(barbaro.vida, danoFinal);
-        int feFinal = calculos.manaFinal(this.fe, this.custoFe);
+        int feFinal = calculos.feFinal(this.fe, this.custoFe);
         barbaro.vida = vidaFinal;
         this.fe = feFinal;
         if (danoFinal >barbaro.vida){
@@ -51,14 +51,14 @@ public class Clerigo {
         return danoFinal;
     }
     public int atacar(Mago mago){
-        if (fe < custoFe){
+        if (this.fe < custoFe){
             return 0;
         }
         Calculos calculos = new Calculos();
-        int poderFinal = calculos.poderFinalAtaque(this.poderDivino.poderIntensidade, ataque);
+        int poderFinal = calculos.poderFinalAtaque(this.poderDivino.poderIntensidade, this.ataque);
         int danoFinal = calculos.danoFinal(poderFinal, mago.defesa);
         int vidaFinal = calculos.vidaFinal(mago.vida, danoFinal);
-        int feFinal = calculos.manaFinal(this.fe, this.custoFe);
+        int feFinal = calculos.feFinal(this.fe, this.custoFe);
         mago.vida = vidaFinal;
         this.fe = feFinal;
         if (danoFinal >mago.vida){
@@ -68,14 +68,14 @@ public class Clerigo {
 
     }
     public int atacar(Feiticeiro feiticeiro){
-        if (fe < custoFe){
+        if (this.fe < custoFe){
             return 0;
         }
         Calculos calculos = new Calculos();
-        int poderFinal = calculos.poderFinalAtaque(this.poderDivino.poderIntensidade, ataque);
+        int poderFinal = calculos.poderFinalAtaque(this.poderDivino.poderIntensidade, this.ataque);
         int danoFinal = calculos.danoFinal(poderFinal, feiticeiro.defesa);
         int vidaFinal = calculos.vidaFinal(feiticeiro.vida, danoFinal);
-        int feFinal = calculos.manaFinal(this.fe, this.custoFe);
+        int feFinal = calculos.feFinal(this.fe, this.custoFe);
         feiticeiro.vida = vidaFinal;
         this.fe = feFinal;
         if (danoFinal >feiticeiro.vida){
@@ -84,14 +84,14 @@ public class Clerigo {
         return danoFinal;
     }
     public int atacar(Druida druida){
-        if (fe < custoFe){
+        if (this.fe < custoFe){
             return 0;
         }
         Calculos calculos = new Calculos();
-        int poderFinal = calculos.poderFinalAtaque(this.poderDivino.poderIntensidade, ataque);
+        int poderFinal = calculos.poderFinalAtaque(this.poderDivino.poderIntensidade, this.ataque);
         int danoFinal = calculos.danoFinal(poderFinal, druida.defesa);
         int vidaFinal = calculos.vidaFinal(druida.vida, danoFinal);
-        int feFinal = calculos.manaFinal(this.fe, this.custoFe);
+        int feFinal = calculos.feFinal(this.fe, this.custoFe);
         druida.vida = vidaFinal;
         this.fe = feFinal;
         if (danoFinal >druida.vida){
@@ -100,14 +100,14 @@ public class Clerigo {
         return danoFinal;
     }
     public int atacar(Clerigo clerigo){
-        if (fe < custoFe){
+        if (this.fe < custoFe){
             return 0;
         }
         Calculos calculos = new Calculos();
-        int poderFinal = calculos.poderFinalAtaque(this.poderDivino.poderIntensidade, ataque);
+        int poderFinal = calculos.poderFinalAtaque(this.poderDivino.poderIntensidade, this.ataque);
         int danoFinal = calculos.danoFinal(poderFinal, clerigo.defesa);
         int vidaFinal = calculos.vidaFinal(clerigo.vida, danoFinal);
-        int feFinal = calculos.manaFinal(this.fe, this.custoFe);
+        int feFinal = calculos.feFinal(this.fe, this.custoFe);
         clerigo.vida = vidaFinal;
         this.fe = feFinal;
         if (danoFinal >clerigo.vida){
