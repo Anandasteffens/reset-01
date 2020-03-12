@@ -1,15 +1,15 @@
 package CombateRPG;
 
-public class Magia {
+public class Arma {
     String nome;
     int poderAtaque;
-    int custoMana;
 
-    Magia(String nome, int poderAtaque, int custoMana) {
+    Arma(String nome, int poderAtaque) {
         this.nome = nome;
         this.poderAtaque = poderAtaque;
-        this.custoMana = custoMana;
     }
 
+    public void atacar() {
 
+    }
 }
