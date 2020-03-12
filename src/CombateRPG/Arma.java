@@ -9,7 +9,4 @@ public class Arma {
         this.poderAtaque = poderAtaque;
     }
 
-    public void atacar() {
-
-    }
 }
