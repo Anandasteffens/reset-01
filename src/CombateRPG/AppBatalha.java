@@ -18,13 +18,13 @@ public class AppBatalha {
 
         Barbaro barbaro = new Barbaro("Ragnar", 150, 6, 35, martelo);
 
-        Mago mago = new Mago("Aethas", 150, 4, 40, raioDeFrio, 80);
+        Mago mago = new Mago("Aethas", 150, 40, 40, raioDeFrio, 80);
 
-        Feiticeiro feiticeiro = new Feiticeiro("Ramza", 150, 6, 45, bolaDeFogo, 80);
+        Feiticeiro feiticeiro = new Feiticeiro("Ramza", 150, 6, 45, bolaDeFogo, 0);
 
-        Druida druida = new Druida("Beatrice", 150, 4, 33, invocarEnxames, 80);
+        Druida druida = new Druida("Beatrice", 150, 4, 33, invocarEnxames, 0);
 
-        Clerigo clerigo = new Clerigo("Mayari", 150, 5, 38, toqueDeFadiga, 80);
+        Clerigo clerigo = new Clerigo("Mayari", 150, 5, 38, toqueDeFadiga, 0);
 
         //Ataque Guerreiro 1
         System.out.print(guerreiro.nome +" " + "atacou"+ " ");
@@ -69,13 +69,20 @@ public class AppBatalha {
        // System.out.print();
 
         //Ataque Mago 2
+        System.out.println("#####################");
+        int danoCausado = mago.atacar(guerreiro);
+        if (danoCausado <= 0 ){
+            System.out.println("Duelo finalizado por falta de mana");
+        }
         System.out.print(mago.nome +" " + "atacou"+ " ");
         System.out.print(guerreiro.nome +" "+"com");
         System.out.print(" " +mago.magia.nome + " " +"causando ");
-        System.out.print(mago.atacar(guerreiro)+ " de dano");
+        System.out.print(danoCausado+ " de dano");
         System.out.println(".");
        // System.out.println("mana eh: " +mago.mana);
        // System.out.print();
+        System.out.println("#####################");
+
 
         //Ataque Feiticeiro 1
         System.out.print(feiticeiro.nome +" " + "atacou"+ " ");

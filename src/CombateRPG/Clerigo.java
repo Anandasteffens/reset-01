@@ -19,35 +19,101 @@ public class Clerigo {
     }
 
     public int atacar(Guerreiro guerreiro){
+        if (fe < custoFe){
+            return 0;
+        }
         Calculos calculos = new Calculos();
         int poderFinal = calculos.poderFinalAtaque(this.poderDivino.poderIntensidade, ataque);
         int danoFinal = calculos.danoFinal(poderFinal, guerreiro.defesa);
         int vidaFinal = calculos.vidaFinal(guerreiro.vida, danoFinal);
-        int feFinal = calculos.feFinal(this.fe, this.custoFe);
+        int feFinal = calculos.manaFinal(this.fe, this.custoFe);
         guerreiro.vida = vidaFinal;
         this.fe = feFinal;
+        if (danoFinal >guerreiro.vida){
+            System.out.println("O ataque resultou na morte do alvo "+guerreiro.nome);
+        }
         return danoFinal;
     }
-    public void atacar(Barbaro barbaro){
+    public int atacar(Barbaro barbaro){
+        if (fe < custoFe){
+            return 0;
+        }
+        Calculos calculos = new Calculos();
+        int poderFinal = calculos.poderFinalAtaque(this.poderDivino.poderIntensidade, ataque);
+        int danoFinal = calculos.danoFinal(poderFinal, barbaro.defesa);
+        int vidaFinal = calculos.vidaFinal(barbaro.vida, danoFinal);
+        int feFinal = calculos.manaFinal(this.fe, this.custoFe);
+        barbaro.vida = vidaFinal;
+        this.fe = feFinal;
+        if (danoFinal >barbaro.vida){
+            System.out.println("O ataque resultou na morte do alvo "+barbaro.nome);
+        }
+        return danoFinal;
     }
-    public void atacar(Mago mago){
+    public int atacar(Mago mago){
+        if (fe < custoFe){
+            return 0;
+        }
+        Calculos calculos = new Calculos();
+        int poderFinal = calculos.poderFinalAtaque(this.poderDivino.poderIntensidade, ataque);
+        int danoFinal = calculos.danoFinal(poderFinal, mago.defesa);
+        int vidaFinal = calculos.vidaFinal(mago.vida, danoFinal);
+        int feFinal = calculos.manaFinal(this.fe, this.custoFe);
+        mago.vida = vidaFinal;
+        this.fe = feFinal;
+        if (danoFinal >mago.vida){
+            System.out.println("O ataque resultou na morte do alvo "+mago.nome);
+        }
+        return danoFinal;
+
     }
-    public void atacar(Feiticeiro feiticeiro){
+    public int atacar(Feiticeiro feiticeiro){
+        if (fe < custoFe){
+            return 0;
+        }
+        Calculos calculos = new Calculos();
+        int poderFinal = calculos.poderFinalAtaque(this.poderDivino.poderIntensidade, ataque);
+        int danoFinal = calculos.danoFinal(poderFinal, feiticeiro.defesa);
+        int vidaFinal = calculos.vidaFinal(feiticeiro.vida, danoFinal);
+        int feFinal = calculos.manaFinal(this.fe, this.custoFe);
+        feiticeiro.vida = vidaFinal;
+        this.fe = feFinal;
+        if (danoFinal >feiticeiro.vida){
+            System.out.println("O ataque resultou na morte do alvo "+feiticeiro.nome);
+        }
+        return danoFinal;
     }
     public int atacar(Druida druida){
+        if (fe < custoFe){
+            return 0;
+        }
         Calculos calculos = new Calculos();
         int poderFinal = calculos.poderFinalAtaque(this.poderDivino.poderIntensidade, ataque);
         int danoFinal = calculos.danoFinal(poderFinal, druida.defesa);
         int vidaFinal = calculos.vidaFinal(druida.vida, danoFinal);
-        int feFinal = calculos.feFinal(this.fe, this.custoFe);
+        int feFinal = calculos.manaFinal(this.fe, this.custoFe);
         druida.vida = vidaFinal;
         this.fe = feFinal;
+        if (danoFinal >druida.vida){
+            System.out.println("O ataque resultou na morte do alvo "+druida.nome);
+        }
         return danoFinal;
     }
-    public void atacar(Clerigo clerigo){
+    public int atacar(Clerigo clerigo){
+        if (fe < custoFe){
+            return 0;
+        }
+        Calculos calculos = new Calculos();
+        int poderFinal = calculos.poderFinalAtaque(this.poderDivino.poderIntensidade, ataque);
+        int danoFinal = calculos.danoFinal(poderFinal, clerigo.defesa);
+        int vidaFinal = calculos.vidaFinal(clerigo.vida, danoFinal);
+        int feFinal = calculos.manaFinal(this.fe, this.custoFe);
+        clerigo.vida = vidaFinal;
+        this.fe = feFinal;
+        if (danoFinal >clerigo.vida){
+            System.out.println("O ataque resultou na morte do alvo "+clerigo.nome);
+        }
+        return danoFinal;
     }
 
-    public void defender() {
-
-    }
 }
