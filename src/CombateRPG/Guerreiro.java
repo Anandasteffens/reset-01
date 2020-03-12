@@ -17,7 +17,8 @@ public class Guerreiro {
 
     public int atacar(Guerreiro guerreiro){
         Calculos calculos = new Calculos();
-        int poderFinal = calculos.poderFinalAtaque(this.arma.poderAtaque, ataque);
+        int poderFinal = calculos.poderFinalAtaque(this.arma.poderAtaque, this.ataque); 
+        //inserir this.ataque para deixar mais claro.
         int danoFinal = calculos.danoFinal(poderFinal, guerreiro.defesa);
         int vidaFinal = calculos.vidaFinal(guerreiro.vida, danoFinal);
         guerreiro.vida = vidaFinal;
@@ -29,7 +30,7 @@ public class Guerreiro {
 
     public int atacar (Barbaro barbaro){
     Calculos calculos = new Calculos();
-    int poderFinal = calculos.poderFinalAtaque(this.arma.poderAtaque, ataque);
+    int poderFinal = calculos.poderFinalAtaque(this.arma.poderAtaque, this.ataque);
     int danoFinal = calculos.danoFinal(poderFinal, barbaro.defesa);
     int vidaFinal = calculos.vidaFinal(barbaro.vida, danoFinal);
     barbaro.vida = vidaFinal;
@@ -41,7 +42,7 @@ public class Guerreiro {
     }
     public int atacar(Mago mago){
         Calculos calculos = new Calculos();
-        int poderFinal = calculos.poderFinalAtaque(this.arma.poderAtaque, ataque);
+        int poderFinal = calculos.poderFinalAtaque(this.arma.poderAtaque, this.ataque);
         int danoFinal = calculos.danoFinal(poderFinal, mago.defesa);
         int vidaFinal = calculos.vidaFinal(mago.vida, danoFinal);
         mago.vida = vidaFinal;
@@ -53,7 +54,7 @@ public class Guerreiro {
     }
     public int atacar(Feiticeiro feiticeiro){
         Calculos calculos = new Calculos();
-        int poderFinal = calculos.poderFinalAtaque(this.arma.poderAtaque, ataque);
+        int poderFinal = calculos.poderFinalAtaque(this.arma.poderAtaque, this.ataque);
         int danoFinal = calculos.danoFinal(poderFinal, feiticeiro.defesa);
         int vidaFinal = calculos.vidaFinal(feiticeiro.vida, danoFinal);
         feiticeiro.vida = vidaFinal;
@@ -64,7 +65,7 @@ public class Guerreiro {
     }
     public int atacar(Druida druida){
         Calculos calculos = new Calculos();
-        int poderFinal = calculos.poderFinalAtaque(this.arma.poderAtaque, ataque);
+        int poderFinal = calculos.poderFinalAtaque(this.arma.poderAtaque, this.ataque);
         int danoFinal = calculos.danoFinal(poderFinal, druida.defesa);
         int vidaFinal = calculos.vidaFinal(druida.vida, danoFinal);
         druida.vida = vidaFinal;
@@ -75,7 +76,7 @@ public class Guerreiro {
     }
     public int atacar(Clerigo clerigo){
         Calculos calculos = new Calculos();
-        int poderFinal = calculos.poderFinalAtaque(this.arma.poderAtaque, ataque);
+        int poderFinal = calculos.poderFinalAtaque(this.arma.poderAtaque, this.ataque);
         int danoFinal = calculos.danoFinal(poderFinal, clerigo.defesa);
         int vidaFinal = calculos.vidaFinal(clerigo.vida, danoFinal);
         clerigo.vida = vidaFinal;
