@@ -7,7 +7,6 @@ public class Feiticeiro {
     int defesa;
     Magia magia;
     int mana;
-    private static final int custoMana = 20;
 
     Feiticeiro(String nome, int vida, int ataque, int defesa, Magia magia, int mana) {
         this.nome = nome;
@@ -19,98 +18,116 @@ public class Feiticeiro {
     }
 
     public int atacar(Guerreiro guerreiro){
-        if (this.mana < custoMana){
+        if (this.mana < this.magia.custoMana){
             return 0;
         }
         Calculos calculos = new Calculos();
         int poderFinal = calculos.poderFinalAtaque(this.magia.poderAtaque, this.ataque);
         int danoFinal = calculos.danoFinal(poderFinal, guerreiro.defesa);
         int vidaFinal = calculos.vidaFinal(guerreiro.vida, danoFinal);
-        int manaFinal = calculos.manaFinal(this.mana, this.custoMana);
-        guerreiro.vida = vidaFinal;
+        int manaFinal = calculos.manaFinal(this.mana, this.magia.custoMana);
         this.mana = manaFinal;
-        if (danoFinal >guerreiro.vida){
+        if (danoFinal >= guerreiro.vida){
             System.out.println("O ataque resultou na morte do alvo "+guerreiro.nome);
+            guerreiro.vida=0;
+        }
+        else {
+            guerreiro.vida = vidaFinal;
         }
         return danoFinal;
     }
     public int atacar(Barbaro barbaro){
-        if (this.mana < custoMana){
+        if (this.mana < this.magia.custoMana){
             return 0;
         }
         Calculos calculos = new Calculos();
         int poderFinal = calculos.poderFinalAtaque(this.magia.poderAtaque, this.ataque);
         int danoFinal = calculos.danoFinal(poderFinal, barbaro.defesa);
         int vidaFinal = calculos.vidaFinal(barbaro.vida, danoFinal);
-        int manaFinal = calculos.manaFinal(this.mana, this.custoMana);
-        barbaro.vida = vidaFinal;
+        int manaFinal = calculos.manaFinal(this.mana, this.magia.custoMana);
         this.mana = manaFinal;
-        if (danoFinal >barbaro.vida){
+        if (danoFinal >= barbaro.vida){
             System.out.println("O ataque resultou na morte do alvo "+barbaro.nome);
+            barbaro.vida=0;
+        }
+        else {
+            barbaro.vida = vidaFinal;
         }
         return danoFinal;
     }
     public int atacar(Mago mago){
-        if (this.mana < custoMana){
+        if (this.mana < this.magia.custoMana){
             return 0;
         }
         Calculos calculos = new Calculos();
         int poderFinal = calculos.poderFinalAtaque(this.magia.poderAtaque, this.ataque);
         int danoFinal = calculos.danoFinal(poderFinal, mago.defesa);
         int vidaFinal = calculos.vidaFinal(mago.vida, danoFinal);
-        int manaFinal = calculos.manaFinal(this.mana, this.custoMana);
-        mago.vida = vidaFinal;
+        int manaFinal = calculos.manaFinal(this.mana, this.magia.custoMana);
         this.mana = manaFinal;
-        if (danoFinal >mago.vida){
+        if (danoFinal >= mago.vida){
             System.out.println("O ataque resultou na morte do alvo "+mago.nome);
+            mago.vida=0;
+        }
+        else {
+            mago.vida = vidaFinal;
         }
         return danoFinal;
     }
     public int atacar(Feiticeiro feiticeiro){
-        if (this.mana < custoMana){
+        if (this.mana < this.magia.custoMana){
             return 0;
         }
         Calculos calculos = new Calculos();
         int poderFinal = calculos.poderFinalAtaque(this.magia.poderAtaque, this.ataque);
         int danoFinal = calculos.danoFinal(poderFinal, feiticeiro.defesa);
         int vidaFinal = calculos.vidaFinal(feiticeiro.vida, danoFinal);
-        int manaFinal = calculos.manaFinal(this.mana, this.custoMana);
-        feiticeiro.vida = vidaFinal;
+        int manaFinal = calculos.manaFinal(this.mana, this.magia.custoMana);
         this.mana = manaFinal;
-        if (danoFinal >feiticeiro.vida){
+        if (danoFinal >= feiticeiro.vida){
             System.out.println("O ataque resultou na morte do alvo "+feiticeiro.nome);
+            feiticeiro.vida=0;
+        }
+        else {
+            feiticeiro.vida = vidaFinal;
         }
         return danoFinal;
     }
     public int atacar(Druida druida){
-        if (this.mana < custoMana){
+        if (this.mana < this.magia.custoMana){
             return 0;
         }
         Calculos calculos = new Calculos();
         int poderFinal = calculos.poderFinalAtaque(this.magia.poderAtaque, this.ataque);
         int danoFinal = calculos.danoFinal(poderFinal, druida.defesa);
         int vidaFinal = calculos.vidaFinal(druida.vida, danoFinal);
-        int manaFinal = calculos.manaFinal(this.mana, this.custoMana);
-        druida.vida = vidaFinal;
+        int manaFinal = calculos.manaFinal(this.mana, this.magia.custoMana);
         this.mana = manaFinal;
-        if (danoFinal >druida.vida){
+        if (danoFinal >= druida.vida){
             System.out.println("O ataque resultou na morte do alvo "+druida.nome);
+            druida.vida=0;
+        }
+        else {
+            druida.vida = vidaFinal;
         }
         return danoFinal;
     }
     public int atacar(Clerigo clerigo){
-        if (this.mana < custoMana){
+        if (this.mana < this.magia.custoMana){
             return 0;
         }
         Calculos calculos = new Calculos();
         int poderFinal = calculos.poderFinalAtaque(this.magia.poderAtaque, this.ataque);
         int danoFinal = calculos.danoFinal(poderFinal, clerigo.defesa);
         int vidaFinal = calculos.vidaFinal(clerigo.vida, danoFinal);
-        int manaFinal = calculos.manaFinal(this.mana, this.custoMana);
-        clerigo.vida = vidaFinal;
+        int manaFinal = calculos.manaFinal(this.mana, this.magia.custoMana);
         this.mana = manaFinal;
-        if (danoFinal >clerigo.vida){
+        if (danoFinal >= clerigo.vida){
             System.out.println("O ataque resultou na morte do alvo "+clerigo.nome);
+            clerigo.vida=0;
+        }
+        else {
+            clerigo.vida = vidaFinal;
         }
         return danoFinal;
     }
