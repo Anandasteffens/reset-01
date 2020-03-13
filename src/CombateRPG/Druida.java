@@ -28,8 +28,8 @@ public class Druida {
         int feFinal = calculos.feFinal(this.fe, this.poderDivino.custoFe);
         this.fe = feFinal;
         if (danoFinal >= guerreiro.vida) {
-                System.out.println("O ataque resultou na morte do alvo " + guerreiro.nome);
-                guerreiro.vida = 0;
+            System.out.println("O ataque resultou na morte do alvo " + guerreiro.nome);
+            guerreiro.vida = 0;
         }
         else {
             guerreiro.vida = vidaFinal;

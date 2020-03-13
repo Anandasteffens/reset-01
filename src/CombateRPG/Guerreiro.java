@@ -17,7 +17,7 @@ public class Guerreiro {
 
     public int atacar(Guerreiro guerreiro){
         Calculos calculos = new Calculos();
-        int poderFinal = calculos.poderFinalAtaque(this.arma.poderAtaque, this.ataque); 
+        int poderFinal = calculos.poderFinalAtaque(this.arma.poderAtaque, this.ataque);
         //inserir this.ataque para deixar mais claro.
         int danoFinal = calculos.danoFinal(poderFinal, guerreiro.defesa);
         int vidaFinal = calculos.vidaFinal(guerreiro.vida, danoFinal);
@@ -32,14 +32,14 @@ public class Guerreiro {
     }
 
     public int atacar (Barbaro barbaro){
-    Calculos calculos = new Calculos();
-    int poderFinal = calculos.poderFinalAtaque(this.arma.poderAtaque, this.ataque);
-    int danoFinal = calculos.danoFinal(poderFinal, barbaro.defesa);
-    int vidaFinal = calculos.vidaFinal(barbaro.vida, danoFinal);
+        Calculos calculos = new Calculos();
+        int poderFinal = calculos.poderFinalAtaque(this.arma.poderAtaque, this.ataque);
+        int danoFinal = calculos.danoFinal(poderFinal, barbaro.defesa);
+        int vidaFinal = calculos.vidaFinal(barbaro.vida, danoFinal);
         if (danoFinal >= barbaro.vida){
-        System.out.println("O ataque resultou na morte do alvo "+barbaro.nome);
-        barbaro.vida=0;
-    }
+            System.out.println("O ataque resultou na morte do alvo "+barbaro.nome);
+            barbaro.vida=0;
+        }
         else {
             barbaro.vida = vidaFinal;
         }
@@ -105,4 +105,4 @@ public class Guerreiro {
     }
 
 
-    }
+}
