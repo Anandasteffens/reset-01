@@ -8,7 +8,7 @@ public class Alunos {
         this.nome=nome;
         this.notaFinal=notaFinal;
     }
-    if (notaFinal<7)
+    //if (notaFinal<7)
 
 
 }
