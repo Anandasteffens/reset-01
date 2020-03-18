@@ -1,24 +1,27 @@
 public class HomemDeArmas extends Personagem {
-    Arma arma;
+    private Arma arma;
 
-    public HomemDeArmas(String nome, double vida, double ataque, double defesa, Arma arma) {
+    protected HomemDeArmas(String nome, double vida, double ataque, double defesa, Arma arma) {
         super(nome, vida, ataque, defesa);
         this.arma = arma;
     }
+    protected Arma getArma(){
+        return this.arma;
+    }
 
     public void atacar (Personagem alvo){
-        if (this.vida>0) {
+        if (this.getVida()>0) {
             Calculo calculo = new Calculo();
-            double poderFinal = calculo.poderFinalAtaque(this.arma.poderAtaque, this.ataque);
-            double danoFinal = calculo.danoFinal(poderFinal, alvo.defesa);
-            double vidaFinal = calculo.vidaFinal(alvo.vida, danoFinal);
-            if (danoFinal >= alvo.vida) {
-                System.out.println("O ataque resultou na morte do alvo " + alvo.nome);
-                alvo.vida = 0;
+            double poderFinal = calculo.poderFinalAtaque(this.arma.poderAtaque, this.getAtaque());
+            double danoFinal = calculo.danoFinal(poderFinal, alvo.getDefesa());
+            double vidaFinal = calculo.vidaFinal(alvo.getVida(), danoFinal);
+            if (danoFinal >= alvo.getVida()) {
+                System.out.println("O ataque resultou na morte do alvo " + alvo.getNome());
+                alvo.setVida(0);
             } else {
-                alvo.vida = vidaFinal;
+                alvo.setVida(vidaFinal);
             }
-            this.imprimir(alvo.nome, this.arma.nome, danoFinal);
+            this.imprimir(alvo.getNome(), this.arma.nome, danoFinal);
         }
 
     }
