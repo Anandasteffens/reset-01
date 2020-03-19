@@ -31,6 +31,7 @@ public class Personagem {
    public String imprimir(String nomeAlvo, String habilidade, double danoFinal) {
        return (this.nome + " atacou " + nomeAlvo + " com " + habilidade + " causando " + danoFinal + " de dano.");
     }
+
 }
 
 

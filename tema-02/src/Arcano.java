@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Arcano extends Personagem {
 
-   private Magia magia;
+    private Magia magia;
     private double mana;
 
     protected Arcano(String nome, double vida, double ataque, double defesa, Magia magia, double mana) {
@@ -25,7 +25,7 @@ public class Arcano extends Personagem {
         if (this.getVida() > 0) {
             if (this.magia.isDanoArea() == false) {
                 this.atacarIndividual(alvo, listaMsg);
-                listaMsg.add("TIPO DE ATAQUE: ATAQUE INDIVIDUAL REALIZADO");
+                listaMsg.add("["+Data.getDataHora()+ "]"+" TIPO DE ATAQUE: ATAQUE INDIVIDUAL REALIZADO");
             } else {
                 List<Personagem> listaAlvos = new ArrayList<>();
                 listaAlvos.add(alvo);
@@ -33,7 +33,7 @@ public class Arcano extends Personagem {
                 listaAlvos.add(alvo);
                 listaAlvos.add(alvo);
                 this.atacarArea(listaAlvos, listaMsg);
-                listaMsg.add("TIPO DE ATAQUE: ATAQUE EM ÁREA REALIZADO");
+                listaMsg.add("["+Data.getDataHora()+ "]"+" TIPO DE ATAQUE: ATAQUE EM ÁREA REALIZADO");
             }
         }
         return listaMsg;
@@ -41,7 +41,7 @@ public class Arcano extends Personagem {
 
     public void atacarIndividual(Personagem alvo, List<String> listaMsg) {
         if (this.mana <= 0) {
-            listaMsg.add("Duelo finalizado por falta de mana.");
+            listaMsg.add("["+Data.getDataHora()+ "]"+" Duelo finalizado por falta de mana.");
         } else {
             Calculo calculo = new Calculo();
             double poderFinal = calculo.poderFinalAtaque(this.magia.getPoderAtaque(), this.getAtaque());
@@ -51,17 +51,15 @@ public class Arcano extends Personagem {
             if (this.mana >= magia.getCustoMana()) {
                 if (danoFinal >= alvo.getVida()) {
                     listaMsg.add(this.imprimir(alvo.getNome(), this.magia.getNome(), danoFinal));
-                    listaMsg.add("O ataque resultou na morte do alvo " + alvo.getNome());
+                    listaMsg.add("["+Data.getDataHora()+ "]"+" O ataque resultou na morte do alvo " + alvo.getNome());
                     alvo.setVida(0);
                 } else {
                     alvo.setVida(vidaFinal);
-                    listaMsg.add(this.imprimir(alvo.getNome(), this.magia.getNome(), danoFinal));
+                    listaMsg.add("["+Data.getDataHora()+ "]"+" "+this.imprimir(alvo.getNome(), this.magia.getNome(), danoFinal));
                 }
             } else {
                 this.setMana(manaFinal);
             }
-          // listaMsg.add(this.imprimir(alvo.getNome(), this.magia.getNome(), danoFinal));
-       //     listaMsg.add(this.getNome() + " atacou " + alvo.getNome() + " com " + this.magia.getNome() + " causando " + danoFinal + " de dano.");
         }
     }
 
@@ -69,7 +67,9 @@ public class Arcano extends Personagem {
         for (Personagem alvo : listaAlvos) {
             this.atacarIndividual(alvo, listaMsg);
         }
-
-            //TODO: imprimir o estado do personagem
-        }
     }
+    void imprimirStatus(){
+        System.out.println("Nome: " + this.getNome() + " | Vida: " + this.getVida()+" | Mana: " + this.getMana());
+    }
+
+}

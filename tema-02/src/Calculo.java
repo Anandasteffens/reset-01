@@ -4,7 +4,7 @@ public class Calculo {
     double danoFinal (double poderFinalAtaque, double defesaAlvo) {return poderFinalAtaque-defesaAlvo;}
 
     double vidaFinal (double vida, double danoFinal) {return vida-danoFinal;}
-    //TODO: chamar método de mana final
+
     double manaFinal (double mana, double custoMana) {return mana-custoMana;}
 
     double feFinal (double fe, double custoFe) {return fe-custoFe;}

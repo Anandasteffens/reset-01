@@ -28,7 +28,7 @@ public class Sacerdote extends Personagem {
         if (this.getVida() > 0) {
             if (this.poderDivino.isDanoArea() == false) {
                 this.atacarIndividual(alvo, listaMsg);
-                listaMsg.add("TIPO DE ATAQUE: ATAQUE INDIVIDUAL REALIZADO");
+                listaMsg.add("["+Data.getDataHora()+ "]"+" TIPO DE ATAQUE: ATAQUE INDIVIDUAL REALIZADO");
             } else {
                 List<Personagem> listaAlvos = new ArrayList<>();
                 listaAlvos.add(alvo);
@@ -36,7 +36,7 @@ public class Sacerdote extends Personagem {
                 listaAlvos.add(alvo);
                 listaAlvos.add(alvo);
                 this.atacarArea(listaAlvos, listaMsg);
-                listaMsg.add("TIPO DE ATAQUE: ATAQUE EM ÁREA REALIZADO");
+                listaMsg.add("["+Data.getDataHora()+ "]"+" TIPO DE ATAQUE: ATAQUE EM ÁREA REALIZADO");
             }
         }
         return listaMsg;
@@ -44,7 +44,7 @@ public class Sacerdote extends Personagem {
 
     private void atacarIndividual(Personagem alvo, List<String> listaMsg) {
         if (this.fe <= 0) {
-            listaMsg.add("Duelo finalizado por falta de fe.");
+            listaMsg.add("["+Data.getDataHora()+ "]"+" Duelo finalizado por falta de fe.");
         } else {
             Calculo calculo = new Calculo();
             double poderFinal = calculo.poderFinalAtaque(this.poderDivino.getIntensidade(), this.getAtaque());
@@ -53,8 +53,8 @@ public class Sacerdote extends Personagem {
             double feFinal = calculo.feFinal(this.fe, poderDivino.getCustoFe());
             if (this.fe >=poderDivino.getCustoFe()) {
                 if (danoFinal >= alvo.getVida()) {
-                    listaMsg.add(this.imprimir(alvo.getNome(), this.poderDivino.getnome(), danoFinal));
-                    listaMsg.add("O ataque resultou na morte do alvo " + alvo.getNome());
+                    listaMsg.add("["+Data.getDataHora()+ "]"+" "+this.imprimir(alvo.getNome(), this.poderDivino.getnome(), danoFinal));
+                    listaMsg.add("["+Data.getDataHora()+ "]"+" O ataque resultou na morte do alvo " + alvo.getNome());
                     alvo.setVida(0);
                 } else {
                     alvo.setVida(vidaFinal);
@@ -62,10 +62,8 @@ public class Sacerdote extends Personagem {
             }
             else {
                 this.setFe(feFinal);
-                listaMsg.add(this.imprimir(alvo.getNome(), this.poderDivino.getnome(), danoFinal));
+                listaMsg.add("["+Data.getDataHora()+ "]"+" "+this.imprimir(alvo.getNome(), this.poderDivino.getnome(), danoFinal));
             }
-           //listaMsg.add(this.imprimir(alvo.getNome(), this.poderDivino.getnome(), danoFinal));
-           // listaMsg.add(this.getNome() + " atacou " + alvo.getNome() + " com " + this.poderDivino.getnome() + " causando " + danoFinal + " de dano.");
         }
     }
 
@@ -74,7 +72,8 @@ public class Sacerdote extends Personagem {
             this.atacarIndividual(alvo, listaMsg);
         }
     }
-
+    void imprimirStatus(){
+        System.out.println("Nome: " + this.getNome() + " | Vida: " + this.getVida()+" | Fe: " + this.getFe());
+    }
 }
 
-    //TODO: imprimir o estado do personagem
