@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Arcano extends Personagem {
 
    private Magia magia;
@@ -15,28 +18,58 @@ public class Arcano extends Personagem {
     protected double getMana(){
         return this.mana;
     }
+    protected void setMana (double mana){this.mana = mana;};
 
-
-    public void atacar(Personagem alvo) {
+    public List<String> atacar(Personagem alvo){
+        List<String> listaMsg = new ArrayList<>();
         if (this.getVida() > 0) {
-            if (this.mana<=0){
-                System.out.println("Duelo finalizado por falta de fe.");
+            if (this.magia.isDanoArea() == false) {
+                this.atacarIndividual(alvo, listaMsg);
+                listaMsg.add("TIPO DE ATAQUE: ATAQUE INDIVIDUAL REALIZADO");
+            } else {
+                List<Personagem> listaAlvos = new ArrayList<>();
+                listaAlvos.add(alvo);
+                listaAlvos.add(alvo);
+                listaAlvos.add(alvo);
+                listaAlvos.add(alvo);
+                this.atacarArea(listaAlvos, listaMsg);
+                listaMsg.add("TIPO DE ATAQUE: ATAQUE EM ÁREA REALIZADO");
             }
-            else{
-                Calculo calculo = new Calculo();
-                double poderFinal = calculo.poderFinalAtaque(this.magia.getPoderAtaque(), this.getAtaque());
-                double danoFinal = calculo.danoFinal(poderFinal, alvo.getDefesa());
-                double vidaFinal = calculo.vidaFinal(alvo.getVida(), danoFinal);
+        }
+        return listaMsg;
+    }
+
+    public void atacarIndividual(Personagem alvo, List<String> listaMsg) {
+        if (this.mana <= 0) {
+            listaMsg.add("Duelo finalizado por falta de mana.");
+        } else {
+            Calculo calculo = new Calculo();
+            double poderFinal = calculo.poderFinalAtaque(this.magia.getPoderAtaque(), this.getAtaque());
+            double danoFinal = calculo.danoFinal(poderFinal, alvo.getDefesa());
+            double vidaFinal = calculo.vidaFinal(alvo.getVida(), danoFinal);
+            double manaFinal = calculo.manaFinal(this.mana, magia.getCustoMana());
+            if (this.mana >= magia.getCustoMana()) {
                 if (danoFinal >= alvo.getVida()) {
-                    System.out.println("O ataque resultou na morte do alvo " + alvo.getNome());
+                    listaMsg.add(this.imprimir(alvo.getNome(), this.magia.getNome(), danoFinal));
+                    listaMsg.add("O ataque resultou na morte do alvo " + alvo.getNome());
                     alvo.setVida(0);
                 } else {
                     alvo.setVida(vidaFinal);
+                    listaMsg.add(this.imprimir(alvo.getNome(), this.magia.getNome(), danoFinal));
                 }
-                this.imprimir(alvo.getNome(), this.magia.getNome(), danoFinal);
+            } else {
+                this.setMana(manaFinal);
             }
+          // listaMsg.add(this.imprimir(alvo.getNome(), this.magia.getNome(), danoFinal));
+       //     listaMsg.add(this.getNome() + " atacou " + alvo.getNome() + " com " + this.magia.getNome() + " causando " + danoFinal + " de dano.");
+        }
+    }
+
+    private void atacarArea(List<Personagem> listaAlvos, List<String> listaMsg) {
+        for (Personagem alvo : listaAlvos) {
+            this.atacarIndividual(alvo, listaMsg);
+        }
 
             //TODO: imprimir o estado do personagem
         }
     }
-}

@@ -28,8 +28,8 @@ public class Personagem {
         return this.defesa;
     }
 
-    public void imprimir(String nomeAlvo, String habilidade, double danoFinal) {
-        System.out.println(this.nome + " atacou " + nomeAlvo + " com " + habilidade + " causando " + danoFinal + " de dano.");
+   public String imprimir(String nomeAlvo, String habilidade, double danoFinal) {
+       return (this.nome + " atacou " + nomeAlvo + " com " + habilidade + " causando " + danoFinal + " de dano.");
     }
 }
 

@@ -19,9 +19,7 @@ public class PoderDivino {
         return this.nome;
     }
 
-    protected double getCustoFe(){
-        return this.custoFe;
-    }
+    protected double getCustoFe(){return this.custoFe;}
 
     protected boolean isDanoArea(){
         return this.danoArea;
