@@ -14,17 +14,11 @@ public class PoderDivino {
     protected double getIntensidade(){
         return this.poderIntensidade;
     }
-
     protected String getnome(){
         return this.nome;
     }
-
     protected double getCustoFe(){return this.custoFe;}
-
     protected boolean isDanoArea(){
         return this.danoArea;
     }
-
-
-
 }

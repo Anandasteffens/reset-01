@@ -4,6 +4,7 @@ import java.util.List;
 public class Sacerdote extends Personagem {
     private PoderDivino poderDivino;
     private double fe;
+    String feZero = "zero";
 
     protected Sacerdote(String nome, double vida, double ataque, double defesa, PoderDivino poderDivino, double fe) {
         super(nome, vida, ataque, defesa);
@@ -56,8 +57,11 @@ public class Sacerdote extends Personagem {
                     listaMsg.add("["+Data.getDataHora()+ "]"+" "+this.imprimir(alvo.getNome(), this.poderDivino.getnome(), danoFinal));
                     listaMsg.add("["+Data.getDataHora()+ "]"+" O ataque resultou na morte do alvo " + alvo.getNome());
                     alvo.setVida(0);
+                    this.setFe(feFinal);
                 } else {
                     alvo.setVida(vidaFinal);
+                    listaMsg.add("["+Data.getDataHora()+ "]"+" "+this.imprimir(alvo.getNome(), this.poderDivino.getnome(), danoFinal));
+                    this.setFe(feFinal);
                 }
             }
             else {

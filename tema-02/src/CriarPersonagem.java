@@ -18,7 +18,7 @@ public class CriarPersonagem {
         System.out.print("Defesa: ");
         double defesa = scanner.nextDouble();
 
-       // System.out.print("Criando guerreiro:");
+        // System.out.print("Criando guerreiro:");
         Guerreiro guerreiro = new Guerreiro(nome, vida, ataque, defesa, arma);
 
         return guerreiro;
@@ -40,7 +40,7 @@ public class CriarPersonagem {
         System.out.print("Defesa: ");
         double defesa = scanner.nextDouble();
 
-      //  System.out.print("Criando barbaro:");
+        //  System.out.print("Criando barbaro:");
         Barbaro barbaro = new Barbaro(nome, vida, ataque, defesa, arma);
 
         return barbaro;
@@ -63,7 +63,7 @@ public class CriarPersonagem {
         System.out.print("Defesa: ");
         double defesa = scanner.nextDouble();
 
-       // System.out.print("Criando mago:");
+        // System.out.print("Criando mago:");
         Mago mago = new Mago(nome, vida, ataque, defesa, magia, mana);
 
         return mago;

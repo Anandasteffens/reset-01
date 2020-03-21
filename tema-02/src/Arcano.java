@@ -31,7 +31,6 @@ public class Arcano extends Personagem {
                 listaAlvos.add(alvo);
                 listaAlvos.add(alvo);
                 listaAlvos.add(alvo);
-                listaAlvos.add(alvo);
                 this.atacarArea(listaAlvos, listaMsg);
                 listaMsg.add("["+Data.getDataHora()+ "]"+" TIPO DE ATAQUE: ATAQUE EM ÁREA REALIZADO");
             }
@@ -50,12 +49,14 @@ public class Arcano extends Personagem {
             double manaFinal = calculo.manaFinal(this.mana, magia.getCustoMana());
             if (this.mana >= magia.getCustoMana()) {
                 if (danoFinal >= alvo.getVida()) {
-                    listaMsg.add(this.imprimir(alvo.getNome(), this.magia.getNome(), danoFinal));
+                    listaMsg.add("["+Data.getDataHora()+ "]"+this.imprimir(alvo.getNome(), this.magia.getNome(), danoFinal));
                     listaMsg.add("["+Data.getDataHora()+ "]"+" O ataque resultou na morte do alvo " + alvo.getNome());
                     alvo.setVida(0);
+                    this.setMana(manaFinal);
                 } else {
                     alvo.setVida(vidaFinal);
                     listaMsg.add("["+Data.getDataHora()+ "]"+" "+this.imprimir(alvo.getNome(), this.magia.getNome(), danoFinal));
+                    this.setMana(manaFinal);
                 }
             } else {
                 this.setMana(manaFinal);
@@ -71,5 +72,4 @@ public class Arcano extends Personagem {
     void imprimirStatus(){
         System.out.println("Nome: " + this.getNome() + " | Vida: " + this.getVida()+" | Mana: " + this.getMana());
     }
-
 }

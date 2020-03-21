@@ -9,8 +9,9 @@ public class HomemDeArmas extends Personagem {
         super(nome, vida, ataque, defesa);
         this.arma = arma;
     }
-    protected Arma getArma(){
-        return this.arma;
+
+    public void equiparArma (Arma arma) {
+        this.arma = arma;
     }
 
     public List<String> atacar (Personagem alvo) {
@@ -26,16 +27,15 @@ public class HomemDeArmas extends Personagem {
                 alvo.setVida(0);
             } else {
                 alvo.setVida(vidaFinal);
-                listaMsg.add(this.imprimir(alvo.getNome(), this.arma.nome, danoFinal));
+                listaMsg.add("[" + Data.getDataHora() + "]"+this.imprimir(alvo.getNome(), this.arma.nome, danoFinal));
             }
 
         }
         return listaMsg;
     }
-
-        void imprimirStatus(){
-            System.out.println("Nome: " + this.getNome() + " | Vida: " + this.getVida());
-}
+    void imprimirStatus(){
+        System.out.println("Nome: " + this.getNome() + " | Vida: " + this.getVida());
     }
+}
 
 
