@@ -19,7 +19,7 @@ public class MenuMusica {
         this.regrasMusica = new RegrasMusica();
     }
 
-    public void opcoes() {
+    public void opcao() {
         Scanner scanner = new Scanner(System.in);
         int opcao = 0;
         while (opcao != 9) {
@@ -165,7 +165,7 @@ public class MenuMusica {
         int id = scanner.nextInt();
 
         if (regrasMusica.deletar(id)) {
-            System.out.println("Musica deletadao.");
+            System.out.println("Musica deletada.");
         } else {
             System.out.println("Música não encontrada.");
         }

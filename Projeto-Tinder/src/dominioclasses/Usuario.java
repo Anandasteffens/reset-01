@@ -1,7 +1,7 @@
 package dominioclasses;
 
-import javax.xml.crypto.Data;
-import java.text.DateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 
 public class Usuario {
 
@@ -9,16 +9,16 @@ public class Usuario {
     private String nome;
     private String email;
     private String telefone;
-    private DateFormat dateFormat;
+    private LocalDate dataNascimento;
     private String bio;
-    private int latitude;
-    private int longitude;
+    private double latitude;
+    private double longitude;
 
-    public Usuario(String nome, String email, String telefone, DateFormat dateFormat, String bio, int latitude, int longitude) {
+    public Usuario(String nome, String email, String telefone, LocalDate dataNascimento, String bio, double latitude, double longitude) {
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
-        this.dateFormat = dateFormat;
+        this.dataNascimento = dataNascimento;
         this.bio = bio;
         this.latitude = latitude;
         this.longitude = longitude;
@@ -56,12 +56,12 @@ public class Usuario {
         this.telefone = telefone;
     }
 
-    public DateFormat getDateFormat() {
-        return dateFormat;
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
     }
 
-    public void setDateFormat(DateFormat dateFormat) {
-        this.dateFormat = dateFormat;
+    public void setDataNascimento(LocalDate dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
     public String getBio() {
@@ -72,19 +72,19 @@ public class Usuario {
         this.bio = bio;
     }
 
-    public int getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(int latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
-    public int getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(int longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 
@@ -95,7 +95,7 @@ public class Usuario {
                 ", nome='" + nome + '\'' +
                 ", email='" + email + '\'' +
                 ", telefone='" + telefone + '\'' +
-                ", dateFormat=" + dateFormat +
+                ", dateFormat=" + dataNascimento +
                 ", bio='" + bio + '\'' +
                 ", latitude=" + latitude +
                 ", longitude=" + longitude +

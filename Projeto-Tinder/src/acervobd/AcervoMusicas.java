@@ -20,7 +20,9 @@ public class AcervoMusicas {
     }
 
     public List<Musica> listar() {
-        return musicas;
+        if (musicas == null){
+            return null;
+        } else {return musicas;}
     }
 
     public Musica pesquisar(int id) {
@@ -37,7 +39,7 @@ public class AcervoMusicas {
     public boolean deletar(int id) {
         Musica deletarMusica = this.pesquisar(id);
         if (deletarMusica != null) {
-            musicas.remove(deletarMusica);
+            return musicas.remove(deletarMusica);
         }
         return false;
     }
