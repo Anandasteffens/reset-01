@@ -13,17 +13,21 @@ public class RegrasMusica {
 
     public Musica criar(Musica musica) {
         List<Musica> musicas = acervo.listar();
-
-        for (Musica musicaExiste : musicas){
-            if (musica.getNome().equals(musicaExiste.getNome())){
+        if (musica.getNome().isEmpty() || musica.getAutor().isEmpty() || musica.getEstilo() == null || musica.getDataLancamento() == null) {
+            System.out.println("Campos obrigatórios não informados.");
+            return null;
+        }
+        for (Musica musicaExiste : musicas) {
+            if (musica.getNome().equals(musicaExiste.getNome())) {
                 return musicaExiste;
             }
-        }
-        if (musica.getDataLancamento().isAfter(LocalDate.now())){
-            return null;
+            if (musica.getDataLancamento().isAfter(LocalDate.now())) {
+                return null;
+            }
         }
         return acervo.criar(musica);
     }
+
     public List<Musica> listar (){
         return acervo.listar();
     }

@@ -1,6 +1,7 @@
 package dominioclasses;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.Date;
 
 public class Usuario {
@@ -87,6 +88,16 @@ public class Usuario {
     public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
+
+    public int confirmarIdade (LocalDate dataNascimento) {
+        LocalDate today = LocalDate.now();
+        LocalDate aniver = dataNascimento;
+
+        Period period = Period.between(aniver, today);
+        int idadeUsuario = period.getYears();
+        return idadeUsuario;
+    }
+
 
     @Override
     public String toString() {

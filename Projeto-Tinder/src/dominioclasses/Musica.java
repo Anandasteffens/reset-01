@@ -52,7 +52,7 @@ public class Musica {
         this.dataLancamento = dataLancamento;
     }
 
-    public EstiloMusica estilo (){
+    public EstiloMusica getEstilo() {
         return estilo;
     }
 

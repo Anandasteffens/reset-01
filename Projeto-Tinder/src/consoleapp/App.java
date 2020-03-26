@@ -8,6 +8,8 @@ public class App {
     public static void main(String[] args) {
         MenuMusica menuMusica = new MenuMusica();
         MenuUsuario menuUsuario = new MenuUsuario();
+        MenuFilme menuFilme = new MenuFilme();
+
 
         Scanner scanner = new Scanner(System.in);
         char escolher = ' ';
@@ -16,6 +18,7 @@ public class App {
             System.out.println("Selecione uma opção:");
             System.out.println("[ M ] - Músicas");
             System.out.println("[ U ] - Usuário");
+            System.out.println("[ F ] - Filme");
             System.out.println("[ X ] - Encerrar programa");
             escolher = scanner.next().charAt(0);
 
@@ -25,6 +28,9 @@ public class App {
                     break;
                 case 'U':
                     menuUsuario.opcao();
+                    break;
+                case 'F':
+                    menuFilme.opcao();
                     break;
                 case 'X':
                         System.out.println("Encerreando programa. :) ");

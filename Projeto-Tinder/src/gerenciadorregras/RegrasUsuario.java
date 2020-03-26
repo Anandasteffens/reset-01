@@ -2,14 +2,6 @@ package gerenciadorregras;
 
 import acervobd.AcervoUsuario;
 import dominioclasses.Usuario;
-
-import java.text.DateFormat;
-import java.text.FieldPosition;
-import java.text.ParsePosition;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 public class RegrasUsuario {
@@ -17,6 +9,17 @@ public class RegrasUsuario {
 
     public Usuario cadastrar(Usuario usuario) {
         List<Usuario> usuarios = acervo.listar();
+        if (usuario.confirmarIdade(usuario.getDataNascimento())<18){
+            System.out.println("Aplicativo para maiores de 18 anos.");
+            return null;
+        }
+        if (usuario.getNome().isEmpty() || usuario.getEmail().isEmpty() || usuario.getTelefone().isEmpty() ||
+                usuario.getDataNascimento() == null || usuario.getBio().isEmpty()|| usuario.getLatitude()== 0 || usuario.getLongitude()==0 )
+        {
+            // TODO: FALTA LATITUDE E LONGITUDE
+            System.out.println("Campos obrigatórios não informados.");
+            return null;
+        }
         for (Usuario usuarioExiste : usuarios) {
             if (usuario.getNome().equals(usuarioExiste.getNome())) {
                 return usuarioExiste;
@@ -55,34 +58,3 @@ public class RegrasUsuario {
     }
 
 }
-
-//    public static boolean confirmarData (Usuario dataNascimento, int minimumAge){
-//        LocalDate today = LocalDate.now();
-//        LocalDate aniver = LocalDate.of(dataNascimento);
-//
-//        };
-//    }
-//}
-//
-//
-
-//    LocalDate today = LocalDate.now();
-//    LocalDate birthday = LocalDate.of(1960, Month.JANUARY, 1);
-//
-//    Period p = Period.between(birthday, today);
-//    long p2 = ChronoUnit.DAYS.between(birthday, today);
-//System.out.println("You are " + p.getYears() + " years, " + p.getMonths() +
-//        " months, and " + p.getDays() +
-//        " days old. (" + p2 + " days total)");
-
-//    public static void main(String[] args) {
-//        DateTime test = new DateTime().minusYears(1).plusDays(1);
-//        System.out.println(isUser18Older(test, 1));
-//    }
-//
-//    public static boolean isUser18Older (DateTime dataNascimento, int minimumAge){
-//        DateTime minAge = new DateTime();
-//        Days days = Days.daysBetween(userDob, minAge.minusYears(minimumAge));
-//
-//        return days.getDays()>=0 ;
-//    }

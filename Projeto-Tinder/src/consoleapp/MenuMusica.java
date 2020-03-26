@@ -67,23 +67,24 @@ public class MenuMusica {
 
     public Musica criarMusica() {
         int estilo = 0;
-        Scanner scanner = new Scanner(System.in);
+        Scanner scannerln = new Scanner(System.in);
+        Scanner scannerint = new Scanner(System.in);
         System.out.println("Vamos começar? \n Preencha as opções abaixo: ");
 
         System.out.print("Nome da música: ");
-        String nome = scanner.nextLine();
+        String nome = scannerln.nextLine();
 
         System.out.print("Artista da música: ");
-        String autor = scanner.nextLine();
+        String autor = scannerln.nextLine();
 
         System.out.print("Ano de lançamento: ");
-        int ano = scanner.nextInt();
+        int ano = scannerint.nextInt();
 
         System.out.print("Mês de lançamento: ");
-        int mes = scanner.nextInt();
+        int mes = scannerint.nextInt();
 
         System.out.print("Dia de lançamento: ");
-        int dia = scanner.nextInt();
+        int dia = scannerint.nextInt();
 
         System.out.println("Escolha o estilo músical nas opções abaixo:");
         System.out.println("[ 1 ] Funk");
@@ -93,7 +94,7 @@ public class MenuMusica {
         System.out.println("[ 5 ] Sertanejo");
         System.out.println("[ 6 ] Metal");
 
-        estilo = scanner.nextInt();
+        estilo = scannerint.nextInt();
 
         EstiloMusica estiloMusica;
 
@@ -160,7 +161,7 @@ public class MenuMusica {
 
         List<Musica> musicas = regrasMusica.listar();
         for (Musica musica : musicas) {
-            System.out.println("{" + musica.getId() + "} - " + musica.getNome());
+            System.out.println("[(" + musica.getId() + ")] - " + musica.getNome());
         }
         int id = scanner.nextInt();
 
@@ -185,7 +186,7 @@ public class MenuMusica {
         regrasMusica.editar(id, musica);
     }
 
-    public void encerrar() {
+    private void encerrar() {
         System.out.println("Programa encerrado.");
 
     }

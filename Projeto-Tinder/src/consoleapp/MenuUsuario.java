@@ -68,35 +68,36 @@ public class MenuUsuario {
         double latitude = 0.0;
         double longitude = 0.0;
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner scannerint = new Scanner(System.in);
+        Scanner scannerln = new Scanner(System.in);
         System.out.println("Preencha as opções abaixo: ");
 
         System.out.print("Nome do usuário: ");
-        String nome = scanner.nextLine();
+        String nome = scannerln.nextLine();
 
         System.out.print("Email do usuário: ");
-        String email = scanner.nextLine();
+        String email = scannerln.nextLine();
 
         System.out.print("Telefone do usuário: ");
-        String telefone = scanner.nextLine();
+        String telefone = scannerln.nextLine();
 
         System.out.print("Ano de nascimento: ");
-        int ano = scanner.nextInt();
+        int ano = scannerint.nextInt();
 
         System.out.print("Mês de nascimento: ");
-        int mes = scanner.nextInt();
+        int mes = scannerint.nextInt();
 
         System.out.print("Dia de nascimento: ");
-        int dia = scanner.nextInt();
+        int dia = scannerint.nextInt();
 
         System.out.print("Insira a biografia do usuário: ");
-        String bio = scanner.next();
+        String bio = scannerln.nextLine();
 
         System.out.print("Insira sua localização geográfica- Latitude: ");
-        latitude = scanner.nextDouble();
+        latitude = scannerint.nextDouble();
 
         System.out.print("Longitude: ");
-        longitude = scanner.nextDouble();
+        longitude = scannerint.nextDouble();
 
         return new Usuario(nome, email, telefone, LocalDate.of(ano, mes, dia), bio, latitude, longitude);
 
@@ -139,7 +140,7 @@ public class MenuUsuario {
         System.out.println(" Informe o código do usuário que deseja deletar: ");
         List<Usuario> usuarios = regrasUsuario.listar();
         for (Usuario usuario : usuarios) {
-            System.out.println("{" + usuario.getId() + "} - " + usuario.getNome());
+            System.out.println("[(" + usuario.getId() + ")] - " + usuario.getNome());
         }
         int id = scanner.nextInt();
 
