@@ -12,10 +12,10 @@ public class Usuario {
     private String telefone;
     private LocalDate dataNascimento;
     private String bio;
-    private double latitude;
-    private double longitude;
+    private Double latitude;
+    private Double longitude;
 
-    public Usuario(String nome, String email, String telefone, LocalDate dataNascimento, String bio, double latitude, double longitude) {
+    public Usuario(String nome, String email, String telefone, LocalDate dataNascimento, String bio, Double latitude, Double longitude) {
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
@@ -73,7 +73,7 @@ public class Usuario {
         this.bio = bio;
     }
 
-    public double getLatitude() {
+    public Double getLatitude() {
         return latitude;
     }
 
@@ -81,7 +81,7 @@ public class Usuario {
         this.latitude = latitude;
     }
 
-    public double getLongitude() {
+    public Double getLongitude() {
         return longitude;
     }
 

@@ -14,7 +14,7 @@ public class RegrasUsuario {
             return null;
         }
         if (usuario.getNome().isEmpty() || usuario.getEmail().isEmpty() || usuario.getTelefone().isEmpty() ||
-                usuario.getDataNascimento() == null || usuario.getBio().isEmpty()|| usuario.getLatitude()== 0 || usuario.getLongitude()==0 )
+                usuario.getDataNascimento() == null || usuario.getBio().isEmpty()|| usuario.getLatitude().isNaN() || usuario.getLongitude().isNaN() )
         {
             // TODO: FALTA LATITUDE E LONGITUDE
             System.out.println("Campos de preenchimento obrigatórios não informados");

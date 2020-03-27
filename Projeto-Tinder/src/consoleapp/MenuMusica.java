@@ -156,7 +156,7 @@ public class MenuMusica {
 
     private void deletar() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Exluir música");
+        System.out.println("Deletar música");
 
         List<Musica> musicas = regrasMusica.listar();
         for (Musica musica : musicas) {

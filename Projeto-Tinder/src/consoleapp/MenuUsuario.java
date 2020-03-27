@@ -65,8 +65,8 @@ public class MenuUsuario {
 
     public Usuario cadastrarUsuario () {
 
-        double latitude = 0.0;
-        double longitude = 0.0;
+        Double latitude = 0.0;
+        Double longitude = 0.0;
 
         Scanner scannerint = new Scanner(System.in);
         Scanner scannerln = new Scanner(System.in);
