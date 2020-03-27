@@ -1,12 +1,10 @@
 package consoleapp;
 
 import dominioclasses.CategoriaJogo;
-import dominioclasses.Filme;
 import dominioclasses.Jogo;
 import dominioclasses.PlataformaJogo;
 import gerenciadorregras.RegrasJogo;
 
-import javax.swing.*;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
@@ -25,6 +23,7 @@ public class MenuJogo {
         int opcao = 0;
         while (opcao != 9) {
             System.out.println("-------------------------");
+            System.out.println("Selecione a opção desejada:");
             System.out.println("[ 1 ] Cadastrar jogo.");
             System.out.println("[ 2 ] Listar jogo.");
             System.out.println("[ 3 ] Pesquisar jogo.");
@@ -72,13 +71,13 @@ public class MenuJogo {
         System.out.print(" Qual o publisher do jogo: ");
         String publisher = scannerln.nextLine();
 
-        System.out.println("Qual o ano de lançamento do jogo: ");
+        System.out.print("Qual o ano de lançamento do jogo: ");
         int ano = scannerint.nextInt();
 
-        System.out.println("Qual o mês do lançamento do jogo: ");
+        System.out.print("Qual o mês do lançamento do jogo: ");
         int mes = scannerint.nextInt();
 
-        System.out.println("Qual o dia do lançamento do jogo:");
+        System.out.print("Qual o dia do lançamento do jogo:");
         int dia = scannerint.nextInt();
 
         System.out.println("Escolha a categoria abaixo:");
@@ -199,6 +198,7 @@ public class MenuJogo {
         for (Jogo jogo : jogos) {
             System.out.println("[(" + jogo.getId() + ")] - " + jogo.getNome());
         }
+        System.out.println("Digite o id do jogo que deseja deletar.");
         int id = scanner.nextInt();
 
         if (regrasJogo.deletar(id)) {
