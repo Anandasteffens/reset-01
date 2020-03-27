@@ -14,7 +14,7 @@ public class RegrasMusica {
     public Musica criar(Musica musica) {
         List<Musica> musicas = acervo.listar();
         if (musica.getNome().isEmpty() || musica.getAutor().isEmpty() || musica.getEstilo() == null || musica.getDataLancamento() == null) {
-            System.out.println("Campos obrigatórios não informados.");
+            System.out.println("Campos de preenchimento obrigatórios não informados");
             return null;
         }
         for (Musica musicaExiste : musicas) {

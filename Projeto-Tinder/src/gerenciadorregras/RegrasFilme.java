@@ -12,7 +12,7 @@ public class RegrasFilme {
     public Filme cadastrar(Filme filme) {
         List<Filme> filmes = acervo.listar();
         if (filme.getNome().isEmpty() || filme.getDiretor().isEmpty() || filme.getCategoria() == null || filme.getSinopse().isEmpty() || filme.getDataLancamento() == null) {
-            System.out.println("Campos obrigatórios não informados.");
+            System.out.println("Campos de preenchimento obrigatórios não informados");
             return null;
         }
         for (Filme filmeExiste : filmes) {

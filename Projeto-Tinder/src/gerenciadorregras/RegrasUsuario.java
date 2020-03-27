@@ -17,7 +17,7 @@ public class RegrasUsuario {
                 usuario.getDataNascimento() == null || usuario.getBio().isEmpty()|| usuario.getLatitude()== 0 || usuario.getLongitude()==0 )
         {
             // TODO: FALTA LATITUDE E LONGITUDE
-            System.out.println("Campos obrigatórios não informados.");
+            System.out.println("Campos de preenchimento obrigatórios não informados");
             return null;
         }
         for (Usuario usuarioExiste : usuarios) {
