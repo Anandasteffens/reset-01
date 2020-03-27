@@ -36,6 +36,7 @@ public class AcervoSeries {
     public boolean editar (int id, Serie serie){
         Serie editarSerie = this.pesquisar(id);
         if (editarSerie != null){
+            serie.setId(id);
             int a = series.indexOf(editarSerie);
             series.set(a, serie);
         }

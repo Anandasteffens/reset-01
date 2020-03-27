@@ -30,7 +30,6 @@ public class AcervoMusicas {
                 return musica;
             }
         }
-
         return null;
     }
 
@@ -45,11 +44,11 @@ public class AcervoMusicas {
     public boolean editar(int id, Musica musica) {
         Musica editarMusica = this.pesquisar(id);
         if (editarMusica != null) {
+            musica.setId(id);
             int a = musicas.indexOf(editarMusica);
             musicas.set(a, musica);
         }
         return false;
-
     }
 }
 

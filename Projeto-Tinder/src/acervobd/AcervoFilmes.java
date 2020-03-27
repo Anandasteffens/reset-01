@@ -43,6 +43,7 @@ public class AcervoFilmes {
     public boolean editar (int id, Filme filme){
         Filme editarFilme = this.pesquisar(id);{
             if (editarFilme != null){
+                filme.setId(id);
                 int a = filmes.indexOf(editarFilme);
                 filmes.set(a, filme);
             }

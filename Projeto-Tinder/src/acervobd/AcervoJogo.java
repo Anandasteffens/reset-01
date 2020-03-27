@@ -38,6 +38,7 @@ public class AcervoJogo {
     public boolean editar (int id, Jogo jogo){
         Jogo editarJogo = this.pesquisar(id);
         if (editarJogo != null){
+            jogo.setId(id);
             int a = jogos.indexOf(editarJogo);
             jogos.set(a, editarJogo);
         }

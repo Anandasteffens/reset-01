@@ -157,12 +157,12 @@ public class MenuMusica {
     private void deletar() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Exluir música");
-        System.out.println("Qual música deseja excluir?");
 
         List<Musica> musicas = regrasMusica.listar();
         for (Musica musica : musicas) {
             System.out.println("[(" + musica.getId() + ")] - " + musica.getNome());
         }
+        System.out.print("Digite o id da música que deseja excluir: ");
         int id = scanner.nextInt();
 
         if (regrasMusica.deletar(id)) {
@@ -180,7 +180,7 @@ public class MenuMusica {
         for (Musica musica : musicas) {
             System.out.println("{" + musica.getId() + "} - " + musica.getNome());
         }
-        System.out.println("Qual música (id) deseja editar?");
+        System.out.print("Digite o id da música que deseja editar:");
         int id = scanner.nextInt();
         Musica musica = criarMusica();
         regrasMusica.editar(id, musica);

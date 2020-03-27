@@ -33,19 +33,20 @@ public class AcervoUsuario {
         Usuario deletarUsuario = this.pesquisar(id);
         if (deletarUsuario != null) {
             return usuarios.remove(deletarUsuario);
-            }
-        return false;
         }
+        return false;
+    }
 
-        public boolean editar (int id, Usuario usuario){
+    public boolean editar (int id, Usuario usuario){
         Usuario editarUsuario = this.pesquisar(id);
         if (editarUsuario != null){
+            usuario.setId(id);
             int a = 0;
             usuarios.indexOf(editarUsuario);
             usuarios.set(a, usuario);
         }
         return false;
-        }
     }
+}
 
 

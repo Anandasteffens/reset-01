@@ -11,7 +11,7 @@ public class App {
         MenuFilme menuFilme = new MenuFilme();
         MenuJogo menuJogo = new MenuJogo();
         MenuSerie menuSerie = new MenuSerie();
-
+        MenuCuriosidade menuCuriosidade = new MenuCuriosidade();
 
         Scanner scanner = new Scanner(System.in);
         char escolher = ' ';
@@ -23,6 +23,7 @@ public class App {
             System.out.println("[ F ] - Filme");
             System.out.println("[ J ] - Jogo");
             System.out.println("[ S ] - Série");
+            System.out.println("[ C ] - Curiosidade");
             System.out.println("[ X ] - Encerrar programa");
             escolher = scanner.next().charAt(0);
 
@@ -40,6 +41,9 @@ public class App {
                     menuJogo.opcao();
                 case 'S':
                     menuSerie.opcao();
+                    break;
+                case 'C':
+                    menuCuriosidade.opcao();
                     break;
                 case 'X':
                         System.out.println("Encerreando programa. :) ");
