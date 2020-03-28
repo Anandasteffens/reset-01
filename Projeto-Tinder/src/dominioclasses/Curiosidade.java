@@ -25,11 +25,7 @@ public class Curiosidade {
 
     @Override
     public String toString() {
-        return "Curiosidade{" +
-                "id=" + id +
-                ", descricao='" + descricao + '\'' +
-                ", categoriaCuriosidade=" + categoriaCuriosidade +
-                '}';
+        return "Curiosidade - " + "ID: " + id + ", descrição: " + descricao + ", categoria da curiosidade:" + categoriaCuriosidade + '.';
     }
 }
 

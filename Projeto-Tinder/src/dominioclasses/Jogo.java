@@ -45,13 +45,6 @@ public class Jogo {
 
     @Override
     public String toString() {
-        return "Jogo{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", publisher='" + publisher + '\'' +
-                ", dataLancamento=" + dataLancamento +
-                ", categoriaJogo=" + categoriaJogo +
-                ", plataformaJogo=" + plataformaJogo +
-                '}';
+        return "Jogo - " + "ID: " + id + ", nome: " + nome + ", publisher: " + publisher + ", data de lançamento: " + dataLancamento + ", categoria do jogo: " + categoriaJogo + ", plataforma do jogo: " + plataformaJogo + '.';
     }
 }

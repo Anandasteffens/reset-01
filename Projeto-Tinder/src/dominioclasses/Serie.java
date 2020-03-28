@@ -57,15 +57,7 @@ public class Serie {
 
     @Override
     public String toString() {
-        return "Serie{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", diretor='" + diretor + '\'' +
-                ", dataLancamento=" + dataLancamento +
-                ", numeroTemporadas=" + numeroTemporadas +
-                ", numeroEpisodios=" + numeroEpisodios +
-                ", categoriaSerie=" + categoriaSerie +
-                ", sinopse='" + sinopse + '\'' +
-                '}';
+        return "Série - " + "ID: " + id + ", nome: " + nome + ", diretor: " + diretor + ", data lançamento: " + dataLancamento + ", numero de temporadas: " + numeroTemporadas +
+                ", numero de episódios: " + numeroEpisodios + ", categoria da série:" + categoriaSerie + ", sinopse: " + sinopse + '.';
     }
 }

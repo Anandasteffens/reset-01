@@ -101,15 +101,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", email='" + email + '\'' +
-                ", telefone='" + telefone + '\'' +
-                ", dateFormat=" + dataNascimento +
-                ", bio='" + bio + '\'' +
-                ", latitude=" + latitude +
-                ", longitude=" + longitude +
-                '}';
+        return "Usuário - " + "ID: " + id + ", nome: " + nome + ", email: " + email + ", telefone: " + telefone + ", data de nascimento:" + dataNascimento +
+                ", biografia: " + bio + ", latitude: " + latitude + ", longitude: " + longitude + '.';
     }
 }

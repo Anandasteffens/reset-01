@@ -19,9 +19,6 @@ public class Esporte {
 
     @Override
     public String toString() {
-        return "Esporte{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                '}';
+        return "Esporte - " + "ID: " + id + ", nome: " + nome + '.';
     }
 }

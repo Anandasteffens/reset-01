@@ -10,7 +10,6 @@ public class RegrasMusica {
 
     private AcervoMusicas acervo = new AcervoMusicas();
 
-
     public Musica criar(Musica musica) {
         List<Musica> musicas = acervo.listar();
         if (musica.getNome().isEmpty() || musica.getAutor().isEmpty() || musica.getEstilo() == null || musica.getDataLancamento() == null) {

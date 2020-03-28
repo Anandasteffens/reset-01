@@ -1,6 +1,9 @@
 package acervobd;
 
+import dominioclasses.EstiloMusica;
 import dominioclasses.Musica;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +13,14 @@ public class AcervoMusicas {
     private static int contador = +1;
     private static List<Musica> musicas = new ArrayList<>();
 
+    public AcervoMusicas(){
+        criar(new Musica("Hit Contagiante", "Kevin o Chris", LocalDate.now(), EstiloMusica.FUNK));
+        criar(new Musica("Vai menina", "Pedro Sampaio", LocalDate.now(), EstiloMusica.FUNK));
+        criar(new Musica("Tudo Ok", "Thiaguinho MT", LocalDate.now(), EstiloMusica.FUNK));
+        criar(new Musica("Choram as rosas", "Bruno e Marrone", LocalDate.now(), EstiloMusica.SERTANEJO));
+        criar(new Musica("Fugidinha", "Exaltasamba", LocalDate.now(), EstiloMusica.PAGODE));
+        criar(new Musica("Duality", "Slipknot", LocalDate.now(), EstiloMusica.ROCK));
+    }
 
     public Musica criar(Musica musica) {
         musica.setId(contador++);

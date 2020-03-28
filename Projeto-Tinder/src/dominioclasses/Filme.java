@@ -45,13 +45,6 @@ public class Filme {
 
     @Override
     public String toString() {
-        return "Filme{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", diretor='" + diretor + '\'' +
-                ", dataLancamento=" + dataLancamento +
-                ", categoria=" + categoria +
-                ", sinopse='" + sinopse + '\'' +
-                '}';
+        return "Filme - " + "ID: " + id + ", nome: " + nome + ", diretor: " + diretor + ", data de lançamento: " + dataLancamento + ", categoria: " + categoria + ", sinopse: " + sinopse + '.';
     }
 }
