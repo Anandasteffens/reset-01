@@ -1,0 +1,32 @@
+API REST
+API NÃO TEM INTERFACE
+SÓ TRAFEGA DADOS
+SEPARAR INTERFACE 
+BIO - ALGO SOBRE A PESSOA
+
+DOMINIO - CLASSES REPRESENTAR FUNCIONALIDADES EM SI, MÍNIMO POSSIVEL PARA
+A A MUSICA OU FILME EXISTER.
+CRIAR MÚSICA SEM O id, OU SEJA, NÃO VAI NO CONSTRUTOR
+
+No final da classe colocar um to string para caso precise imprimir
+já está pronta
+
+ACERVO - BANCO DE DADOS
+CONSOLE - APP
+DOMINIO - classes entre os packages 
+GERENCIADOR - camada de negocio - regras de negocio - regra de musica
+
+fazer funcionar com música primeiro !!!!!!!!!!!!!!!!!
+
+iniciar projeto
+cadastro de música - cadastro usuário - ... - esportes.
+tentar as regras também
+
+editar:
+passar dois parametros (id dados usuário)
+
+Tu busca o usuário da lista pelo id. 
+Se não encontra retorna só exibe na tela que não foi encontrado, como na música.
+Se encontra substitui todos os dados com os recebidos no segundo parâmetros
+
+end poit no request mapping de acordo com cada funcionalidade
