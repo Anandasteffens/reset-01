@@ -13,8 +13,10 @@ public class Usuario {
     private String bio;
     private Double latitude;
     private Double longitude;
+    private String urlFoto;
 
-    public Usuario(String nome, String email, String telefone, LocalDate dataNascimento, String bio, Double latitude, Double longitude) {
+
+    public Usuario( String nome, String email, String telefone, LocalDate dataNascimento, String bio, Double latitude, Double longitude, String urlFoto) {
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
@@ -22,6 +24,7 @@ public class Usuario {
         this.bio = bio;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.urlFoto = urlFoto;
     }
 
     public int getId(){
@@ -88,6 +91,12 @@ public class Usuario {
         this.longitude = longitude;
     }
 
+    public String getUrlFoto() {return urlFoto;}
+
+    public void setUrlFoto(String urlFoto) {this.urlFoto = urlFoto;}
+
+
+
     public int confirmarIdade (LocalDate dataNascimento) {
         LocalDate today = LocalDate.now();
         LocalDate aniver = dataNascimento;
@@ -100,7 +109,16 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuário - " + "ID: " + id + ", nome: " + nome + ", email: " + email + ", telefone: " + telefone + ", data de nascimento:" + dataNascimento +
-                ", biografia: " + bio + ", latitude: " + latitude + ", longitude: " + longitude + '.';
+        return "Usuario{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                ", telefone='" + telefone + '\'' +
+                ", dataNascimento=" + dataNascimento +
+                ", bio='" + bio + '\'' +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", urlFoto='" + urlFoto + '\'' +
+                '}';
     }
 }

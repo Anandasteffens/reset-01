@@ -97,7 +97,10 @@ public class MenuUsuario {
         System.out.print("Longitude: ");
         longitude = scannerint.nextDouble();
 
-        return new Usuario(nome, email, telefone, LocalDate.of(ano, mes, dia), bio, latitude, longitude);
+        System.out.print("Foto: ");
+        String urlFoto = scannerln.nextLine();
+
+        return new Usuario(nome, email, telefone, LocalDate.of(ano, mes, dia), bio, latitude, longitude, urlFoto);
 
     }
 
