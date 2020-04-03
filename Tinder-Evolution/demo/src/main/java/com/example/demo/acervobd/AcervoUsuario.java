@@ -1,6 +1,7 @@
 package com.example.demo.acervobd;
 
 import com.example.demo.dominioclasses.Usuario;
+import com.example.demo.gerenciadorregras.RegrasUsuario;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -56,6 +57,7 @@ public class AcervoUsuario {
         }
         return null;
     }
+
 }
 
 

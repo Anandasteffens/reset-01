@@ -2,6 +2,8 @@ package com.example.demo.dominioclasses;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Usuario {
 
@@ -14,6 +16,12 @@ public class Usuario {
     private Double latitude;
     private Double longitude;
     private String urlFoto;
+    private List<Integer> curtidasMusicas;
+    private List<Integer> curtidasFilmes;
+    private List<Integer> curtidasSeries;
+    private List<Integer> curtidasJogos;
+    private List<Integer> curtidasEsporte;
+    private List<Integer> curtidasCuriosidades;
 
 
     public Usuario( String nome, String email, String telefone, LocalDate dataNascimento, String bio, Double latitude, Double longitude, String urlFoto) {
@@ -25,6 +33,7 @@ public class Usuario {
         this.latitude = latitude;
         this.longitude = longitude;
         this.urlFoto = urlFoto;
+        this.curtidasMusicas = new ArrayList<>();
     }
 
     public int getId(){
@@ -95,6 +104,60 @@ public class Usuario {
 
     public void setUrlFoto(String urlFoto) {this.urlFoto = urlFoto;}
 
+    public List<Integer> getCurtidasMusicas() {
+        return curtidasMusicas;
+    }
+
+    public void setCurtidasMusicas(List<Integer> curtidasMusicas) {
+        this.curtidasMusicas = curtidasMusicas;
+    }
+
+    public List<Integer> getCurtidasFilmes() {
+        return curtidasFilmes;
+    }
+
+    public void setCurtidasFilmes(List<Integer> curtidasFilmes) {
+        this.curtidasFilmes = curtidasFilmes;
+    }
+
+    public List<Integer> getCurtidasSeries() {
+        return curtidasSeries;
+    }
+
+    public void setCurtidasSeries(List<Integer> curtidasSeries) {
+        this.curtidasSeries = curtidasSeries;
+    }
+
+    public List<Integer> getCurtidasJogos() {
+        return curtidasJogos;
+    }
+
+    public void setCurtidasJogos(List<Integer> curtidasJogos) {
+        this.curtidasJogos = curtidasJogos;
+    }
+
+    public List<Integer> getCurtidasEsporte() {
+        return curtidasEsporte;
+    }
+
+    public void setCurtidasEsporte(List<Integer> curtidasEsporte) {
+        this.curtidasEsporte = curtidasEsporte;
+    }
+
+    public List<Integer> getCurtidasCuriosidades() {
+        return curtidasCuriosidades;
+    }
+
+    public void setCurtidasCuriosidades(List<Integer> curtidasCuriosidades) {
+        this.curtidasCuriosidades = curtidasCuriosidades;
+    }
+
+    public boolean curtirMusica (int idMusica){
+        if (!curtidasMusicas.contains(idMusica)){
+            return curtidasMusicas.add(idMusica);
+        }
+       return false;
+    }
 
 
     public int confirmarIdade (LocalDate dataNascimento) {

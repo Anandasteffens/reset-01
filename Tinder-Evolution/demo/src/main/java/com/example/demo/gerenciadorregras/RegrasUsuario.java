@@ -1,6 +1,8 @@
 package com.example.demo.gerenciadorregras;
 
+import com.example.demo.acervobd.AcervoMusicas;
 import com.example.demo.acervobd.AcervoUsuario;
+import com.example.demo.dominioclasses.Musica;
 import com.example.demo.dominioclasses.Usuario;
 
 import java.util.List;
@@ -55,6 +57,15 @@ public class RegrasUsuario {
             return acervo.editar(id, usuario);
         }
         return null;
+    }
+
+    public boolean curtirMusica (int idMusica, int idUsuario){
+        RegrasMusica regrasMusica = new RegrasMusica();
+        if (regrasMusica.pesquisar(idMusica) != null){
+            Usuario usuario = this.pesquisar(idUsuario);
+           return usuario.curtirMusica(idMusica);
+        }
+        return false;
     }
 
 }

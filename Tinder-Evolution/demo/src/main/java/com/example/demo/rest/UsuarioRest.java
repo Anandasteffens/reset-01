@@ -11,8 +11,6 @@ import java.util.List;
 @RequestMapping ("/usuario")
 public class UsuarioRest {
 
-    private static int contador = +1;
-    private List<Usuario> listaUsuarios = new ArrayList<>();
     private RegrasUsuario regrasUsuario = new RegrasUsuario();
 
     @PostMapping
