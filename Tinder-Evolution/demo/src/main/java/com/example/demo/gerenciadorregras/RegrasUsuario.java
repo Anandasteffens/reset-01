@@ -68,4 +68,22 @@ public class RegrasUsuario {
         return false;
     }
 
+    public boolean curtirFilme (int idFilme, int idUsuario){
+        RegrasFilme regrasFilme = new RegrasFilme();
+        if (regrasFilme.pesquisar(idFilme) != null){
+            Usuario usuario = this.pesquisar(idUsuario);
+            return usuario.curtirFilme(idFilme);
+        }
+        return false;
+    }
+
+    public boolean curtirSerie (int idSerie, int idFilme){
+        RegrasSerie regrasSerie = new RegrasSerie();
+        if (regrasSerie.pesquisar(idSerie) !=null){
+            Usuario usuario = this.pesquisar(idSerie);
+            return usuario.curtirSerie(idSerie);
+        }
+        return false;
+    }
+
 }

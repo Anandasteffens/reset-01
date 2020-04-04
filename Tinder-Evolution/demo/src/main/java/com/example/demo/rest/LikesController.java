@@ -15,12 +15,20 @@ public class LikesController {
 
     RegrasUsuario regrasUsuario = new RegrasUsuario();
 
-    @PostMapping ("musica/{idMusica}/avaliador/{idUsuario}")
+    @PostMapping ("/musica/{idMusica}/avaliador/{idUsuario}")
     public boolean curtirMusica (@PathVariable ("idMusica") int idMusica, @PathVariable ("idUsuario") int idUsuario){
         return regrasUsuario.curtirMusica(idMusica, idUsuario);
     }
 
+    @PostMapping ("/filme/{idFilme}/avaliador/{idUsuario}")
+    public boolean curtirFilme (@PathVariable ("idFilme") int idFilme, @PathVariable("idUsuario") int idUsuario){
+        return regrasUsuario.curtirFilme(idFilme, idUsuario);
+    }
 
+    @PostMapping ("serie/{idSerie}/avaliador/{idUsuario}")
+    public boolean curtirSerie (@PathVariable ("idSerie") int idSerie, @PathVariable ("idUsuario") int idUsuario){
+        return regrasUsuario.curtirSerie(idSerie, idUsuario);
+    }
 
 
 }

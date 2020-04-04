@@ -34,6 +34,8 @@ public class Usuario {
         this.longitude = longitude;
         this.urlFoto = urlFoto;
         this.curtidasMusicas = new ArrayList<>();
+        this.curtidasFilmes = new ArrayList<>();
+        this.curtidasSeries = new ArrayList<>();
     }
 
     public int getId(){
@@ -157,6 +159,20 @@ public class Usuario {
             return curtidasMusicas.add(idMusica);
         }
        return false;
+    }
+
+    public boolean curtirFilme (int idFilme){
+        if (!curtidasFilmes.contains(idFilme)){
+            return curtidasFilmes.add(idFilme);
+        }
+        return false;
+    }
+
+    public boolean curtirSerie (int idSerie){
+        if (!curtidasSeries.contains(idSerie)){
+            return curtidasSeries.add(idSerie);
+        }
+        return false;
     }
 
 
