@@ -36,6 +36,8 @@ public class Usuario {
         this.curtidasMusicas = new ArrayList<>();
         this.curtidasFilmes = new ArrayList<>();
         this.curtidasSeries = new ArrayList<>();
+        this.curtidasJogos = new ArrayList<>();
+        this.curtidasEsporte = new ArrayList<>();
     }
 
     public int getId(){
@@ -161,6 +163,14 @@ public class Usuario {
        return false;
     }
 
+    public Integer descurtirMusica (int idMusica){
+        if (curtidasMusicas.contains(idMusica)){
+            int a = curtidasMusicas.indexOf(idMusica);
+            return curtidasMusicas.remove(a);
+        }
+        return null;
+    }
+
     public boolean curtirFilme (int idFilme){
         if (!curtidasFilmes.contains(idFilme)){
             return curtidasFilmes.add(idFilme);
@@ -168,11 +178,54 @@ public class Usuario {
         return false;
     }
 
+    public Integer descurtirFilme (int idFilme){
+        if (curtidasFilmes.contains(idFilme)){
+            int a = curtidasFilmes.indexOf(idFilme);
+            return curtidasFilmes.remove(a);
+        }
+        return null;
+    }
+
     public boolean curtirSerie (int idSerie){
         if (!curtidasSeries.contains(idSerie)){
             return curtidasSeries.add(idSerie);
         }
         return false;
+    }
+    public Integer descurtirSerie (int idSerie){
+        if (curtidasSeries.contains(idSerie)){
+            int a = curtidasSeries.indexOf(idSerie);
+            return curtidasSeries.remove(a);
+        }
+        return null;
+    }
+
+    public boolean curtirJogo (int idJogo) {
+        if (!curtidasJogos.contains(idJogo));{
+            return curtidasJogos.add(idJogo);
+        }
+    }
+
+    public Integer descurtirJogo (int idJogo){
+        if (curtidasJogos.contains(idJogo)){
+            int a = curtidasJogos.indexOf(idJogo);
+            return curtidasJogos.remove(a);
+        }
+        return null;
+    }
+
+    public boolean curtirEsporte (int idEsporte){
+        if (!curtidasEsporte.contains(idEsporte)){
+            return curtidasEsporte.add(idEsporte);
+        }
+        return false;
+    }
+    public Integer descurtirEsporte (int idEsporte){
+        if (curtidasEsporte.contains(idEsporte)){
+            int a = curtidasEsporte.indexOf(idEsporte);
+            return curtidasEsporte.remove(a);
+        }
+        return null;
     }
 
 
