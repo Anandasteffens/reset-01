@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/serie")
-public class SerieRest {
+public class SerieController {
 
     private static int contador = +1;
     private List<Serie> listaSeries = new ArrayList<>();

@@ -21,7 +21,7 @@ public class Usuario {
     private List<Integer> curtidasSeries;
     private List<Integer> curtidasJogos;
     private List<Integer> curtidasEsporte;
-    private List<Integer> curtidasCuriosidades;
+    private List<Integer> curiosidades;
 
 
     public Usuario( String nome, String email, String telefone, LocalDate dataNascimento, String bio, Double latitude, Double longitude, String urlFoto) {
@@ -38,6 +38,7 @@ public class Usuario {
         this.curtidasSeries = new ArrayList<>();
         this.curtidasJogos = new ArrayList<>();
         this.curtidasEsporte = new ArrayList<>();
+        this.curiosidades = new ArrayList<>();
     }
 
     public int getId(){
@@ -148,12 +149,12 @@ public class Usuario {
         this.curtidasEsporte = curtidasEsporte;
     }
 
-    public List<Integer> getCurtidasCuriosidades() {
-        return curtidasCuriosidades;
+    public List<Integer> getCuriosidades() {
+        return curiosidades;
     }
 
-    public void setCurtidasCuriosidades(List<Integer> curtidasCuriosidades) {
-        this.curtidasCuriosidades = curtidasCuriosidades;
+    public void setCuriosidades(List<Integer> curiosidades) {
+        this.curiosidades = curiosidades;
     }
 
     public boolean curtirMusica (int idMusica){
@@ -226,6 +227,13 @@ public class Usuario {
             return curtidasEsporte.remove(a);
         }
         return null;
+    }
+
+    public boolean cadastrarCuriosidade (int idCuriosidade){
+        if (!curiosidades.contains(idCuriosidade)){
+            return curiosidades.add(idCuriosidade);
+        }
+        return false;
     }
 
 

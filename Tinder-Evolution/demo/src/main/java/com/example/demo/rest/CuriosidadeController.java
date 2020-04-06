@@ -2,6 +2,7 @@ package com.example.demo.rest;
 
 import com.example.demo.dominioclasses.Curiosidade;
 import com.example.demo.gerenciadorregras.RegrasCuriosidade;
+import com.example.demo.gerenciadorregras.RegrasUsuario;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -14,10 +15,16 @@ public class CuriosidadeController {
     private static int contador = +1;
     private List<Curiosidade> listaCuriosidades = new ArrayList<>();
     RegrasCuriosidade regrasCuriosidade = new RegrasCuriosidade();
+    RegrasUsuario regrasUsuario = new RegrasUsuario();
 
     @PostMapping
     public Curiosidade cadastrarCuriosidade (@RequestBody Curiosidade requestBody){
         return regrasCuriosidade.cadastrar(requestBody);
+    }
+
+    @PostMapping ("/{idCuriosidade}/avaliador/{idUsuario}")
+    public boolean curiosidade (@PathVariable ("idCuriosidade") int idCuriosidade, @PathVariable ("idUsuario") int idUsuario){
+        return regrasUsuario.cadastrarCuriosidade(idCuriosidade, idUsuario);
     }
 
     @GetMapping

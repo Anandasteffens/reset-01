@@ -2,9 +2,10 @@ package com.example.demo.gerenciadorregras;
 
 import com.example.demo.acervobd.AcervoMusicas;
 import com.example.demo.acervobd.AcervoUsuario;
-import com.example.demo.dominioclasses.Musica;
-import com.example.demo.dominioclasses.Usuario;
+import com.example.demo.dominioclasses.*;
+import com.fasterxml.jackson.databind.ser.std.UUIDSerializer;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RegrasUsuario {
@@ -59,6 +60,17 @@ public class RegrasUsuario {
         return null;
     }
 
+    public List<Musica> listarMusicarCurtidas (int idUsuario){
+        Usuario usuario = this.pesquisar(idUsuario);
+        List<Musica> listaMusicasCurtidas = new ArrayList<>();
+        for (Integer id : usuario.getCurtidasMusicas()){
+            RegrasMusica regrasMusica = new RegrasMusica();
+            Musica musicaCurtida = regrasMusica.pesquisar(id);
+            listaMusicasCurtidas.add(musicaCurtida);
+        }
+        return listaMusicasCurtidas;
+    }
+
     public boolean curtirMusica (int idMusica, int idUsuario){
         RegrasMusica regrasMusica = new RegrasMusica();
         if (regrasMusica.pesquisar(idMusica) != null){
@@ -75,6 +87,17 @@ public class RegrasUsuario {
             return usuario.descurtirMusica(idMusica);
         }
         return null;
+    }
+
+    public List<Filme> listarFilmesCurtidos (int idUsuario){
+        Usuario usuario = this.pesquisar(idUsuario);
+        List <Filme> listaFilmesCurtidos = new ArrayList<>();
+        for (Integer id : usuario.getCurtidasFilmes()){
+            RegrasFilme regrasFilme = new RegrasFilme();
+            Filme filmesCurtidos = regrasFilme.pesquisar(id);
+            listaFilmesCurtidos.add(filmesCurtidos);
+        }
+        return listaFilmesCurtidos;
     }
 
     public boolean curtirFilme (int idFilme, int idUsuario){
@@ -95,6 +118,17 @@ public class RegrasUsuario {
         return null;
     }
 
+    public List<Serie> listarSerieCurtida (int idUsuario){
+        Usuario usuario = this.pesquisar(idUsuario);
+        List<Serie> listaSerieCurdida = new ArrayList<>();
+        for (Integer id : usuario.getCurtidasSeries()){
+            RegrasSerie regrasSerie = new RegrasSerie();
+            Serie serieCurtida = regrasSerie.pesquisar(id);
+            listaSerieCurdida.add(serieCurtida);
+        }
+        return listaSerieCurdida;
+    }
+
     public boolean curtirSerie (int idSerie, int idUsuario){
         RegrasSerie regrasSerie = new RegrasSerie();
         if (regrasSerie.pesquisar(idSerie) !=null){
@@ -111,6 +145,17 @@ public class RegrasUsuario {
             return usuario.descurtirSerie(idSerie);
         }
         return null;
+    }
+
+    public List<Jogo> listaJogosCurtidos (int idUsuario){
+        Usuario usuario = this.pesquisar(idUsuario);
+        List<Jogo> listaJogosCurtidos = new ArrayList<>();
+        for (Integer id : usuario.getCurtidasJogos()){
+        RegrasJogo regrasJogo = new RegrasJogo();
+        Jogo jogosCurtidos = regrasJogo.pesquisar(id);
+        listaJogosCurtidos.add(jogosCurtidos);
+        }
+        return listaJogosCurtidos;
     }
 
     public boolean curtirJogo (int idJogo, int idUsuario){
@@ -131,6 +176,17 @@ public class RegrasUsuario {
         return null;
     }
 
+    public List<Esporte> listarEsporteCurtidos (int idUsuario){
+        Usuario usuario = this.pesquisar(idUsuario);
+        List<Esporte> listarEsportesCurtidos = new ArrayList<>();
+        for (Integer id: usuario.getCurtidasEsporte()){
+            RegrasEsporte regrasEsporte = new RegrasEsporte();
+            Esporte esporteCurtido = regrasEsporte.pesquisar(id);
+            listarEsportesCurtidos.add(esporteCurtido);
+        }
+        return listarEsportesCurtidos;
+    }
+
     public boolean curtirEsporte (int idEsporte, int idUsuario){
         RegrasEsporte regrasEsporte = new RegrasEsporte();
         if (regrasEsporte.pesquisar(idEsporte)!= null){
@@ -147,6 +203,26 @@ public class RegrasUsuario {
             return usuario.descurtirEsporte(idEsporte);
         }
         return null;
+    }
+
+    public boolean cadastrarCuriosidade (int idCuriosidade, int idUsuario){
+        RegrasCuriosidade regrasCuriosidade = new RegrasCuriosidade();
+        if (regrasCuriosidade.pesquisar(idCuriosidade) !=null){
+            Usuario usuario = this.pesquisar(idUsuario);
+            return usuario.cadastrarCuriosidade(idCuriosidade);
+        }
+        return false;
+    }
+
+    public List<Curiosidade> listarCuriosidade (int idUsuario){
+        Usuario usuario = this.pesquisar(idUsuario);
+        List<Curiosidade> listaCuriosidades = new ArrayList<>();
+        for (Integer id :usuario.getCuriosidades()){
+            RegrasCuriosidade regrasCuriosidade = new RegrasCuriosidade();
+            Curiosidade curiosidadeListada = regrasCuriosidade.pesquisar(id);
+            listaCuriosidades.add(curiosidadeListada);
+        }
+        return listaCuriosidades;
     }
 
 }
