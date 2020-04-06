@@ -22,6 +22,7 @@ public class Usuario {
     private List<Integer> curtidasJogos;
     private List<Integer> curtidasEsporte;
     private List<Integer> curiosidades;
+    public List<Integer> curtirUsuario;
 
 
     public Usuario( String nome, String email, String telefone, LocalDate dataNascimento, String bio, Double latitude, Double longitude, String urlFoto) {
@@ -39,6 +40,7 @@ public class Usuario {
         this.curtidasJogos = new ArrayList<>();
         this.curtidasEsporte = new ArrayList<>();
         this.curiosidades = new ArrayList<>();
+        this.curtirUsuario = new ArrayList<>();
     }
 
     public int getId(){
@@ -155,6 +157,29 @@ public class Usuario {
 
     public void setCuriosidades(List<Integer> curiosidades) {
         this.curiosidades = curiosidades;
+    }
+
+    public List<Integer> getCurtirUsuario() {
+        return curtirUsuario;
+    }
+
+    public void setCurtirUsuario(List<Integer> curtirUsuario) {
+        this.curtirUsuario = curtirUsuario;
+    }
+
+    public boolean curtirUsuario (int idUsuarioAvaliador){
+        if (!curtirUsuario.contains(idUsuarioAvaliador)){
+            return curtirUsuario.add(idUsuarioAvaliador);
+        }
+        return false;
+    }
+
+    public Integer descurtirUsuario (int idUsuarioAvaliador){
+        if (curtirUsuario.contains(idUsuarioAvaliador)){
+            int a = curtirUsuario.indexOf(idUsuarioAvaliador);
+            return curtirUsuario.remove(a);
+        }
+        return null;
     }
 
     public boolean curtirMusica (int idMusica){

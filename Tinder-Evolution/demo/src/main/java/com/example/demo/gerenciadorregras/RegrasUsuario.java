@@ -60,6 +60,22 @@ public class RegrasUsuario {
         return null;
     }
 
+    public boolean curtirUsuario (int idUsuarioAvaliado, int idUsuarioAvaliador){
+        if (this.pesquisar(idUsuarioAvaliador) != null){
+            Usuario usuario = this.pesquisar(idUsuarioAvaliado);
+            return usuario.curtirUsuario(idUsuarioAvaliador);
+        }
+        return false;
+    }
+
+    public Integer descurtirUsuario (int idUsuarioAvaliado, int idUsuarioAvaliador){
+        if (this.pesquisar(idUsuarioAvaliador) != null){
+            Usuario usuario = this.pesquisar(idUsuarioAvaliado);
+            return usuario.descurtirUsuario(idUsuarioAvaliador);
+        }
+        return null;
+    }
+
     public List<Musica> listarMusicarCurtidas (int idUsuario){
         Usuario usuario = this.pesquisar(idUsuario);
         List<Musica> listaMusicasCurtidas = new ArrayList<>();
