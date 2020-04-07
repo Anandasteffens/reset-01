@@ -17,4 +17,15 @@ public class MatchesController {
     public Integer descurtirUsuario (@PathVariable ("idUsuarioAvaliado") int idUsuarioAvaliado, @PathVariable ("idUsuarioAvaliador") int idUsuarioAvaliador){
         return regrasUsuario.descurtirUsuario(idUsuarioAvaliado, idUsuarioAvaliador);
     }
+
+    @DeleteMapping ("/{idUsuarioAvaliado}/avaliador/{idUsuarioAvaliador}/like")
+    public Integer deletarCurtidaUsuario (@PathVariable ("idUsuarioAvaliado") int idUsuarioAvaliado, @PathVariable ("idUsuarioAvaliador") int idUsuarioAvaliador){
+        return regrasUsuario.descurtirUsuario(idUsuarioAvaliado,idUsuarioAvaliador);
+    }
+
+    @DeleteMapping ("/{idUsuarioAvaliado}/avaliador/{idUsuarioAvaliador}/dislike")
+    public boolean deletarDislikeUsuario (@PathVariable ("idUsuarioAvaliado") int idUsuarioAvaliado, @PathVariable ("idUsuarioAvaliador") int idUsuarioAvaliador){
+        return regrasUsuario.curtirUsuario(idUsuarioAvaliado, idUsuarioAvaliador);
+    }
+
 }

@@ -78,9 +78,9 @@ public class RegrasUsuario {
 
     public List<Musica> listarMusicarCurtidas (int idUsuario){
         Usuario usuario = this.pesquisar(idUsuario);
+        RegrasMusica regrasMusica = new RegrasMusica();
         List<Musica> listaMusicasCurtidas = new ArrayList<>();
         for (Integer id : usuario.getCurtidasMusicas()){
-            RegrasMusica regrasMusica = new RegrasMusica();
             Musica musicaCurtida = regrasMusica.pesquisar(id);
             listaMusicasCurtidas.add(musicaCurtida);
         }
@@ -107,9 +107,9 @@ public class RegrasUsuario {
 
     public List<Filme> listarFilmesCurtidos (int idUsuario){
         Usuario usuario = this.pesquisar(idUsuario);
+        RegrasFilme regrasFilme = new RegrasFilme();
         List <Filme> listaFilmesCurtidos = new ArrayList<>();
         for (Integer id : usuario.getCurtidasFilmes()){
-            RegrasFilme regrasFilme = new RegrasFilme();
             Filme filmesCurtidos = regrasFilme.pesquisar(id);
             listaFilmesCurtidos.add(filmesCurtidos);
         }
@@ -136,9 +136,9 @@ public class RegrasUsuario {
 
     public List<Serie> listarSerieCurtida (int idUsuario){
         Usuario usuario = this.pesquisar(idUsuario);
+        RegrasSerie regrasSerie = new RegrasSerie();
         List<Serie> listaSerieCurdida = new ArrayList<>();
         for (Integer id : usuario.getCurtidasSeries()){
-            RegrasSerie regrasSerie = new RegrasSerie();
             Serie serieCurtida = regrasSerie.pesquisar(id);
             listaSerieCurdida.add(serieCurtida);
         }
@@ -165,9 +165,9 @@ public class RegrasUsuario {
 
     public List<Jogo> listaJogosCurtidos (int idUsuario){
         Usuario usuario = this.pesquisar(idUsuario);
+        RegrasJogo regrasJogo = new RegrasJogo();
         List<Jogo> listaJogosCurtidos = new ArrayList<>();
         for (Integer id : usuario.getCurtidasJogos()){
-        RegrasJogo regrasJogo = new RegrasJogo();
         Jogo jogosCurtidos = regrasJogo.pesquisar(id);
         listaJogosCurtidos.add(jogosCurtidos);
         }
@@ -194,9 +194,9 @@ public class RegrasUsuario {
 
     public List<Esporte> listarEsporteCurtidos (int idUsuario){
         Usuario usuario = this.pesquisar(idUsuario);
+        RegrasEsporte regrasEsporte = new RegrasEsporte();
         List<Esporte> listarEsportesCurtidos = new ArrayList<>();
         for (Integer id: usuario.getCurtidasEsporte()){
-            RegrasEsporte regrasEsporte = new RegrasEsporte();
             Esporte esporteCurtido = regrasEsporte.pesquisar(id);
             listarEsportesCurtidos.add(esporteCurtido);
         }
@@ -232,9 +232,9 @@ public class RegrasUsuario {
 
     public List<Curiosidade> listarCuriosidade (int idUsuario){
         Usuario usuario = this.pesquisar(idUsuario);
+        RegrasCuriosidade regrasCuriosidade = new RegrasCuriosidade();
         List<Curiosidade> listaCuriosidades = new ArrayList<>();
         for (Integer id :usuario.getCuriosidades()){
-            RegrasCuriosidade regrasCuriosidade = new RegrasCuriosidade();
             Curiosidade curiosidadeListada = regrasCuriosidade.pesquisar(id);
             listaCuriosidades.add(curiosidadeListada);
         }
