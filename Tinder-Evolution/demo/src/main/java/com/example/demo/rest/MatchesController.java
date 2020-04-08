@@ -1,7 +1,10 @@
 package com.example.demo.rest;
 
+import com.example.demo.dominioclasses.Usuario;
 import com.example.demo.gerenciadorregras.RegrasUsuario;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/matches")
@@ -14,18 +17,23 @@ public class MatchesController {
     }
 
     @PostMapping("/{idUsuarioAvaliado}/avaliador/{idUsuarioAvaliador}/dislike")
-    public Integer descurtirUsuario (@PathVariable ("idUsuarioAvaliado") int idUsuarioAvaliado, @PathVariable ("idUsuarioAvaliador") int idUsuarioAvaliador){
-        return regrasUsuario.descurtirUsuario(idUsuarioAvaliado, idUsuarioAvaliador);
+    public boolean dislikeUsuario (@PathVariable ("idUsuarioAvaliado") int idUsuarioAvaliado, @PathVariable ("idUsuarioAvaliador") int idUsuarioAvaliador){
+        return regrasUsuario.dislikeUsuario(idUsuarioAvaliado, idUsuarioAvaliador);
     }
 
     @DeleteMapping ("/{idUsuarioAvaliado}/avaliador/{idUsuarioAvaliador}/like")
     public Integer deletarCurtidaUsuario (@PathVariable ("idUsuarioAvaliado") int idUsuarioAvaliado, @PathVariable ("idUsuarioAvaliador") int idUsuarioAvaliador){
-        return regrasUsuario.descurtirUsuario(idUsuarioAvaliado,idUsuarioAvaliador);
+        return regrasUsuario.deletarCurtidaUsuario(idUsuarioAvaliado,idUsuarioAvaliador);
     }
 
     @DeleteMapping ("/{idUsuarioAvaliado}/avaliador/{idUsuarioAvaliador}/dislike")
-    public boolean deletarDislikeUsuario (@PathVariable ("idUsuarioAvaliado") int idUsuarioAvaliado, @PathVariable ("idUsuarioAvaliador") int idUsuarioAvaliador){
-        return regrasUsuario.curtirUsuario(idUsuarioAvaliado, idUsuarioAvaliador);
+    public Integer deletarDislikeUsuario (@PathVariable ("idUsuarioAvaliado") int idUsuarioAvaliado, @PathVariable ("idUsuarioAvaliador") int idUsuarioAvaliador){
+        return regrasUsuario.deletarDislikeUsuario(idUsuarioAvaliado, idUsuarioAvaliador);
+    }
+
+    @GetMapping ("/{idUsuarioAvaliado}")
+    public List<Usuario> listarMatches (@PathVariable ("idUsuarioAvaliado") int idUsuarioAvaliado){
+        return regrasUsuario.criarMatches(idUsuarioAvaliado);
     }
 
 }

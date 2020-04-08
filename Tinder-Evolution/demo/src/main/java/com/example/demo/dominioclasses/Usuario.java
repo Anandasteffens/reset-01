@@ -22,7 +22,8 @@ public class Usuario {
     private List<Integer> curtidasJogos;
     private List<Integer> curtidasEsporte;
     private List<Integer> curiosidades;
-    public List<Integer> curtirUsuario;
+    public List<Integer> curtidasUsuario;
+    public List<Integer> dislikesUsuario;
 
 
     public Usuario( String nome, String email, String telefone, LocalDate dataNascimento, String bio, Double latitude, Double longitude, String urlFoto) {
@@ -40,7 +41,8 @@ public class Usuario {
         this.curtidasJogos = new ArrayList<>();
         this.curtidasEsporte = new ArrayList<>();
         this.curiosidades = new ArrayList<>();
-        this.curtirUsuario = new ArrayList<>();
+        this.curtidasUsuario = new ArrayList<>();
+        this.dislikesUsuario = new ArrayList<>();
     }
 
     public int getId(){
@@ -159,28 +161,52 @@ public class Usuario {
         this.curiosidades = curiosidades;
     }
 
-    public List<Integer> getCurtirUsuario() {
-        return curtirUsuario;
+    public List<Integer> getCurtidasUsuario() {
+        return curtidasUsuario;
     }
 
-    public void setCurtirUsuario(List<Integer> curtirUsuario) {
-        this.curtirUsuario = curtirUsuario;
+    public void setCurtidasUsuario(List<Integer> curtidasUsuario) {
+        this.curtidasUsuario = curtidasUsuario;
+    }
+
+    public List<Integer> getDislikesUsuario() {
+        return dislikesUsuario;
+    }
+
+    public void setDislikesUsuario(List<Integer> dislikesUsuario) {
+        this.dislikesUsuario = dislikesUsuario;
     }
 
     public boolean curtirUsuario (int idUsuarioAvaliador){
-        if (!curtirUsuario.contains(idUsuarioAvaliador)){
-            return curtirUsuario.add(idUsuarioAvaliador);
+        if (!curtidasUsuario.contains(idUsuarioAvaliador)){
+            return curtidasUsuario.add(idUsuarioAvaliador);
         }
         return false;
     }
 
-    public Integer descurtirUsuario (int idUsuarioAvaliador){
-        if (curtirUsuario.contains(idUsuarioAvaliador)){
-            int a = curtirUsuario.indexOf(idUsuarioAvaliador);
-            return curtirUsuario.remove(a);
+    public boolean dislikeUsuario (int idUsuarioAvaliador){
+        if (!dislikesUsuario.contains(idUsuarioAvaliador)){
+            return dislikesUsuario.add(idUsuarioAvaliador);
+        }
+        return false;
+    }
+
+    public Integer deletarCurtidaUsuario (int idUsuarioAvaliador){
+        if (curtidasUsuario.contains(idUsuarioAvaliador)){
+            int a = curtidasUsuario.indexOf(idUsuarioAvaliador);
+            return curtidasUsuario.remove(a);
         }
         return null;
     }
+
+    public Integer deletarDislikeUsuario (int idUsuarioAvaliador){
+        if (dislikesUsuario.contains(idUsuarioAvaliador)){
+            int a = dislikesUsuario.indexOf(idUsuarioAvaliador);
+            return dislikesUsuario.remove(a);
+        }
+        return null;
+    }
+
 
     public boolean curtirMusica (int idMusica){
         if (!curtidasMusicas.contains(idMusica)){

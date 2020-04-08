@@ -1,9 +1,7 @@
 package com.example.demo.gerenciadorregras;
 
-import com.example.demo.acervobd.AcervoMusicas;
 import com.example.demo.acervobd.AcervoUsuario;
 import com.example.demo.dominioclasses.*;
-import com.fasterxml.jackson.databind.ser.std.UUIDSerializer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,12 +66,41 @@ public class RegrasUsuario {
         return false;
     }
 
-    public Integer descurtirUsuario (int idUsuarioAvaliado, int idUsuarioAvaliador){
+    public boolean dislikeUsuario (int idUsuarioAvaliado, int idUsuarioAvaliador){
+        if (this.pesquisar(idUsuarioAvaliado) != null){
+            Usuario usuario = this.pesquisar(idUsuarioAvaliado);
+            return usuario.dislikeUsuario(idUsuarioAvaliador);
+        }
+        return false;
+    }
+
+    public Integer deletarCurtidaUsuario (int idUsuarioAvaliado, int idUsuarioAvaliador){
         if (this.pesquisar(idUsuarioAvaliador) != null){
             Usuario usuario = this.pesquisar(idUsuarioAvaliado);
-            return usuario.descurtirUsuario(idUsuarioAvaliador);
+            return usuario.deletarCurtidaUsuario(idUsuarioAvaliador);
         }
         return null;
+    }
+
+    public Integer deletarDislikeUsuario (int idUsuarioAvaliado, int idUsuarioAvaliador){
+        if (this.pesquisar(idUsuarioAvaliador) !=null){
+            Usuario usuario = this.pesquisar(idUsuarioAvaliado);
+            return usuario.deletarDislikeUsuario(idUsuarioAvaliador);
+        }
+        return null;
+    }
+
+    public List<Usuario> criarMatches (int idUsuarioAvaliado){
+        Usuario usuarioAvaliado = this.pesquisar(idUsuarioAvaliado);
+        List<Usuario> listaMatches = new ArrayList<>();
+        AcervoUsuario acervoUsuario = new AcervoUsuario();
+        List<Usuario> listarUsuarios = acervoUsuario.listar();
+        for (Usuario usuario : listarUsuarios){
+            if (usuarioAvaliado.curtidasUsuario.contains(usuario.getId()) && usuario.curtidasUsuario.contains(usuarioAvaliado.getId())){
+                listaMatches.add(usuario);
+            }
+        }
+        return listaMatches;
     }
 
     public List<Musica> listarMusicarCurtidas (int idUsuario){
