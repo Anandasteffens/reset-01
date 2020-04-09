@@ -12,8 +12,7 @@ public class RegrasCuriosidade {
     public Curiosidade cadastrar (Curiosidade curiosidade){
         List<Curiosidade> curiosidades = acervoCuriosidade.listar();
         if (curiosidade.getDescricao().isEmpty() || curiosidade.getCategoriaCuriosidade()== null){
-            System.out.println("Campos de preenchimento obrigatórios não informados");
-            return null;
+            throw new RuntimeException ("Campos de preenchimento obrigatórios não informados");
         }
         for (Curiosidade curiosidadeExiste : curiosidades){
             if (curiosidade.getDescricao().equals(curiosidadeExiste.getDescricao())){

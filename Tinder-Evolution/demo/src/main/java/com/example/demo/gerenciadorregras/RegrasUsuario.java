@@ -12,14 +12,13 @@ public class RegrasUsuario {
     public Usuario cadastrar(Usuario usuario) {
         List<Usuario> usuarios = acervo.listar();
         if (usuario.confirmarIdade(usuario.getDataNascimento())<18){
-            System.out.println("Aplicativo para maiores de 18 anos.");
-            return null;
+            throw new RuntimeException("Aplicativo para maiores de 18 anos.");
         }
         if (usuario.getNome().isEmpty() || usuario.getEmail().isEmpty() || usuario.getTelefone().isEmpty() ||
                 usuario.getDataNascimento() == null || usuario.getBio().isEmpty()|| usuario.getLatitude().isNaN() || usuario.getLongitude().isNaN() )
         {
-            System.out.println("Campos de preenchimento obrigatórios não informados");
-            return null;
+            throw new RuntimeException("Campos de preenchimento obrigatórios não informados");
+
         }
         for (Usuario usuarioExiste : usuarios) {
             if (usuario.getNome().equals(usuarioExiste.getNome())) {

@@ -13,8 +13,7 @@ public class RegrasEsporte {
     public Esporte cadastrar (Esporte esporte){
         List<Esporte> esportes = acervoEsporte.listar();
         if (esporte.getNome().isEmpty()){
-            System.out.println("Campos de preenchimento obrigatórios não informados");
-            return null;
+            throw new RuntimeException ("Campos de preenchimento obrigatórios não informados");
         }
         for (Esporte esporteExiste : esportes){
             if (esporte.getNome().equals(esporteExiste.getNome())){

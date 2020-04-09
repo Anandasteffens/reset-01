@@ -183,16 +183,17 @@ public class Usuario {
 
     public boolean curtirUsuario (int idUsuarioAvaliador){
         if (!curtidasUsuario.contains(idUsuarioAvaliador)){
+//            if ()
             return curtidasUsuario.add(idUsuarioAvaliador);
         }
-        return false;
+        throw new RuntimeException ("Usuário não encontrado.");
     }
 
     public boolean dislikeUsuario (int idUsuarioAvaliador){
         if (!dislikesUsuario.contains(idUsuarioAvaliador)){
             return dislikesUsuario.add(idUsuarioAvaliador);
         }
-        return false;
+        throw new RuntimeException ("Usuário não encontrado");
     }
 
     public Integer deletarCurtidaUsuario (int idUsuarioAvaliador){
@@ -200,7 +201,7 @@ public class Usuario {
             int a = curtidasUsuario.indexOf(idUsuarioAvaliador);
             return curtidasUsuario.remove(a);
         }
-        return null;
+        throw new RuntimeException ("Usuário não encontrado");
     }
 
     public Integer deletarDislikeUsuario (int idUsuarioAvaliador){
@@ -208,7 +209,7 @@ public class Usuario {
             int a = dislikesUsuario.indexOf(idUsuarioAvaliador);
             return dislikesUsuario.remove(a);
         }
-        return null;
+        throw new RuntimeException ("Usuário não encontrado");
     }
 
 
@@ -216,7 +217,7 @@ public class Usuario {
         if (!curtidasMusicas.contains(idMusica)){
             return curtidasMusicas.add(idMusica);
         }
-       return false;
+        throw new RuntimeException ("Música não encontrada");
     }
 
     public Integer descurtirMusica (int idMusica){
@@ -224,14 +225,14 @@ public class Usuario {
             int a = curtidasMusicas.indexOf(idMusica);
             return curtidasMusicas.remove(a);
         }
-        return null;
+        throw new RuntimeException ("Música não encontrada");
     }
 
     public boolean curtirFilme (int idFilme){
         if (!curtidasFilmes.contains(idFilme)){
             return curtidasFilmes.add(idFilme);
         }
-        return false;
+        throw new RuntimeException ("Filme não encontrado");
     }
 
     public Integer descurtirFilme (int idFilme){
@@ -239,21 +240,21 @@ public class Usuario {
             int a = curtidasFilmes.indexOf(idFilme);
             return curtidasFilmes.remove(a);
         }
-        return null;
+        throw new RuntimeException ("Filme não encontrado");
     }
 
     public boolean curtirSerie (int idSerie){
         if (!curtidasSeries.contains(idSerie)){
             return curtidasSeries.add(idSerie);
         }
-        return false;
+        throw new RuntimeException ("Série não encontrada");
     }
     public Integer descurtirSerie (int idSerie){
         if (curtidasSeries.contains(idSerie)){
             int a = curtidasSeries.indexOf(idSerie);
             return curtidasSeries.remove(a);
         }
-        return null;
+        throw new RuntimeException ("Série não encontrada");
     }
 
     public boolean curtirJogo (int idJogo) {
@@ -267,28 +268,28 @@ public class Usuario {
             int a = curtidasJogos.indexOf(idJogo);
             return curtidasJogos.remove(a);
         }
-        return null;
+        throw new RuntimeException ("Jogo não encontrado");
     }
 
     public boolean curtirEsporte (int idEsporte){
         if (!curtidasEsporte.contains(idEsporte)){
             return curtidasEsporte.add(idEsporte);
         }
-        return false;
+        throw new RuntimeException ("Objeto não encontrado");
     }
     public Integer descurtirEsporte (int idEsporte){
         if (curtidasEsporte.contains(idEsporte)){
             int a = curtidasEsporte.indexOf(idEsporte);
             return curtidasEsporte.remove(a);
         }
-        return null;
+        throw new RuntimeException ("Objeto não encontrado");
     }
 
     public boolean cadastrarCuriosidade (int idCuriosidade){
         if (!curiosidades.contains(idCuriosidade)){
             return curiosidades.add(idCuriosidade);
         }
-        return false;
+        throw new RuntimeException ("Objeto não encontrado");
     }
 
 

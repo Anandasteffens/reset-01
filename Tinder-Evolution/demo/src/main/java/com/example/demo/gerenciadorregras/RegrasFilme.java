@@ -12,8 +12,7 @@ public class RegrasFilme {
     public Filme cadastrar(Filme filme) {
         List<Filme> filmes = acervo.listar();
         if (filme.getNome().isEmpty() || filme.getDiretor().isEmpty() || filme.getCategoria() == null || filme.getSinopse().isEmpty() || filme.getDataLancamento() == null) {
-            System.out.println("Campos de preenchimento obrigatórios não informados");
-            return null;
+            throw new RuntimeException ("Campos de preenchimento obrigatórios não informados");
         }
         for (Filme filmeExiste : filmes) {
             if (filme.getNome().equals(filmeExiste.getNome())) {

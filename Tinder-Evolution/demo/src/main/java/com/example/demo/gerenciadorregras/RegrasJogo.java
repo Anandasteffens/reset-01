@@ -14,8 +14,7 @@ public class RegrasJogo {
         List<Jogo> jogos = acervo.listar();
 
         if (jogo.getNome().isEmpty() || jogo.getDataLancamento() == null || jogo.getCategoriaJogo() == null || jogo.getPlataformaJogo() == null) {
-            System.out.println("Campos de preenchimento obrigatórios não informados");
-            return null;
+            throw new RuntimeException ("Campos de preenchimento obrigatórios não informados");
         }
         for (Jogo jogoExiste : jogos) {
             if (jogo.getNome().equals(jogoExiste.getNome())) {

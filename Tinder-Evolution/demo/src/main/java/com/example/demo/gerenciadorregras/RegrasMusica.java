@@ -13,8 +13,7 @@ public class RegrasMusica {
     public Musica criar(Musica musica) {
         List<Musica> musicas = acervo.listar();
         if (musica.getNome().isEmpty() || musica.getAutor().isEmpty() || musica.getEstilo() == null || musica.getDataLancamento() == null) {
-            System.out.println("Campos de preenchimento obrigatórios não informados");
-            return null;
+            throw new RuntimeException("Campos de preenchimento obrigatórios não informados");
         }
         for (Musica musicaExiste : musicas) {
             if (musica.getNome().equals(musicaExiste.getNome())) {

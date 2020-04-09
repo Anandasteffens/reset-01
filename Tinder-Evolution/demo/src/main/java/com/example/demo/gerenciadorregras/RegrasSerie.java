@@ -13,8 +13,7 @@ public class RegrasSerie {
     public Serie cadastrar (Serie serie){
         List<Serie> series = acervoSeries.listar();
         if (serie.getNome().isEmpty() || serie.getDiretor().isEmpty() || serie.getDataLancamento()==null || serie.getNumeroTemporadas() ==0 || serie.getNumeroEpisodios()==0 || serie.getCategoriaSerie()==null || serie.getSinopse().isEmpty()){
-            System.out.println("Campos de preenchimento obrigatórios não informados.");
-            return null;
+            throw new RuntimeException ("Campos de preenchimento obrigatórios não informados.");
         }
         for (Serie serieExiste : series){
             if (serie.getNome().equals(serieExiste)){
