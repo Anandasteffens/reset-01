@@ -36,4 +36,9 @@ public class MatchesController {
         return regrasUsuario.criarMatches(idUsuarioAvaliado);
     }
 
+    @GetMapping ("/{idUsuario}/best")
+    public Usuario listarUsuarioBest (@PathVariable ("idUsuario") int idUsuario){
+        return regrasUsuario.bff(idUsuario);
+    }
+
 }

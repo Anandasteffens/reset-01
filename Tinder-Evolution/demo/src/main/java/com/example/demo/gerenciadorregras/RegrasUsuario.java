@@ -90,6 +90,76 @@ public class RegrasUsuario {
         return null;
     }
 
+    public Usuario bff (int idUsuario){
+        Usuario usuarioAvaliado = this.pesquisar(idUsuario);
+        AcervoUsuario acervoUsuario = new AcervoUsuario();
+        List<Usuario> listarUsuarios = acervoUsuario.listar();
+        listarUsuarios.remove(usuarioAvaliado);
+        Usuario usuario = new Usuario();
+        int melhorPontuacao = 0;
+        for (Usuario usuarioAlone : listarUsuarios){
+            int pontuacao = 0;
+            if (!usuarioAvaliado.curtidasUsuario.contains(usuarioAlone.getId()) && !usuarioAvaliado.dislikesUsuario.contains(usuarioAlone.getId())){
+                for (Integer musicaAvaliada : usuarioAvaliado.getCurtidasMusicas()){
+                    for (Integer musicaUsuarioAlone : usuarioAlone.getCurtidasMusicas()){
+                        if (musicaAvaliada.equals(musicaUsuarioAlone)){
+                            pontuacao++;
+                        }
+                    }
+                }
+                if (pontuacao > melhorPontuacao){
+                    usuario = usuarioAlone;
+                    melhorPontuacao = pontuacao;
+                }
+                for (Integer filmeAvaliado : usuarioAvaliado.getCurtidasFilmes()){
+                    for (Integer filmeUsuarioAlone : usuarioAlone.getCurtidasFilmes()){
+                        if (filmeAvaliado.equals(filmeUsuarioAlone)){
+                            pontuacao++;
+                        }
+                    }
+                }
+                if (pontuacao > melhorPontuacao){
+                    usuario = usuarioAlone;
+                    melhorPontuacao = pontuacao;
+                }
+                for (Integer serieAvaliado : usuarioAvaliado.getCurtidasSeries()){
+                    for (Integer serieUsuarioAlone : usuarioAlone.getCurtidasSeries()){
+                        if (serieAvaliado.equals(serieUsuarioAlone)){
+                            pontuacao++;
+                        }
+                    }
+                }
+                if (pontuacao > melhorPontuacao){
+                    usuario = usuarioAlone;
+                    melhorPontuacao = pontuacao;
+                }
+                for (Integer jogoAvaliado : usuarioAvaliado.getCurtidasJogos()){
+                    for (Integer jogoUsuarioAlone : usuarioAlone.getCurtidasJogos()){
+                        if (jogoAvaliado.equals(jogoUsuarioAlone)){
+                            pontuacao++;
+                        }
+                    }
+                }
+                if (pontuacao>melhorPontuacao){
+                    usuario = usuarioAlone;
+                    melhorPontuacao = pontuacao;
+                }
+                for (Integer esporteAvalido : usuarioAvaliado.getCurtidasEsporte()){
+                    for (Integer esporteUsuarioAlone : usuarioAlone.getCurtidasEsporte()){
+                        if (esporteAvalido.equals(esporteUsuarioAlone)){
+                            pontuacao++;
+                        }
+                    }
+                }
+                if (pontuacao>melhorPontuacao){
+                    usuario = usuarioAlone;
+                    melhorPontuacao = pontuacao;
+                }
+            }
+        }
+        return usuario;
+    }
+
     public List<Usuario> criarMatches (int idUsuarioAvaliado){
         Usuario usuarioAvaliado = this.pesquisar(idUsuarioAvaliado);
         List<Usuario> listaMatches = new ArrayList<>();

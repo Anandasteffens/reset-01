@@ -45,6 +45,10 @@ public class Usuario {
         this.dislikesUsuario = new ArrayList<>();
     }
 
+    public Usuario() {
+
+    }
+
     public int getId(){
         return id;
     }
