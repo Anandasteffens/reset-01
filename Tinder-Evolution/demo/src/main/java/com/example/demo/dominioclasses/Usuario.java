@@ -183,7 +183,10 @@ public class Usuario {
 
     public boolean curtirUsuario (int idUsuarioAvaliador){
         if (!curtidasUsuario.contains(idUsuarioAvaliador)){
-//            if ()
+            if (dislikesUsuario.contains(idUsuarioAvaliador)){
+                int a = dislikesUsuario.indexOf(idUsuarioAvaliador);
+                dislikesUsuario.remove(a);
+            }
             return curtidasUsuario.add(idUsuarioAvaliador);
         }
         throw new RuntimeException ("Usuário não encontrado.");
@@ -191,6 +194,10 @@ public class Usuario {
 
     public boolean dislikeUsuario (int idUsuarioAvaliador){
         if (!dislikesUsuario.contains(idUsuarioAvaliador)){
+            if (curtidasUsuario.contains(idUsuarioAvaliador)){
+                int a = curtidasUsuario.indexOf(idUsuarioAvaliador);
+                curtidasUsuario.remove(a);
+            }
             return dislikesUsuario.add(idUsuarioAvaliador);
         }
         throw new RuntimeException ("Usuário não encontrado");
