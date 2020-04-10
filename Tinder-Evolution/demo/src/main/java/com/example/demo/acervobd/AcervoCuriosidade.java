@@ -12,9 +12,9 @@ public class AcervoCuriosidade {
     private static List<Curiosidade> curiosidades = new ArrayList<>();
 
     public AcervoCuriosidade(){
-        cadastrar(new Curiosidade("Ler livros terror", CategoriaCuriosidade.COMPORTAMENTO));
-        cadastrar(new Curiosidade("Chocólotra", CategoriaCuriosidade.ALIMENTACAO));
-        cadastrar(new Curiosidade("Cabelos morenos", CategoriaCuriosidade.APARENCIA));
+//        cadastrar(new Curiosidade("Ler livros terror", CategoriaCuriosidade.COMPORTAMENTO));
+//        cadastrar(new Curiosidade("Chocólotra", CategoriaCuriosidade.ALIMENTACAO));
+//        cadastrar(new Curiosidade("Cabelos morenos", CategoriaCuriosidade.APARENCIA));
     }
 
     public Curiosidade cadastrar (Curiosidade curiosidade){
@@ -24,10 +24,7 @@ public class AcervoCuriosidade {
     }
 
     public List<Curiosidade> listar (){
-        if (curiosidades == null){
-            return null;
-        }
-        else {return curiosidades;}
+        return curiosidades;
     }
 
     public Curiosidade pesquisar (int id){

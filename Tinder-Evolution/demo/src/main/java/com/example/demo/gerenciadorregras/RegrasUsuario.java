@@ -94,7 +94,7 @@ public class RegrasUsuario {
         AcervoUsuario acervoUsuario = new AcervoUsuario();
         List<Usuario> listarUsuarios = acervoUsuario.listar();
         listarUsuarios.remove(usuarioAvaliado);
-        Usuario usuario = new Usuario();
+        Usuario usuario = null;
         int melhorPontuacao = 0;
         for (Usuario usuarioAlone : listarUsuarios){
             int pontuacao = 0;
@@ -106,20 +106,12 @@ public class RegrasUsuario {
                         }
                     }
                 }
-                if (pontuacao > melhorPontuacao){
-                    usuario = usuarioAlone;
-                    melhorPontuacao = pontuacao;
-                }
                 for (Integer filmeAvaliado : usuarioAvaliado.getCurtidasFilmes()){
                     for (Integer filmeUsuarioAlone : usuarioAlone.getCurtidasFilmes()){
                         if (filmeAvaliado.equals(filmeUsuarioAlone)){
                             pontuacao++;
                         }
                     }
-                }
-                if (pontuacao > melhorPontuacao){
-                    usuario = usuarioAlone;
-                    melhorPontuacao = pontuacao;
                 }
                 for (Integer serieAvaliado : usuarioAvaliado.getCurtidasSeries()){
                     for (Integer serieUsuarioAlone : usuarioAlone.getCurtidasSeries()){
@@ -128,20 +120,12 @@ public class RegrasUsuario {
                         }
                     }
                 }
-                if (pontuacao > melhorPontuacao){
-                    usuario = usuarioAlone;
-                    melhorPontuacao = pontuacao;
-                }
                 for (Integer jogoAvaliado : usuarioAvaliado.getCurtidasJogos()){
                     for (Integer jogoUsuarioAlone : usuarioAlone.getCurtidasJogos()){
                         if (jogoAvaliado.equals(jogoUsuarioAlone)){
                             pontuacao++;
                         }
                     }
-                }
-                if (pontuacao>melhorPontuacao){
-                    usuario = usuarioAlone;
-                    melhorPontuacao = pontuacao;
                 }
                 for (Integer esporteAvalido : usuarioAvaliado.getCurtidasEsporte()){
                     for (Integer esporteUsuarioAlone : usuarioAlone.getCurtidasEsporte()){

@@ -13,9 +13,9 @@ public class AcervoFilmes {
     private static List<Filme> filmes = new ArrayList<>();
 
     public AcervoFilmes (){
-        cadastrar(new Filme("Titanic", "James Camaron", LocalDate.now(), CategoriaFilme.DRAMA, "Barco afunda"));
-        cadastrar(new Filme("Velozes e furiosos", "Rob Coehn", LocalDate.now(), CategoriaFilme.ACAO, "Loucura"));
-        cadastrar(new Filme("Jogos Mortais", "Jamas Wan", LocalDate.now(), CategoriaFilme.TERROR, "Todo mundo morre"));
+//        cadastrar(new Filme("Titanic", "James Camaron", LocalDate.now(), CategoriaFilme.DRAMA, "Barco afunda"));
+//        cadastrar(new Filme("Velozes e furiosos", "Rob Coehn", LocalDate.now(), CategoriaFilme.ACAO, "Loucura"));
+//        cadastrar(new Filme("Jogos Mortais", "Jamas Wan", LocalDate.now(), CategoriaFilme.TERROR, "Todo mundo morre"));
     }
 
     public Filme cadastrar (Filme filme){
@@ -25,10 +25,7 @@ public class AcervoFilmes {
     }
 
     public List<Filme> listar (){
-        if (filmes == null){
-            return null;
-        }
-        else {return filmes;}
+        return filmes;
     }
 
     public Filme pesquisar (int id){

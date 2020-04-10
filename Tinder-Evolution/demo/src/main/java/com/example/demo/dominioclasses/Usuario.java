@@ -16,15 +16,14 @@ public class Usuario {
     private Double latitude;
     private Double longitude;
     private String urlFoto;
-    private List<Integer> curtidasMusicas;
-    private List<Integer> curtidasFilmes;
-    private List<Integer> curtidasSeries;
-    private List<Integer> curtidasJogos;
-    private List<Integer> curtidasEsporte;
-    private List<Integer> curiosidades;
-    public List<Integer> curtidasUsuario;
-    public List<Integer> dislikesUsuario;
-
+    private List<Integer> curtidasMusicas = new ArrayList<>();
+    private List<Integer> curtidasFilmes = new ArrayList<>();
+    private List<Integer> curtidasSeries = new ArrayList<>();
+    private List<Integer> curtidasJogos = new ArrayList<>();
+    private List<Integer> curtidasEsporte = new ArrayList<>();
+    private List<Integer> curiosidades = new ArrayList<>();
+    public List<Integer> curtidasUsuario = new ArrayList<>();
+    public List<Integer> dislikesUsuario = new ArrayList<>();
 
     public Usuario( String nome, String email, String telefone, LocalDate dataNascimento, String bio, Double latitude, Double longitude, String urlFoto) {
         this.nome = nome;
@@ -35,19 +34,13 @@ public class Usuario {
         this.latitude = latitude;
         this.longitude = longitude;
         this.urlFoto = urlFoto;
-        this.curtidasMusicas = new ArrayList<>();
-        this.curtidasFilmes = new ArrayList<>();
-        this.curtidasSeries = new ArrayList<>();
-        this.curtidasJogos = new ArrayList<>();
-        this.curtidasEsporte = new ArrayList<>();
-        this.curiosidades = new ArrayList<>();
-        this.curtidasUsuario = new ArrayList<>();
-        this.dislikesUsuario = new ArrayList<>();
     }
 
     public Usuario() {
 
     }
+
+//    public Usuario() {}
 
     public int getId(){
         return id;
@@ -181,16 +174,25 @@ public class Usuario {
         this.dislikesUsuario = dislikesUsuario;
     }
 
+//    public boolean curtirUsuario (int idUsuarioAvaliador){
+//        if (!curtidasUsuario.contains(idUsuarioAvaliador)){
+//            if (dislikesUsuario.contains(idUsuarioAvaliador)){
+//                int a = dislikesUsuario.indexOf(idUsuarioAvaliador);
+//                dislikesUsuario.remove(a);
+//            }
+//            return curtidasUsuario.add(idUsuarioAvaliador);
+//        }
+//        throw new RuntimeException ("Usuário não encontrado.");
+//    }
+
     public boolean curtirUsuario (int idUsuarioAvaliador){
-        if (!curtidasUsuario.contains(idUsuarioAvaliador)){
-            if (dislikesUsuario.contains(idUsuarioAvaliador)){
-                int a = dislikesUsuario.indexOf(idUsuarioAvaliador);
-                dislikesUsuario.remove(a);
-            }
-            return curtidasUsuario.add(idUsuarioAvaliador);
+        if (dislikesUsuario.contains(idUsuarioAvaliador)){
+            int a = dislikesUsuario.indexOf(idUsuarioAvaliador);
+            dislikesUsuario.remove(a);
         }
-        throw new RuntimeException ("Usuário não encontrado.");
+        return curtidasUsuario.add(idUsuarioAvaliador);
     }
+
 
     public boolean dislikeUsuario (int idUsuarioAvaliador){
         if (!dislikesUsuario.contains(idUsuarioAvaliador)){

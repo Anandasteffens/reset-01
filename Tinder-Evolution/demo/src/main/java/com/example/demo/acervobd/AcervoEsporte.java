@@ -11,9 +11,9 @@ public class AcervoEsporte {
     private static List<Esporte> esportes = new ArrayList<>();
 
     public AcervoEsporte(){
-        cadastrar(new Esporte(1 ,"Volei"));
-        cadastrar(new Esporte(2, "Futebol"));
-        cadastrar(new Esporte(3, "Basquete"));
+//        cadastrar(new Esporte(1 ,"Volei"));
+//        cadastrar(new Esporte(2, "Futebol"));
+//        cadastrar(new Esporte(3, "Basquete"));
     }
 
     public Esporte cadastrar (Esporte esporte){
@@ -23,11 +23,7 @@ public class AcervoEsporte {
     }
 
     public List<Esporte> listar (){
-        if (esportes == null){
-            return null;
-        }
-        else {return esportes;}
-
+        return esportes;
     }
 
     public Esporte pesquisar (int id){

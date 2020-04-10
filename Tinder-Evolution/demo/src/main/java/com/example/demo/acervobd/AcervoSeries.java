@@ -13,9 +13,9 @@ public class AcervoSeries {
     private static List<Serie> series = new ArrayList<>();
 
     public AcervoSeries (){
-        cadastrar(new Serie ("Elite", "Carlos Montero", LocalDate.now(), 3, 24, CategoriaSerie.SUSPENSE, "Bem legal"));
-        cadastrar(new Serie ("La casa de papel", "Alex pina", LocalDate.now(), 3, 24, CategoriaSerie.ACAO, "Show"));
-        cadastrar(new Serie ("Gossip Girl", "Josh", LocalDate.now(), 6, 121, CategoriaSerie.DRAMA, "Amoo"));
+////        cadastrar(new Serie ("Elite", "Carlos Montero", LocalDate.now(), 3, 24, CategoriaSerie.SUSPENSE, "Bem legal"));
+////        cadastrar(new Serie ("La casa de papel", "Alex pina", LocalDate.now(), 3, 24, CategoriaSerie.ACAO, "Show"));
+////        cadastrar(new Serie ("Gossip Girl", "Josh", LocalDate.now(), 6, 121, CategoriaSerie.DRAMA, "Amoo"));
     }
 
     public Serie cadastrar (Serie serie){
@@ -25,10 +25,7 @@ public class AcervoSeries {
     }
 
     public List<Serie> listar (){
-        if (series == null){
-            return null;
-        }
-        else {return series;}
+        return series;
     }
 
     public Serie pesquisar (int id){

@@ -14,9 +14,9 @@ public class AcervoJogo {
     private static List<Jogo> jogos = new ArrayList<>();
 
     public AcervoJogo (){
-        cadastrar(new Jogo ("CS", "VALVE", LocalDate.now(), CategoriaJogo.SUSPENSE, PlataformaJogo.PC ));
-        cadastrar(new Jogo ("LOL", "NAO SEI", LocalDate.now(), CategoriaJogo.ACAO, PlataformaJogo.PC ));
-        cadastrar(new Jogo ("MARIO KART", "Nintendo", LocalDate.now(), CategoriaJogo.ACAO, PlataformaJogo.PS4 ));
+//        cadastrar(new Jogo ("CS", "VALVE", LocalDate.now(), CategoriaJogo.SUSPENSE, PlataformaJogo.PC ));
+//        cadastrar(new Jogo ("LOL", "NAO SEI", LocalDate.now(), CategoriaJogo.ACAO, PlataformaJogo.PC ));
+//        cadastrar(new Jogo ("MARIO KART", "Nintendo", LocalDate.now(), CategoriaJogo.ACAO, PlataformaJogo.PS4 ));
     }
 
     public Jogo cadastrar(Jogo jogo) {
@@ -36,12 +36,7 @@ public class AcervoJogo {
 
 
     public List<Jogo> listar (){
-        if (jogos == null){
-            return null;
-        }
-        else {
             return jogos;
-        }
     }
 
     public Jogo editar (int id, Jogo jogo){

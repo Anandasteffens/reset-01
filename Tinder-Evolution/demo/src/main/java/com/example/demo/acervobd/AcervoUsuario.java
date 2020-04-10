@@ -12,9 +12,9 @@ public class AcervoUsuario {
     private static List<Usuario> usuarios = new ArrayList<>();
 
     public AcervoUsuario(){
-        cadastrar(new Usuario("Ananda", "ananda@hotmail.com", "992228104", LocalDate.now(), "Engenharia Química", 48.0, 50.0, "Foto1"));
-        cadastrar(new Usuario("Wagner", "wagner@hotmail.com", "992736325", LocalDate.now(), "Desenvolvedor Software", 40.0, 55.0, "Foto2"));
-        cadastrar(new Usuario("Ramon", "ramon@hotmail.com", "34740190", LocalDate.now(), "Estagiário DEV", 40.0, 45.0, "Foto3"));
+//        cadastrar(new Usuario("Ananda", "ananda@hotmail.com", "992228104", LocalDate.now(), "Engenharia Química", 48.0, 50.0, "Foto1"));
+//        cadastrar(new Usuario("Wagner", "wagner@hotmail.com", "992736325", LocalDate.now(), "Desenvolvedor Software", 40.0, 55.0, "Foto2"));
+//        cadastrar(new Usuario("Ramon", "ramon@hotmail.com", "34740190", LocalDate.now(), "Estagiário DEV", 40.0, 45.0, "Foto3"));
     }
 
     public Usuario cadastrar (Usuario usuario){
@@ -24,7 +24,7 @@ public class AcervoUsuario {
     }
 
     public List<Usuario> listar(){
-        return usuarios;
+        return new ArrayList<Usuario>(usuarios);
     }
 
     public Usuario pesquisar (int id){

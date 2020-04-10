@@ -14,12 +14,12 @@ public class AcervoMusicas {
     private static List<Musica> musicas = new ArrayList<>();
 
     public AcervoMusicas(){
-        criar(new Musica("Hit Contagiante", "Kevin o Chris", LocalDate.now(), EstiloMusica.FUNK));
-        criar(new Musica("Vai menina", "Pedro Sampaio", LocalDate.now(), EstiloMusica.FUNK));
-        criar(new Musica("Tudo Ok", "Thiaguinho MT", LocalDate.now(), EstiloMusica.FUNK));
-        criar(new Musica("Choram as rosas", "Bruno e Marrone", LocalDate.now(), EstiloMusica.SERTANEJO));
-        criar(new Musica("Fugidinha", "Exaltasamba", LocalDate.now(), EstiloMusica.PAGODE));
-        criar(new Musica("Duality", "Slipknot", LocalDate.now(), EstiloMusica.ROCK));
+//        criar(new Musica("Hit Contagiante", "Kevin o Chris", LocalDate.now(), EstiloMusica.FUNK));
+//        criar(new Musica("Vai menina", "Pedro Sampaio", LocalDate.now(), EstiloMusica.FUNK));
+//        criar(new Musica("Tudo Ok", "Thiaguinho MT", LocalDate.now(), EstiloMusica.FUNK));
+//        criar(new Musica("Choram as rosas", "Bruno e Marrone", LocalDate.now(), EstiloMusica.SERTANEJO));
+//        criar(new Musica("Fugidinha", "Exaltasamba", LocalDate.now(), EstiloMusica.PAGODE));
+//        criar(new Musica("Duality", "Slipknot", LocalDate.now(), EstiloMusica.ROCK));
     }
 
     public Musica criar(Musica musica) {
@@ -29,9 +29,7 @@ public class AcervoMusicas {
     }
 
     public List<Musica> listar() {
-        if (musicas == null){
-            return null;
-        } else {return musicas;}
+        return musicas;
     }
 
     public Musica pesquisar(int id) {
