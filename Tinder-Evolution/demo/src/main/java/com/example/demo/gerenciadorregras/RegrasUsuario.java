@@ -91,6 +91,9 @@ public class RegrasUsuario {
 
     public Usuario bff (int idUsuario){
         Usuario usuarioAvaliado = this.pesquisar(idUsuario);
+        if (usuarioAvaliado == null){
+            return null;
+        }
         AcervoUsuario acervoUsuario = new AcervoUsuario();
         List<Usuario> listarUsuarios = acervoUsuario.listar();
         listarUsuarios.remove(usuarioAvaliado);
@@ -145,6 +148,9 @@ public class RegrasUsuario {
 
     public List<Usuario> criarMatches (int idUsuarioAvaliado){
         Usuario usuarioAvaliado = this.pesquisar(idUsuarioAvaliado);
+        if (usuarioAvaliado == null){
+            return null;
+        }
         List<Usuario> listaMatches = new ArrayList<>();
         AcervoUsuario acervoUsuario = new AcervoUsuario();
         List<Usuario> listarUsuarios = acervoUsuario.listar();

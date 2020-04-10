@@ -38,27 +38,32 @@ public class LikesController {
     }
 
     @DeleteMapping ("/musica/{idMusica}/avaliador/{idUsuario}")
-    public Integer descurtirMusica (@PathVariable ("idMusica") int idMusica, @PathVariable ("idUsuario") int idUsuario){
-        return regrasUsuario.descurtirMusica(idMusica, idUsuario);
+    public String descurtirMusica (@PathVariable ("idMusica") int idMusica, @PathVariable ("idUsuario") int idUsuario){
+        regrasUsuario.descurtirMusica(idMusica, idUsuario);
+        return "Música descurtida";
     }
 
     @DeleteMapping ("filme/{idFilme}/avaliador/{idUsuario}")
-    public Integer descurtirFilme (@PathVariable ("idFilme") int idFilme, @PathVariable ("idUsuario") int idUsuario){
-        return regrasUsuario.descurtirFilme(idFilme, idUsuario);
+    public String descurtirFilme (@PathVariable ("idFilme") int idFilme, @PathVariable ("idUsuario") int idUsuario){
+        regrasUsuario.descurtirFilme(idFilme, idUsuario);
+        return "Filme descurtido";
     }
 
     @DeleteMapping ("/serie/{idSerie}/avaliador/{idUsuario}")
-    public Integer descurtirSerie (@PathVariable ("idSerie") int idSerie, @PathVariable ("idUsuario") int idUsuario){
-        return regrasUsuario.descurtirSerie(idSerie, idUsuario);
+    public String descurtirSerie (@PathVariable ("idSerie") int idSerie, @PathVariable ("idUsuario") int idUsuario){
+        regrasUsuario.descurtirSerie(idSerie, idUsuario);
+        return "Série descurtida";
     }
 
     @DeleteMapping ("/jogo/{idJogo}/avaliador/{idUsuario}")
-    public Integer descurtirJogo (@PathVariable ("idJogo") int idJogo, @PathVariable ("idUsuario") int idUsuario){
-        return regrasUsuario.descurtirJogo(idJogo, idUsuario);
+    public String descurtirJogo (@PathVariable ("idJogo") int idJogo, @PathVariable ("idUsuario") int idUsuario){
+        regrasUsuario.descurtirJogo(idJogo, idUsuario);
+        return "Jogo descurtido";
     }
     @DeleteMapping("/esporte/{idEsporte}/avaliador/{idUsuario}")
-    public Integer descurtirEsporte (@PathVariable ("idEsporte") int idEsporte, @PathVariable ("idUsuario") int idUsuario){
-        return regrasUsuario.descurtirEsporte(idEsporte, idUsuario);
+    public String descurtirEsporte (@PathVariable ("idEsporte") int idEsporte, @PathVariable ("idUsuario") int idUsuario){
+        regrasUsuario.descurtirEsporte(idEsporte, idUsuario);
+        return "Esporte descurtido";
     }
 
 

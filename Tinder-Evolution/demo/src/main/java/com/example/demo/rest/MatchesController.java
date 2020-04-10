@@ -22,13 +22,15 @@ public class MatchesController {
     }
 
     @DeleteMapping ("/{idUsuarioAvaliado}/avaliador/{idUsuarioAvaliador}/like")
-    public Integer deletarCurtidaUsuario (@PathVariable ("idUsuarioAvaliado") int idUsuarioAvaliado, @PathVariable ("idUsuarioAvaliador") int idUsuarioAvaliador){
-        return regrasUsuario.deletarCurtidaUsuario(idUsuarioAvaliado,idUsuarioAvaliador);
+    public String deletarCurtidaUsuario (@PathVariable ("idUsuarioAvaliado") int idUsuarioAvaliado, @PathVariable ("idUsuarioAvaliador") int idUsuarioAvaliador){
+        regrasUsuario.deletarCurtidaUsuario(idUsuarioAvaliado,idUsuarioAvaliador);
+        return "Like deletado";
     }
 
     @DeleteMapping ("/{idUsuarioAvaliado}/avaliador/{idUsuarioAvaliador}/dislike")
-    public Integer deletarDislikeUsuario (@PathVariable ("idUsuarioAvaliado") int idUsuarioAvaliado, @PathVariable ("idUsuarioAvaliador") int idUsuarioAvaliador){
-        return regrasUsuario.deletarDislikeUsuario(idUsuarioAvaliado, idUsuarioAvaliador);
+    public String deletarDislikeUsuario (@PathVariable ("idUsuarioAvaliado") int idUsuarioAvaliado, @PathVariable ("idUsuarioAvaliador") int idUsuarioAvaliador){
+        regrasUsuario.deletarDislikeUsuario(idUsuarioAvaliado, idUsuarioAvaliador);
+        return "Dislike deletado";
     }
 
     @GetMapping ("/{idUsuarioAvaliado}")

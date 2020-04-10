@@ -174,23 +174,15 @@ public class Usuario {
         this.dislikesUsuario = dislikesUsuario;
     }
 
-//    public boolean curtirUsuario (int idUsuarioAvaliador){
-//        if (!curtidasUsuario.contains(idUsuarioAvaliador)){
-//            if (dislikesUsuario.contains(idUsuarioAvaliador)){
-//                int a = dislikesUsuario.indexOf(idUsuarioAvaliador);
-//                dislikesUsuario.remove(a);
-//            }
-//            return curtidasUsuario.add(idUsuarioAvaliador);
-//        }
-//        throw new RuntimeException ("Usuário não encontrado.");
-//    }
-
     public boolean curtirUsuario (int idUsuarioAvaliador){
-        if (dislikesUsuario.contains(idUsuarioAvaliador)){
-            int a = dislikesUsuario.indexOf(idUsuarioAvaliador);
-            dislikesUsuario.remove(a);
+        if (!curtidasUsuario.contains(idUsuarioAvaliador)){
+            if (dislikesUsuario.contains(idUsuarioAvaliador)){
+                int a = dislikesUsuario.indexOf(idUsuarioAvaliador);
+                dislikesUsuario.remove(a);
+            }
+            return curtidasUsuario.add(idUsuarioAvaliador);
         }
-        return curtidasUsuario.add(idUsuarioAvaliador);
+       return false;
     }
 
 
@@ -202,7 +194,7 @@ public class Usuario {
             }
             return dislikesUsuario.add(idUsuarioAvaliador);
         }
-        throw new RuntimeException ("Usuário não encontrado");
+        return false;
     }
 
     public Integer deletarCurtidaUsuario (int idUsuarioAvaliador){
@@ -210,7 +202,7 @@ public class Usuario {
             int a = curtidasUsuario.indexOf(idUsuarioAvaliador);
             return curtidasUsuario.remove(a);
         }
-        throw new RuntimeException ("Usuário não encontrado");
+        return null;
     }
 
     public Integer deletarDislikeUsuario (int idUsuarioAvaliador){
@@ -218,7 +210,7 @@ public class Usuario {
             int a = dislikesUsuario.indexOf(idUsuarioAvaliador);
             return dislikesUsuario.remove(a);
         }
-        throw new RuntimeException ("Usuário não encontrado");
+        return null;
     }
 
 
@@ -226,7 +218,7 @@ public class Usuario {
         if (!curtidasMusicas.contains(idMusica)){
             return curtidasMusicas.add(idMusica);
         }
-        throw new RuntimeException ("Música não encontrada");
+        return false;
     }
 
     public Integer descurtirMusica (int idMusica){
@@ -234,14 +226,14 @@ public class Usuario {
             int a = curtidasMusicas.indexOf(idMusica);
             return curtidasMusicas.remove(a);
         }
-        throw new RuntimeException ("Música não encontrada");
+        return null;
     }
 
     public boolean curtirFilme (int idFilme){
         if (!curtidasFilmes.contains(idFilme)){
             return curtidasFilmes.add(idFilme);
         }
-        throw new RuntimeException ("Filme não encontrado");
+        return false;
     }
 
     public Integer descurtirFilme (int idFilme){
@@ -249,21 +241,21 @@ public class Usuario {
             int a = curtidasFilmes.indexOf(idFilme);
             return curtidasFilmes.remove(a);
         }
-        throw new RuntimeException ("Filme não encontrado");
+        return null;
     }
 
     public boolean curtirSerie (int idSerie){
         if (!curtidasSeries.contains(idSerie)){
             return curtidasSeries.add(idSerie);
         }
-        throw new RuntimeException ("Série não encontrada");
+        return false;
     }
     public Integer descurtirSerie (int idSerie){
         if (curtidasSeries.contains(idSerie)){
             int a = curtidasSeries.indexOf(idSerie);
             return curtidasSeries.remove(a);
         }
-        throw new RuntimeException ("Série não encontrada");
+        return null;
     }
 
     public boolean curtirJogo (int idJogo) {
@@ -277,28 +269,28 @@ public class Usuario {
             int a = curtidasJogos.indexOf(idJogo);
             return curtidasJogos.remove(a);
         }
-        throw new RuntimeException ("Jogo não encontrado");
+        return null;
     }
 
     public boolean curtirEsporte (int idEsporte){
         if (!curtidasEsporte.contains(idEsporte)){
             return curtidasEsporte.add(idEsporte);
         }
-        throw new RuntimeException ("Objeto não encontrado");
+        return false;
     }
     public Integer descurtirEsporte (int idEsporte){
         if (curtidasEsporte.contains(idEsporte)){
             int a = curtidasEsporte.indexOf(idEsporte);
             return curtidasEsporte.remove(a);
         }
-        throw new RuntimeException ("Objeto não encontrado");
+        return null;
     }
 
     public boolean cadastrarCuriosidade (int idCuriosidade){
         if (!curiosidades.contains(idCuriosidade)){
             return curiosidades.add(idCuriosidade);
         }
-        throw new RuntimeException ("Objeto não encontrado");
+        return false;
     }
 
 
