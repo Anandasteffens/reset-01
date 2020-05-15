@@ -9,6 +9,8 @@ public class Associado {
         this.nome = nome;
     }
 
+    public Associado(){};
+
     public int getId () {return id;}
 
     public void setId (int id) {this.id=id;}
