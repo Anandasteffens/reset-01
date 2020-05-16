@@ -10,7 +10,6 @@ public class Pauta {
     private int id;
     private String assunto;
     private List<Voto> listaVotos = new ArrayList<>();
-    private AcervoAssociado acervoAssociado = new AcervoAssociado();
 
     public Pauta(String assunto) {
         this.assunto = assunto;
@@ -47,11 +46,11 @@ public class Pauta {
     }
 
     public boolean associadoPodeVotar (int idAssociado) {
-            for (Voto voto : listaVotos) {
-                if (voto.getIdAssociado().equals(idAssociado)) {
-                    return false;
-                }
+        for (Voto voto : listaVotos) {
+            if (voto.getIdAssociado().equals(idAssociado)) {
+                return false;
             }
+        }
         return true;
     }
 }
