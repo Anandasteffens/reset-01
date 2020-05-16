@@ -16,7 +16,7 @@ public class AcervoAssociado {
         return associado;
     }
 
-    public List<Associado> listar () {return new ArrayList<Associado>(associados);}
+    public List<Associado> listar () {return associados;}
 
     public Associado pesquisar (int id){
         for (Associado associado : associados){

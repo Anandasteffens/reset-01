@@ -1,5 +1,8 @@
 package com.example.demo.dominioclasses;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Voto {
 
     private Integer idAssociado;
@@ -25,5 +28,6 @@ public class Voto {
     public void setIdAssociado(Integer idAssociado) {
         this.idAssociado = idAssociado;
     }
+
 
 }

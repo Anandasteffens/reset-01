@@ -2,6 +2,7 @@ package com.example.demo.dominioclasses;
 
 import com.example.demo.acervobd.AcervoAssociado;
 
+import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,14 +46,14 @@ public class Pauta {
         listaVotos.add(voto);
     }
 
-    public boolean associadoPodeVotar (int idAssociado){
-        for (Voto voto : listaVotos){
-                if (voto.getIdAssociado().equals(idAssociado)){
+    public boolean associadoPodeVotar (int idAssociado) {
+            for (Voto voto : listaVotos) {
+                if (voto.getIdAssociado().equals(idAssociado)) {
                     return false;
                 }
             }
         return true;
     }
-
 }
+
 
