@@ -1,7 +1,6 @@
 package com.example.demo.gerenciadorregras;
 
 import com.example.demo.acervobd.AcervoPauta;
-import com.example.demo.dominioclasses.Associado;
 import com.example.demo.dominioclasses.Pauta;
 import com.example.demo.dominioclasses.Voto;
 
@@ -10,9 +9,9 @@ public class RegrasPauta {
 
     private AcervoPauta acervoPauta = new AcervoPauta();
 
-    public void votar (int idPauta, Voto voto) {
+    public void votar (int idPauta, Voto voto){
         Pauta pauta = acervoPauta.pesquisar(idPauta);
-        if (pauta != null) {
+        if (pauta != null && pauta.associadoPodeVotar(voto.getIdAssociado())){
             pauta.votar(voto);
         }
     }

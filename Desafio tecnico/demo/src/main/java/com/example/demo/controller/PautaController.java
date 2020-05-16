@@ -17,7 +17,7 @@ public class PautaController {
         return regrasPauta.cadastrar(requestBody);
     }
 
-    @PostMapping("/{idPauta}")
+    @PostMapping("/votar/{idPauta}")
     public void votar (@PathVariable("idPauta") int idPauta,@RequestBody Voto requestBody){
        regrasPauta.votar(idPauta, requestBody);
     }

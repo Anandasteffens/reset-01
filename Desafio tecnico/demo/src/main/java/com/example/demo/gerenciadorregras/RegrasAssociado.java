@@ -1,12 +1,17 @@
 package com.example.demo.gerenciadorregras;
 
 import com.example.demo.acervobd.AcervoAssociado;
+import com.example.demo.acervobd.AcervoPauta;
 import com.example.demo.dominioclasses.Associado;
+import com.example.demo.dominioclasses.Pauta;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RegrasAssociado {
     private AcervoAssociado acervo = new AcervoAssociado();
+    private AcervoPauta acervoPauta = new AcervoPauta();
+
 
     public Associado cadastrar (Associado usuario){
         List<Associado> associados = acervo.listar();
@@ -18,7 +23,7 @@ public class RegrasAssociado {
         return acervo.cadastrar(usuario);
     }
 
-    public List<Associado> listar () {return acervo.listar();}
+//    public List<Associado> listar () {return acervo.listar();}
 
     public Associado pesquisar(int id) {
         if (id > 0) {
@@ -26,4 +31,5 @@ public class RegrasAssociado {
         }
         return null;
     }
+
 }

@@ -1,9 +1,6 @@
 package com.example.demo.acervobd;
 
 import com.example.demo.dominioclasses.Associado;
-import com.example.demo.dominioclasses.Pauta;
-import com.example.demo.dominioclasses.Voto;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 import java.util.ArrayList;
 import java.util.List;
