@@ -28,6 +28,12 @@ public class Associado {
         this.nome = nome;
     }
 
+    /**
+     * Realiza a transformação da entidade em DTO.
+     * @param associado - @{@link Associado}
+     * @return - @{@link AssociadoDTO}
+     */
+
     public static AssociadoDTO toDTO (Associado associado){
         return new AssociadoDTO(associado.getNome(), associado.getId());}
 }

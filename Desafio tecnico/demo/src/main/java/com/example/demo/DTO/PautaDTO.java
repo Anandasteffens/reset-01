@@ -14,30 +14,19 @@ public class PautaDTO {
         this.tempoVotacao = tempoVotacao;
     }
 
-    public int getIdPauta() {
-        return idPauta;
-    }
-
-    public void setIdPauta(int idPauta) {
-        this.idPauta = idPauta;
-    }
-
     public String getAssunto() {
         return assunto;
-    }
-
-    public void setAssunto(String assunto) {
-        this.assunto = assunto;
     }
 
     public int getTempoVotacao() {
         return tempoVotacao;
     }
 
-    public void setTempoVotacao(int tempoVotacao) {
-        this.tempoVotacao = tempoVotacao;
-    }
-
+    /**
+     * Transforma DTO em entidade pauta
+     * @param dTO @{@link PautaDTO}
+     * @return @{@link Pauta}
+     */
     public static Pauta toEndity (PautaDTO dTO){
         return new Pauta(dTO.getAssunto(), dTO.getTempoVotacao());}
 }

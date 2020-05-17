@@ -16,18 +16,15 @@ public class VotoDTO {
         return idAssociado;
     }
 
-    public void setIdAssociado(Integer idAssociado) {
-        this.idAssociado = idAssociado;
-    }
-
     public boolean getVoto() {
         return voto;
     }
 
-    public void setVoto(boolean voto) {
-        this.voto = voto;
-    }
-
+    /**
+     * Transformar DTO em entidade voto
+     * @param votoDTO @{@link VotoDTO}
+     * @return @{@link Voto}
+     */
     public static Voto toEndity (VotoDTO votoDTO){
         return new Voto(votoDTO.getVoto(), votoDTO.idAssociado);
     }

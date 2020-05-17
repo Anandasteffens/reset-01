@@ -7,6 +7,11 @@ import com.example.demo.dominio.Associado;
 public class AssociadoService {
     private AssociadoRepository acervo = new AssociadoRepository();
 
+    /**
+     *Modifica a Entidade Associado cadastrada para DTO através dos métodos "toEndity" e "toDTO".
+     * @param associadoDTO @{@link AssociadoDTO}
+     * @return @{@link AssociadoDTO}
+     */
     public AssociadoDTO cadastrar (AssociadoDTO associadoDTO){
         if (associadoDTO != null){
             Associado associadoCadastrado = acervo.cadastrar(AssociadoDTO.toEndity(associadoDTO)); //recebe associado.

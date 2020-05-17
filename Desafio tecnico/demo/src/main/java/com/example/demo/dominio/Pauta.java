@@ -31,34 +31,31 @@ public class Pauta {
         return assunto;
     }
 
-    public void setAssunto(String assunto) {
-        this.assunto = assunto;
-    }
-
     public List<Voto> getListaVotos() {
         return listaVotos;
-    }
-
-    public void setListaVotos(List<Voto> listaVotos) {
-        this.listaVotos = listaVotos;
     }
 
     public int getTempoVotacao() {
         return tempoVotacao;
     }
 
-    public void setTempoVotacao(int tempoVotacao) {
-        this.tempoVotacao = tempoVotacao;
-    }
-
     public LocalDateTime getDataLimite() {
         return dataLimite;
     }
 
+    /**
+     * Adiciona um voto na lista de votos.
+     * @param voto @{@Voto}
+     */
     public void votar(Voto voto){
         listaVotos.add(voto);
     }
 
+    /**
+     * Verifica se o Associado pode votar, com a condição de estar na lista de associados.
+     * @param idAssociado @{@link Pauta}
+     * @return boolean
+     */
     public boolean associadoPodeVotar (int idAssociado) {
         for (Voto voto : listaVotos) {
             if (voto.getIdAssociado().equals(idAssociado)) {
@@ -68,6 +65,11 @@ public class Pauta {
         return true;
     }
 
+    /**
+     * Realiza a verificação de tempo disponível para votação, caso não informado o tempo, deve-se considerar um tempo default = 1 minuto.
+     * @param tempo @{@link Pauta}
+     * @return LocalDateTime
+     */
     public LocalDateTime calcularTempoVotacao (Integer tempo){
         int tempoDefault = 1;
         if (tempo != null && tempo !=0){
@@ -77,6 +79,12 @@ public class Pauta {
             return LocalDateTime.now().plusMinutes(tempoDefault);
         }
     }
+
+    /**
+     * Realiza a transformação da entidade pauta em DTO.
+     * @param pauta @{@link Pauta}
+     * @return @{@link PautaDTO}
+     */
 
     public static PautaDTO toDTO (Pauta pauta){
         return new PautaDTO(pauta.getId(), pauta.getAssunto(), pauta.getTempoVotacao());}

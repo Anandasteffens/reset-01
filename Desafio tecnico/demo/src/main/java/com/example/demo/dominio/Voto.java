@@ -28,7 +28,13 @@ public class Voto {
         this.idAssociado = idAssociado;
     }
 
+    /**
+     * Realiza a transformaçã da entidade voto em DTO.
+     * @param voto - @{@link Voto}
+     * @return - @{@link VotoDTO}
+     */
     public static VotoDTO toDTO (Voto voto){
         return new VotoDTO(voto.getIdAssociado(), voto.getVoto());}
 }
+
 

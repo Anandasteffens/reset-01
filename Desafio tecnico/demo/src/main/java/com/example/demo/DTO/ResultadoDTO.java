@@ -7,6 +7,12 @@ public class ResultadoDTO {
     private int nao = 0;
     private String resultado;
 
+    /**
+     * Além de informar os itens necessários para a excecução do método, também possui as condições de resultado de votação.
+     * @param idPauta @{@link ResultadoDTO}
+     * @param sim @{@link ResultadoDTO}
+     * @param nao @{@link ResultadoDTO}
+     */
     public ResultadoDTO(int idPauta, int sim, int nao) {
         this.idPauta = idPauta;
         this.sim = sim;

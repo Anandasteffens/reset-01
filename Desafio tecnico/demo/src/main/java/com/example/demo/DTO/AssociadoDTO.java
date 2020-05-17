@@ -24,7 +24,11 @@ public class AssociadoDTO {
         return id;
     }
 
-
+    /**
+     * Transforma DTO em entidade Associado.
+     * @param dTO @{@link AssociadoDTO}
+     * @return @{@link Associado}
+     */
     public static Associado toEndity (AssociadoDTO dTO){
         return new Associado(dTO.getNome(), dTO.getId());}
 
