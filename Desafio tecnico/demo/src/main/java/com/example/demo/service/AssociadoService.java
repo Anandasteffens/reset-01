@@ -1,11 +1,11 @@
 package com.example.demo.service;
 
 import com.example.demo.DTO.AssociadoDTO;
-import com.example.demo.acervobd.AcervoAssociado;
+import com.example.demo.repository.AssociadoRepository;
 import com.example.demo.dominio.Associado;
 
 public class AssociadoService {
-    private AcervoAssociado acervo = new AcervoAssociado();
+    private AssociadoRepository acervo = new AssociadoRepository();
 
     public AssociadoDTO cadastrar (AssociadoDTO associadoDTO){
         if (associadoDTO != null){

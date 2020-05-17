@@ -1,11 +1,11 @@
-package com.example.demo.acervobd;
+package com.example.demo.repository;
 
 import com.example.demo.dominio.Associado;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AcervoAssociado {
+public class AssociadoRepository {
 
     private static int contador = +1;
     private static List<Associado> associados = new ArrayList<>();

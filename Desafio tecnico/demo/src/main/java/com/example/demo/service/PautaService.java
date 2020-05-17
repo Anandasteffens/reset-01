@@ -2,8 +2,8 @@ package com.example.demo.service;
 
 import com.example.demo.DTO.PautaDTO;
 import com.example.demo.DTO.VotoDTO;
-import com.example.demo.acervobd.AcervoAssociado;
-import com.example.demo.acervobd.AcervoPauta;
+import com.example.demo.repository.AssociadoRepository;
+import com.example.demo.repository.PautaRepository;
 import com.example.demo.dominio.Associado;
 import com.example.demo.dominio.Pauta;
 import com.example.demo.DTO.ResultadoDTO;
@@ -14,20 +14,20 @@ import java.time.LocalDateTime;
 
 public class PautaService {
 
-    private AcervoPauta acervoPauta = new AcervoPauta();
-    private AcervoAssociado acervoAssociado = new AcervoAssociado();
+    private PautaRepository pautaRepository = new PautaRepository();
+    private AssociadoRepository associadoRepository = new AssociadoRepository();
 
     public PautaDTO cadastrar(PautaDTO pautaDTO) {
         if (pautaDTO != null) {
-            Pauta pautaCadastrada = acervoPauta.cadastrar(PautaDTO.toEndity(pautaDTO)); //recebe pauta
+            Pauta pautaCadastrada = pautaRepository.cadastrar(PautaDTO.toEndity(pautaDTO)); //recebe pauta
             return Pauta.toDTO(pautaCadastrada);
         }
         return null;
     }
 
     public boolean votar(int idPauta, VotoDTO votoDTO) {
-        Pauta pauta = acervoPauta.pesquisar(idPauta);
-        Associado associadoCadastrado = acervoAssociado.pesquisar(votoDTO.getIdAssociado());
+        Pauta pauta = pautaRepository.pesquisar(idPauta);
+        Associado associadoCadastrado = associadoRepository.pesquisar(votoDTO.getIdAssociado());
         boolean tempoVotacao = pauta.getDataLimite().isAfter(LocalDateTime.now());
         if (pauta != null && pauta.associadoPodeVotar(votoDTO.getIdAssociado()) && associadoCadastrado != null && tempoVotacao) {
             Voto voto = VotoDTO.toEndity(votoDTO);
@@ -39,7 +39,7 @@ public class PautaService {
 
 
     public ResultadoDTO contabilizarVotacao(int idPauta) {
-        Pauta pauta = acervoPauta.pesquisar(idPauta);
+        Pauta pauta = pautaRepository.pesquisar(idPauta);
         if (pauta != null) {
             int sim = 0;
             int nao = 0;
