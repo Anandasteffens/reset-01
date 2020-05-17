@@ -7,6 +7,7 @@ import com.example.demo.dominioclasses.Pauta;
 import com.example.demo.dominioclasses.Resultado;
 import com.example.demo.dominioclasses.Voto;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,9 +17,10 @@ public class RegrasPauta {
     private AcervoPauta acervoPauta = new AcervoPauta();
     private AcervoAssociado acervoAssociado = new AcervoAssociado();
 
-    public Pauta cadastrar(Pauta pauta) {
-        if (pauta != null) {
-            return acervoPauta.cadastrar(pauta);
+    public Pauta cadastrar(Pauta pautaRequest) {
+        if (pautaRequest != null) {
+            Pauta novaPauta = new Pauta(pautaRequest.getAssunto(), pautaRequest.getTempoVotacao());
+            return acervoPauta.cadastrar(novaPauta);
         }
         return null;
     }
@@ -26,12 +28,14 @@ public class RegrasPauta {
     public boolean votar(int idPauta, Voto voto) {
         Pauta pauta = acervoPauta.pesquisar(idPauta);
         Associado associadoCadastrado = acervoAssociado.pesquisar(voto.getIdAssociado());
-        if (pauta != null && pauta.associadoPodeVotar(voto.getIdAssociado()) && associadoCadastrado != null) {
-            pauta.votar(voto);
-            return true;
-        }
+        boolean tempoVotacao = pauta.getDataLimite().isAfter(LocalDateTime.now());
+        if (pauta != null && pauta.associadoPodeVotar(voto.getIdAssociado()) && associadoCadastrado != null && tempoVotacao) {
+                pauta.votar(voto);
+                return true;
+            }
         return false;
-    }
+        }
+
 
     public Resultado contabilizarVotacao(int idPauta) {
         Pauta pauta = acervoPauta.pesquisar(idPauta);
@@ -50,7 +54,9 @@ public class RegrasPauta {
         }
         return null;
     }
+
 }
+
 
 
 
