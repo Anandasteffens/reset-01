@@ -1,6 +1,6 @@
 package com.example.demo.acervobd;
 
-import com.example.demo.dominioclasses.Associado;
+import com.example.demo.dominio.Associado;
 
 import java.util.ArrayList;
 import java.util.List;

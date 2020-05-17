@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 import com.example.demo.DTO.AssociadoDTO;
-import com.example.demo.dominioclasses.Associado;
 import com.example.demo.service.AssociadoService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

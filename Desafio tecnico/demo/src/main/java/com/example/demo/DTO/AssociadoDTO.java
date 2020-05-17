@@ -1,6 +1,6 @@
 package com.example.demo.DTO;
 
-import com.example.demo.dominioclasses.Associado;
+import com.example.demo.dominio.Associado;
 
 public class AssociadoDTO {
 

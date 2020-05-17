@@ -1,4 +1,4 @@
-package com.example.demo.dominioclasses;
+package com.example.demo.dominio;
 
 import com.example.demo.DTO.AssociadoDTO;
 

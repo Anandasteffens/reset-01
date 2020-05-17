@@ -1,6 +1,6 @@
 package com.example.demo.DTO;
 
-import com.example.demo.dominioclasses.Voto;
+import com.example.demo.dominio.Voto;
 
 public class VotoDTO {
 

@@ -1,10 +1,6 @@
-package com.example.demo.dominioclasses;
+package com.example.demo.dominio;
 
-import com.example.demo.DTO.AssociadoDTO;
 import com.example.demo.DTO.VotoDTO;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Voto {
 

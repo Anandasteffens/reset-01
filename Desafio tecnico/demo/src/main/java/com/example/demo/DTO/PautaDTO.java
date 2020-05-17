@@ -1,7 +1,6 @@
 package com.example.demo.DTO;
 
-import com.example.demo.dominioclasses.Associado;
-import com.example.demo.dominioclasses.Pauta;
+import com.example.demo.dominio.Pauta;
 
 public class PautaDTO {
 

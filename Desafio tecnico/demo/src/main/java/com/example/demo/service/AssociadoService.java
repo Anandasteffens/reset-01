@@ -2,7 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.DTO.AssociadoDTO;
 import com.example.demo.acervobd.AcervoAssociado;
-import com.example.demo.dominioclasses.Associado;
+import com.example.demo.dominio.Associado;
 
 public class AssociadoService {
     private AcervoAssociado acervo = new AcervoAssociado();

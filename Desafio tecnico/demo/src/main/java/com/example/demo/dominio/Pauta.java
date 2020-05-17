@@ -1,11 +1,7 @@
-package com.example.demo.dominioclasses;
+package com.example.demo.dominio;
 
-import com.example.demo.DTO.AssociadoDTO;
 import com.example.demo.DTO.PautaDTO;
-import com.example.demo.DTO.VotoDTO;
-import com.example.demo.acervobd.AcervoAssociado;
 
-import java.security.PublicKey;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;

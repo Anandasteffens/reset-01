@@ -4,10 +4,10 @@ import com.example.demo.DTO.PautaDTO;
 import com.example.demo.DTO.VotoDTO;
 import com.example.demo.acervobd.AcervoAssociado;
 import com.example.demo.acervobd.AcervoPauta;
-import com.example.demo.dominioclasses.Associado;
-import com.example.demo.dominioclasses.Pauta;
+import com.example.demo.dominio.Associado;
+import com.example.demo.dominio.Pauta;
 import com.example.demo.DTO.ResultadoDTO;
-import com.example.demo.dominioclasses.Voto;
+import com.example.demo.dominio.Voto;
 
 import java.time.LocalDateTime;
 
