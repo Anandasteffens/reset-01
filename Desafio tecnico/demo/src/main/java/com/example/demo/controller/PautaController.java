@@ -4,14 +4,14 @@ package com.example.demo.controller;
 import com.example.demo.dominioclasses.Pauta;
 import com.example.demo.dominioclasses.Resultado;
 import com.example.demo.dominioclasses.Voto;
-import com.example.demo.gerenciadorregras.RegrasPauta;
+import com.example.demo.service.PautaService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping ("/pauta")
 public class PautaController {
 
-    private RegrasPauta regrasPauta = new RegrasPauta();
+    private PautaService regrasPauta = new PautaService();
 
     @PostMapping
     public Pauta cadastrarPauta (@RequestBody Pauta requestBody){

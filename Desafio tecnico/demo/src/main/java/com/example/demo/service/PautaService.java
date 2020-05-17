@@ -1,4 +1,4 @@
-package com.example.demo.gerenciadorregras;
+package com.example.demo.service;
 
 import com.example.demo.acervobd.AcervoAssociado;
 import com.example.demo.acervobd.AcervoPauta;
@@ -8,11 +8,9 @@ import com.example.demo.dominioclasses.Resultado;
 import com.example.demo.dominioclasses.Voto;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 
-public class RegrasPauta {
+public class PautaService {
 
     private AcervoPauta acervoPauta = new AcervoPauta();
     private AcervoAssociado acervoAssociado = new AcervoAssociado();
