@@ -1,5 +1,8 @@
 package com.example.demo.dominioclasses;
 
+import com.example.demo.DTO.AssociadoDTO;
+import com.example.demo.DTO.PautaDTO;
+import com.example.demo.DTO.VotoDTO;
 import com.example.demo.acervobd.AcervoAssociado;
 
 import java.security.PublicKey;
@@ -22,9 +25,7 @@ public class Pauta {
 
     public Pauta (){};
 
-    public int getId() {
-        return id;
-    }
+    public int getId() {return id;}
 
     public void setId(int id) {
         this.id = id;
@@ -80,6 +81,8 @@ public class Pauta {
             return LocalDateTime.now().plusMinutes(tempoDefault);
         }
     }
-}
 
+    public static PautaDTO toDTO (Pauta pauta){
+        return new PautaDTO(pauta.getId(), pauta.getAssunto(), pauta.getTempoVotacao());}
+}
 

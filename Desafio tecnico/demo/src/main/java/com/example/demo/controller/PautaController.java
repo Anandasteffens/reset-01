@@ -1,9 +1,9 @@
 package com.example.demo.controller;
 
 
-import com.example.demo.dominioclasses.Pauta;
-import com.example.demo.dominioclasses.Resultado;
-import com.example.demo.dominioclasses.Voto;
+import com.example.demo.DTO.PautaDTO;
+import com.example.demo.DTO.VotoDTO;
+import com.example.demo.DTO.ResultadoDTO;
 import com.example.demo.service.PautaService;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,22 +11,21 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping ("/pauta")
 public class PautaController {
 
-    private PautaService regrasPauta = new PautaService();
+    private PautaService pautaService = new PautaService();
 
     @PostMapping
-    public Pauta cadastrarPauta (@RequestBody Pauta requestBody){
-        return regrasPauta.cadastrar(requestBody);
+    public PautaDTO cadastrarPauta (@RequestBody PautaDTO requestBody){
+        return pautaService.cadastrar(requestBody);
     }
 
     @PostMapping("/votar/{idPauta}")
-    public boolean votar (@PathVariable("idPauta") int idPauta,@RequestBody Voto requestBody){
-      return regrasPauta.votar(idPauta, requestBody);
+    public boolean votar (@PathVariable("idPauta") int idPauta,@RequestBody VotoDTO requestBody){
+      return pautaService.votar(idPauta, requestBody);
     }
 
     @GetMapping ("/{idPauta}/resultado")
-    public Resultado resultadoVotacao (@PathVariable ("idPauta") int idPauta){
-        Resultado result = regrasPauta.contabilizarVotacao(idPauta);
-
+    public ResultadoDTO resultadoVotacao (@PathVariable ("idPauta") int idPauta){
+        ResultadoDTO result = pautaService.contabilizarVotacao(idPauta);
         return result;
     }
 }

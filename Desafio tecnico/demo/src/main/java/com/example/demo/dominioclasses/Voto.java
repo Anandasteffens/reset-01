@@ -1,5 +1,8 @@
 package com.example.demo.dominioclasses;
 
+import com.example.demo.DTO.AssociadoDTO;
+import com.example.demo.DTO.VotoDTO;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,5 +32,7 @@ public class Voto {
         this.idAssociado = idAssociado;
     }
 
-
+    public static VotoDTO toDTO (Voto voto){
+        return new VotoDTO(voto.getIdAssociado(), voto.getVoto());}
 }
+

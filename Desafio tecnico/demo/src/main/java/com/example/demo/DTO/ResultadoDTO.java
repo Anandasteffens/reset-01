@@ -1,13 +1,13 @@
-package com.example.demo.dominioclasses;
+package com.example.demo.DTO;
 
-public class Resultado {
+public class ResultadoDTO {
 
     private int idPauta;
     private int sim = 0;
     private int nao = 0;
     private String resultado;
 
-    public Resultado(int idPauta, int sim, int nao) {
+    public ResultadoDTO(int idPauta, int sim, int nao) {
         this.idPauta = idPauta;
         this.sim = sim;
         this.nao = nao;

@@ -19,17 +19,11 @@ public class AssociadoDTO {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public static Associado toEndity (AssociadoDTO dTO){
         return new Associado(dTO.getNome(), dTO.getId());}
