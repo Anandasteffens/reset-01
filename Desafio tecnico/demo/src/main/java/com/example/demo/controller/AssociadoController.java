@@ -1,20 +1,27 @@
 package com.example.demo.controller;
 
 import com.example.demo.DTO.AssociadoDTO;
+import com.example.demo.dominio.Associado;
 import com.example.demo.service.AssociadoService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/associado")
+@Api(value = "Associado")
+@RequestMapping(value = "/associado")
 public class AssociadoController {
 
     private AssociadoService associadoService = new AssociadoService();
 
+    @ApiOperation(value = "Cadastrar associado")
     @PostMapping
     public AssociadoDTO cadastrarAssociado (@RequestBody AssociadoDTO requestBody){
         return associadoService.cadastrar(requestBody);
     }
 }
+
+
+
+
+
