@@ -5,6 +5,7 @@ import com.example.demo.dominio.Associado;
 import com.example.demo.service.AssociadoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,6 +20,7 @@ public class AssociadoController {
     public AssociadoDTO cadastrarAssociado (@RequestBody AssociadoDTO requestBody){
         return associadoService.cadastrar(requestBody);
     }
+
 }
 
 

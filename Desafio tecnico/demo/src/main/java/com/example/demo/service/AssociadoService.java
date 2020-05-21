@@ -5,6 +5,7 @@ import com.example.demo.repository.AssociadoRepository;
 import com.example.demo.dominio.Associado;
 
 public class AssociadoService {
+
     private AssociadoRepository acervo = new AssociadoRepository();
 
     /**
@@ -21,7 +22,6 @@ public class AssociadoService {
         return null;
     }
 
-
     public Associado pesquisar(int idAssociado) {
         if (idAssociado > 0) {
             return acervo.pesquisar(idAssociado);
@@ -29,4 +29,5 @@ public class AssociadoService {
         return null;
     }
 
+//    public AssociadoService() {;}
 }
