@@ -33,7 +33,7 @@ public class PautaController {
 
 
     @ApiOperation(value = "Mostrar resultado da votação, digite o ID da pauta")
-    @GetMapping(value = "/resulado/{idPauta}")
+    @GetMapping(value = "/resultado/{idPauta}")
     public ResultadoDTO resultadoVotacao (@PathVariable ("idPauta") int idPauta){
         ResultadoDTO result = pautaService.contabilizarVotacao(idPauta);
         return result;

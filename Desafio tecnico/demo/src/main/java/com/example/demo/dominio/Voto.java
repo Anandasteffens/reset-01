@@ -16,16 +16,8 @@ public class Voto {
         return voto;
     }
 
-    public void setVoto(boolean voto) {
-        this.voto = voto;
-    }
-
     public Integer getIdAssociado() {
         return idAssociado;
-    }
-
-    public void setIdAssociado(Integer idAssociado) {
-        this.idAssociado = idAssociado;
     }
 
     /**

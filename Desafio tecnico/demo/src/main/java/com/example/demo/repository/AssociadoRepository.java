@@ -19,19 +19,10 @@ public class AssociadoRepository {
     private static String pastaContador = "src\\main\\resources\\";
     private static String arquivoContador = "contador.txt";
     private Integer contador = readIntFromFile();
-    //    private int contador = +1;
     private static String pasta = "src\\main\\resources\\";
     private static String arquivo = "associado.txt";
     private static List<Associado> associados = readObjectFromFile();
-//    private static List<Associado> associados = new ArrayList<>();
 
-    public AssociadoRepository(Integer contador) {
-        this.contador = contador;
-    }
-
-    public AssociadoRepository() {
-        ;
-    }
 
     /**
      * Método cria o associado e adiciona ele na lista de associados

@@ -14,6 +14,14 @@ public class PautaDTO {
         this.tempoVotacao = tempoVotacao;
     }
 
+    public int getIdPauta() {
+        return idPauta;
+    }
+
+    public void setIdPauta(int idPauta) {
+        this.idPauta = idPauta;
+    }
+
     public String getAssunto() {
         return assunto;
     }
@@ -28,7 +36,7 @@ public class PautaDTO {
      * @return @{@link Pauta}
      */
     public static Pauta toEndity (PautaDTO dTO){
-        return new Pauta(dTO.getAssunto(), dTO.getTempoVotacao());}
+        return new Pauta(dTO.getIdPauta(), dTO.getAssunto(), dTO.getTempoVotacao());}
 }
 
 

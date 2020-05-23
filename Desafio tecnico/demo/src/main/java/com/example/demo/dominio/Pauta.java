@@ -13,13 +13,16 @@ public class Pauta {
     private List<Voto> listaVotos = new ArrayList<>();
     private LocalDateTime dataLimite;
 
-    public Pauta(String assunto, int tempoVotacao) {
+    public Pauta(int id, String assunto, int tempoVotacao) {
+        this.id = id;
         this.assunto = assunto;
         this.tempoVotacao = tempoVotacao;
         this.dataLimite = calcularTempoVotacao(tempoVotacao);
     }
 
-    public Pauta (){};
+    public Pauta() {
+
+    }
 
     public int getId() {return id;}
 
