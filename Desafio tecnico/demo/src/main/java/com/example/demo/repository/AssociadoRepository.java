@@ -26,7 +26,6 @@ public class AssociadoRepository {
 
     /**
      * Método cria o associado e adiciona ele na lista de associados
-     *
      * @param associado @{@link Associado}
      * @return @{@link Associado}
      */
@@ -34,12 +33,16 @@ public class AssociadoRepository {
         contador += 1;
         associado.setId(contador);
         associados.add(associado);
-        this.writeAssociado();
+        this.writeObjectToFile(associados);
         this.writeIntToFiles(contador);
         return associado;
     }
 
-    public Object writeObjectToFile(Object objeto) {
+    /**
+     * Método utilizado para escrever em um arquivo, além de transformar um objeto em formato JSON.
+     * @param objeto @{@link Object}
+     */
+    public void writeObjectToFile(Object objeto) {
         try {
             File tempFile = new File(pasta + arquivo);
             Gson gson = new Gson();
@@ -49,13 +52,12 @@ public class AssociadoRepository {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        return null;
     }
 
-    public Object writeAssociado() {
-        return this.writeObjectToFile(associados);
-    }
-
+    /**
+     * Método utilizado para ler o conteudo que foi salvo no arquivo. Além de transformar do formato string em objeto.
+     * @return @{@link List<Associado>}
+     */
     public static List<Associado> readObjectFromFile() {
         try {
             Path filePath = Paths.get(pasta + arquivo);
@@ -76,6 +78,10 @@ public class AssociadoRepository {
         return null;
     }
 
+    /**
+     *Método utilizado para escrever em um arquivo de texto.
+     * @param contador @{@link Integer}
+     */
     public void writeIntToFiles(Integer contador) {
         try {
             File tempFile = new File(pastaContador + arquivoContador);
@@ -85,6 +91,10 @@ public class AssociadoRepository {
         }
     }
 
+    /**
+     * Método utilizado para ler o que foi escrito no arquivo em relação ao contador de associados.
+     * @return @{@link Integer}
+     */
     public static Integer readIntFromFile() {
         try {
             Path filePath = Paths.get(pastaContador + arquivoContador);
@@ -102,8 +112,7 @@ public class AssociadoRepository {
 
     /**
      * Através do id informado realiza a pesquisa desse associado na lista de associados.
-     *
-     * @param id @{@link Associado}
+     * @param id @{@link int}
      * @return @{@link Associado}
      */
     public Associado pesquisar(int id) {

@@ -21,7 +21,7 @@ public class Voto {
     }
 
     /**
-     * Realiza a transformaçã da entidade voto em DTO.
+     * Realiza a transformação da entidade voto em DTO.
      * @param voto - @{@link Voto}
      * @return - @{@link VotoDTO}
      */

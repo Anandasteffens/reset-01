@@ -22,6 +22,11 @@ public class AssociadoService {
         return null;
     }
 
+    /**
+     *Método utilizado para pesquisar o associado através do ID.
+     * @param idAssociado @{@link int}
+     * @return @{@link Associado}
+     */
     public Associado pesquisar(int idAssociado) {
         if (idAssociado > 0) {
             return acervo.pesquisar(idAssociado);

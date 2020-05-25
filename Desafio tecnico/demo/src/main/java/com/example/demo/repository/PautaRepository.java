@@ -33,34 +33,40 @@ public class PautaRepository {
         contadorPauta+=1;
         pauta.setId(contadorPauta);
         pautas.add(pauta);
-       this.salvarPauta();
+        this.salvarPauta();
         return pauta;
     }
 
+    /**
+     * Método utilizado para salvar os votos dentro do arquivo da pauta.
+     */
     public void salvarPauta (){
-        this.writePauta();
+        this.writeObjectToFile(pautas);
         this.writeIntToFiles(contadorPauta);
     }
 
-    public Object writeObjectToFile(Object objeto) {
+    /**
+     * Método utilizado para escrever em um arquivo, além de transformar um objeto em formato JSON.
+     * @param objeto @{@link Object}
+     */
+    public void writeObjectToFile(Object objeto) {
         try {
             File tempFile = new File(pasta+arquivo);
             Gson gson = new Gson();
             String jsonString = gson.toJson(objeto);
             if (jsonString != null){
-            FileUtils.writeStringToFile(tempFile, jsonString);
+                FileUtils.writeStringToFile(tempFile, jsonString);
             }
 
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        return null;
     }
 
-    public Object writePauta() {
-        return this.writeObjectToFile(pautas);
-    }
-
+    /**
+     *Método utilizado para ler o conteudo que foi salvo em no arquivo. Além de transformar do formato string em objeto.
+     * @return @{@link List<Pauta>}
+     */
     public static List<Pauta> readObjectFromFile() {
         try {
             Path filePath = Paths.get(pasta+arquivo);
@@ -81,6 +87,10 @@ public class PautaRepository {
         return null;
     }
 
+    /**
+     *Método utilizado para escrever em um arquivo de texto.
+     * @param contadorPauta @{@link Integer}
+     */
     public void writeIntToFiles(Integer contadorPauta) {
         try {
             File tempFile = new File(pastaContador + arquivoContador);
@@ -89,6 +99,11 @@ public class PautaRepository {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Método utilizado para ler o que foi escrito no arquivo em relação ao contador de pautas.
+     * @return @{@link Integer}
+     */
 
     public static Integer readIntFromFile() {
         try {
@@ -105,11 +120,9 @@ public class PautaRepository {
         return null;
     }
 
-    public List<Pauta> listar () {return pautas;}
-
     /**
      * Através do id informado realiza a pesquisa dessa pauta na lista de pautas.
-     * @param idPauta @{@link Pauta}
+     * @param idPauta @{@link int}
      * @return @{@link Pauta}
      */
     public Pauta pesquisar (int idPauta){

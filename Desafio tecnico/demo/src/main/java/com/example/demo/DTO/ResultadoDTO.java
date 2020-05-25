@@ -9,9 +9,9 @@ public class ResultadoDTO {
 
     /**
      * Além de informar os itens necessários para a excecução do método, também possui as condições de resultado de votação.
-     * @param idPauta @{@link ResultadoDTO}
-     * @param sim @{@link ResultadoDTO}
-     * @param nao @{@link ResultadoDTO}
+     * @param idPauta @{@link int}
+     * @param sim @{@link int}
+     * @param nao @{@link int}
      */
     public ResultadoDTO(int idPauta, int sim, int nao) {
         this.idPauta = idPauta;
@@ -21,7 +21,7 @@ public class ResultadoDTO {
             resultado = "Pauta Aprovada";
         }
         if (sim<nao){
-            resultado = "Pauta reprovada";
+            resultado = "Pauta Reprovada";
         }
         if(sim == nao){
             resultado = "Repetir votação.";
