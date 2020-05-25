@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 import com.example.demo.DTO.AssociadoDTO;
-import com.example.demo.dominio.Associado;
 import com.example.demo.service.AssociadoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -19,6 +18,7 @@ public class AssociadoController {
     public AssociadoDTO cadastrarAssociado (@RequestBody AssociadoDTO requestBody){
         return associadoService.cadastrar(requestBody);
     }
+
 }
 
 

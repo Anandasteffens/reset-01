@@ -13,13 +13,16 @@ public class Pauta {
     private List<Voto> listaVotos = new ArrayList<>();
     private LocalDateTime dataLimite;
 
-    public Pauta(String assunto, int tempoVotacao) {
+    public Pauta(int id, String assunto, int tempoVotacao) {
+        this.id = id;
         this.assunto = assunto;
         this.tempoVotacao = tempoVotacao;
         this.dataLimite = calcularTempoVotacao(tempoVotacao);
     }
 
-    public Pauta (){};
+    public Pauta() {
+
+    }
 
     public int getId() {return id;}
 
@@ -53,7 +56,7 @@ public class Pauta {
 
     /**
      * Verifica se o Associado pode votar, com a condição de estar na lista de associados.
-     * @param idAssociado @{@link Pauta}
+     * @param idAssociado @{@link int}
      * @return boolean
      */
     public boolean associadoPodeVotar (int idAssociado) {
@@ -67,7 +70,7 @@ public class Pauta {
 
     /**
      * Realiza a verificação de tempo disponível para votação, caso não informado o tempo, deve-se considerar um tempo default = 1 minuto.
-     * @param tempo @{@link Pauta}
+     * @param tempo @{@link Integer}
      * @return LocalDateTime
      */
     public LocalDateTime calcularTempoVotacao (Integer tempo){

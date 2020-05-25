@@ -9,12 +9,15 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+
 @RestController
 @RequestMapping(value = "/pauta")
 @Api(value = "Pauta")
 public class PautaController {
 
     private PautaService pautaService = new PautaService();
+
 
     @ApiOperation(value = "Criar uma nova pauta")
     @PostMapping
@@ -30,7 +33,7 @@ public class PautaController {
 
 
     @ApiOperation(value = "Mostrar resultado da votação, digite o ID da pauta")
-    @GetMapping(value = "/pauta/{idPauta}")
+    @GetMapping(value = "/resultado/{idPauta}")
     public ResultadoDTO resultadoVotacao (@PathVariable ("idPauta") int idPauta){
         ResultadoDTO result = pautaService.contabilizarVotacao(idPauta);
         return result;

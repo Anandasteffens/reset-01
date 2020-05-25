@@ -36,27 +36,28 @@ public class PautaService {
      * Realiza a validacao se o associado ja votou na pauta informada pelo seu ID, caso não tenha pode votar;
      * Verifica o tempo disponível para votação;
      * Transforma o DTA na entidade voto e caso todas as condições sejam atendidas realiza o voto na pauta.
-     * @param idPauta @{@link PautaService}
+     * @param idPauta @{@link int}
      * @param votoDTO @{@link VotoDTO}
-     * @return @{@link Voto}
+     * @return @{@link boolean}
      */
     public boolean votar(int idPauta, VotoDTO votoDTO) {
         Pauta pauta = pautaRepository.pesquisar(idPauta);
         Associado associadoCadastrado = associadoRepository.pesquisar(votoDTO.getIdAssociado());
-        boolean tempoVotacao = pauta.getDataLimite().isAfter(LocalDateTime.now());
-        if (pauta != null && pauta.associadoPodeVotar(votoDTO.getIdAssociado()) && associadoCadastrado != null && tempoVotacao) {
+        boolean tempoVotacao = pauta != null && pauta.getDataLimite().isAfter(LocalDateTime.now());
+        if (tempoVotacao && associadoCadastrado != null && pauta.associadoPodeVotar(votoDTO.getIdAssociado())) {
             Voto voto = VotoDTO.toEndity(votoDTO);
-                pauta.votar(voto);
-                return true;
-            }
-        return false;
+            pauta.votar(voto);
+            pautaRepository.salvarPauta();
+            return true;
         }
+        return false;
+    }
 
     /**
-     *Verifica se o id da pauta informado exista na lista;
+     * Verifica se o id da pauta informado exista na lista;
      * Percorre a lista de votos e contabiliza os mesmos nas variáveis sim e nao;
      * Realiza a contabilização dos votos e informa o resultado da votação;
-     * @param idPauta @{@link ResultadoDTO}
+     * @param idPauta @{@link int}
      * @return @{@link ResultadoDTO}
      */
     public ResultadoDTO contabilizarVotacao(int idPauta) {

@@ -24,10 +24,6 @@ public class Associado {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     /**
      * Realiza a transformação da entidade em DTO.
      * @param associado - @{@link Associado}

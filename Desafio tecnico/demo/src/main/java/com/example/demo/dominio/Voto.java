@@ -16,20 +16,12 @@ public class Voto {
         return voto;
     }
 
-    public void setVoto(boolean voto) {
-        this.voto = voto;
-    }
-
     public Integer getIdAssociado() {
         return idAssociado;
     }
 
-    public void setIdAssociado(Integer idAssociado) {
-        this.idAssociado = idAssociado;
-    }
-
     /**
-     * Realiza a transformaçã da entidade voto em DTO.
+     * Realiza a transformação da entidade voto em DTO.
      * @param voto - @{@link Voto}
      * @return - @{@link VotoDTO}
      */
